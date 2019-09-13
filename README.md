@@ -1,17 +1,17 @@
 # CS_478_SemesterProject
 Semester project for CS 478 Software Development
 
-BDDT - Book and document Distrubution Tool (BDDT) Proposal
+BDDT - Book and document Distribution Tool (BDDT) Proposal
 
 ## TOC
 
-[Summary](#summary)
-[Feasibility](#feasibility)
-[Process](#process)
-[Audience](#audience)
-[UI](#ui)
-[Backend](#backend)
-[Roadblocks](#roadblocks)
+[Summary](#summary)<br>
+[Feasibility](#feasibility)<br>
+[Process](#process)<br>
+[Audience](#audience)<br>
+[UI](#ui)<br>
+[Backend](#backend)<br>
+[Roadblocks](#roadblocks)<br>
 
 <div id='summary'/>
 
@@ -31,8 +31,9 @@ As we evaluated all other projects suggested, many of them we realized would pro
 
 ## Process
 The BDDT involves various steps from uploading to adhering a correct format. The
-user will either submit a document that they wish to upload to our server or can go into our directory site to locate all the documents uploaded currently. If the user would like to submit a document for hosting they will click the button or drag their file into the space to begin the process. As the document is uploaded to our webserver, our code 
-will format the document, parsing out the images and collecting the raw text we want for displaying. The goal right now is to grab the text we want to display and remove the images (for the time being, we have also discussed of having a link added to access a separate page for the figure). We would expect our audience to use mobile devices than a computer for reading especially users out in the field who may need access to a manual. The document will then be on display using basic HTML and formatted correctly to where anyone who reads the corresponding document won't suffer unflattering paragraph format. A following diagram below explains our concept:
+user will either submit a document that they wish to upload to our server or can go into our directory site to locate all the documents uploaded currently. If the user would like to submit a document for hosting they will click the button or drag their file into the space to begin the process.
+
+As the document is uploaded to our webserver, our code will format the document, parsing out the images and collecting the raw text we want for displaying. The goal right now is to grab the text we want to display and remove the images (for the time being, we have also discussed of having a link added to access a separate page for the figure). We would expect our audience to use mobile devices than a computer for reading especially users out in the field who may need access to a manual. The document will then be on display using basic HTML and formatted correctly to where anyone who reads the corresponding document won't suffer unflattering paragraph format. A following diagram below explains our concept:
 
 <img src="/BDDT.png">
 
@@ -53,11 +54,15 @@ subject at hand but can at least pull out a document.
 ## UI
 
 We want our front end to look as dynamically pleasant as possible without 
-causing a lack of time on already poor internet functions. For example, many modern sites add animations and other styles that although look fantastic for the site, would unfortunately be detrimental for our slow-end users. Therefore, we've proposed having two layouts. The basic homage would feature two or three buttons: submit a document, go to directory, and another that can give them the more dynamic website. The dynamic website option can also be included in the directory that when a user goes through their can search for documents. Our front end developers will concentrate on using HTML, CSS, and Angular for this part of the project. An early example of what the homepage may look like is seen below:
+causing a lack of time on already poor internet functions. For example, many modern sites add animations and other styles that although look fantastic for the site, would unfortunately be detrimental for our slow-end users. Therefore, we've proposed having two layouts. 
+
+The basic homage would feature two or three buttons: submit a document, go to directory, and another that can give them the more dynamic website. The dynamic website option can also be included in the directory that when a user goes through their can search for documents. Our front end developers will concentrate on using HTML, CSS, and Angular for this part of the project. An early example of what the homepage may look like is seen below:
 
 <img src="/hompageupload.jpeg">
 
-When a user goes into the directory page, they can see all the documents that have been uploaded to the website. Each one will have a title corresponding to their text uploaded and when they were uploaded. Discussion has also taken place about having a search bar in the directory as well as seeing the most recent documents being uploaded. Again, we are still stressing having a simple yet pleasing design that won;t be too hard on slow-end users. The other feature that goes beyond basic html will add more style and be available to faster end users.
+When a user goes into the directory page, they can see all the documents that have been uploaded to the website. Each one will have a title corresponding to their text uploaded and when they were uploaded. 
+
+Discussion has also taken place about having a search bar in the directory as well as seeing the most recent documents being uploaded. Again, we are still stressing having a simple yet pleasing design that won;t be too hard on slow-end users. The other feature that goes beyond basic html will add more style and be available to faster end users.
 
 <div id='backend'/>
 
