@@ -37,6 +37,8 @@ As the document is uploaded to our webserver, our code will format the document,
 
 <img src="/BDDT.png">
 
+*Figure 1: Lucidchart Diagram of the BDDT*
+
 <div id='audience'/>
 
 ## Audience
@@ -59,6 +61,8 @@ causing a lack of time on already poor internet functions. For example, many mod
 The basic homage would feature two or three buttons: submit a document, go to directory, and another that can give them the more dynamic website. The dynamic website option can also be included in the directory that when a user goes through their can search for documents. Our front end developers will concentrate on using HTML, CSS, and Angular for this part of the project. An early example of what the homepage may look like is seen below:
 
 <img src="/hompageupload.jpeg">
+
+*Figure 2: Proposed homepage for users*
 
 When a user goes into the directory page, they can see all the documents that have been uploaded to the website. Each one will have a title corresponding to their text uploaded and when they were uploaded. 
 
