@@ -70,3 +70,25 @@ Sass?
 - If tesseract will be used, need to handle output and clean it up again
  Time Estimate: 15 minutes
 
+### 9/18
+
+- Clear emphasis on user story
+- Entry in and acts like a trail for us
+- Checking out different file formats
+- SFTP or other?
+- Do we consider a different protocol on file transfer?
+- May fall under the code design and the userstory is for what would the user see
+- Possibly a drag and drop
+- We have two main paths upload and download paths
+- View webpage path and upload page path
+- chocie if they wanted the extra privacy
+- may let them choose url name?
+- Big hole in our knowledge base: How are we gonna handle the upload?
+- Have them deliver the document to us
+- brings us to permissions
+- May need to look at a terms of service
+- Have our own moderation
+On front end
+------------
+- how will the front end look?
+- rough representation of the directory?
