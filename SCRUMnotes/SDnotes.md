@@ -66,9 +66,11 @@ Sass?
 ### Conclusion:
 - May have to research how AWs could grab a file without going through our server
 - May need to find a file for handling services
+- We will choose one
 - Do research how file handling works for research (either team)
 - If tesseract will be used, need to handle output and clean it up again
  Time Estimate: 15 minutes
+
 
 ### 9/18
 
@@ -90,5 +92,29 @@ Sass?
 - Have our own moderation
 On front end
 ------------
-- how will the front end look?
-- rough representation of the directory?
+- how will the front end look
+- rough representation of the directory 
+
+9/20/19
+- Will need a domain name
+- AWS for file transfer protocol and how its uploaded
+- we have a documentation
+- Pcik a good name 
+- Next Friday, come up with your final name
+- Hopefully something better than BDDT
+- We will be breaking everything down into user story for next time.
+- Develop the user story with the Lucid chart
+- May have to split work for backend and frontend 
+- Stretch goal - Add some text for a summary of the link
+- Descriptive files names encouraged
+- Preferred documents uploaded
+- On homepage tell user what would be preferred for uploading document
+- Can also use XML for formatting
+- Can show them a preview of what it will look like 
+- Can let user choose how the format to be
+Goal for next time
+--------------------
+- Rough draft of the user story
+- Check something into git
+- How we will handle text other than pdf
+` 
