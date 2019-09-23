@@ -112,9 +112,24 @@ On front end
 - Can also use XML for formatting
 - Can show them a preview of what it will look like 
 - Can let user choose how the format to be
+
 Goal for next time
 --------------------
 - Rough draft of the user story
 - Check something into git
 - How we will handle text other than pdf
-` 
+
+9/23/19
+-------
+- Authentication will be difficult to set up
+- amintainence should be fine
+- Signing andautentication documentation for AWS
+- Probably setup a student account for our website
+- may able to set up to expire
+- just need a general security
+- wire frame is starting getting 
+- By Wendesday start throwing something for the user story
+- User story template for both backend/frontend started
+- Have preliminery for the backend schematic and frontend schematic 
+
+ 
