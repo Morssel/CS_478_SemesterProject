@@ -3,34 +3,38 @@
 # run "pip3 install PyPDF4"
 
 from PyPDF4 import PdfFileReader
-
-f_name='Mod 1 Part A.pdf';
-with open(f_name, 'rb') as f:
-    pdf = PdfFileReader(f)
-    information = pdf.getDocumentInfo()
-    number_of_pages = pdf.getNumPages()
-
-num_pages = pdf.numPages
-count = 0
-text = ""
-
-#The while loop will read each page
-while count < num_pages:
-    pageObj = pdf.getPage(count)
-    count +=1
-    text += pageObj.extractText()
+import re
 
 
-pdfFileObj = open(f_name, 'rb')
-pdfReader = PdfFileReader(pdfFileObj)
-count = 0
-text = ""
-num_pages = pdfReader.numPages
+f_name='Test1.pdf'
 
-while count < num_pages:
-    pageObj = pdfReader.getPage(count)
-    temp_text = pageObj.extractText()
-    text += temp_text
-    count += 1
+# This function grabs the string from a pdf file
+def getTEXT(pdf_file):
+    pdfFileObj = open(pdf_file, 'rb')
+    pdfReader = PdfFileReader(pdfFileObj)
+    count = 0
+    text = ""
+    num_pages = pdfReader.numPages
 
-print(text)
+    while count < num_pages:
+        pageObj = pdfReader.getPage(count)
+        temp_text = pageObj.extractText()
+        text += temp_text
+        count += 1
+        #print(text)
+
+    return text
+
+# This function strips out the control character
+def strip_out_control_char(input):
+    regex = re.compile(r'[\n\r\t]')
+    return regex.sub(" ", input)
+
+result = getTEXT(f_name)
+new_str= strip_out_control_char(result)
+#
+
+
+
+
+
