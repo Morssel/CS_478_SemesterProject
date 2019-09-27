@@ -35,6 +35,16 @@ new_str= strip_out_control_char(result)
 #
 
 
+# Program to show various ways to read and
+# write data in a file.
+fname='str_test.txt'
+with open(fname, "w", encoding="utf-8") as f:
+    f.write(new_str)
 
+fname='str_test.html'
+with open(fname, "w", encoding="utf-8") as f:
+    f.write(new_str)
 
-
+fname='str_test2.html'
+with open(fname, "w", encoding="utf-8") as f:
+    f.write(result)
