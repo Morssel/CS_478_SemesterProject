@@ -132,4 +132,39 @@ Goal for next time
 - User story template for both backend/frontend started
 - Have preliminery for the backend schematic and frontend schematic 
 
+
+9/27/19
+-------
+- Jira too much of a pain, may go with Trello
+- DFD and user story online, need everone to take a look and either add or delete what needs to be included
+- Trello provides better tracking aspects
+- Proibably need an admin, either Hans or Joseph
+- Ideas are getting planned out
+Tasks
+-----
+- Joseph setting up trello
+- Hans finish final draft on userstory and DFD
+- Jace/Kaitlynn starts building index files (Kaitlyn on directory/ Jace on index page)
+- Al parsing method and the scheduler
+
+9/30/19
+-------
+- CSS style how much will be a question
+- Text display what CSS are we gonna display
+- Make it easier to read
+- Backend will grab the text
+- frontend will choose how to display the text
+- Hans will set up the trello impact
+- Discussed what we want for front page to view, upload, and check recent documents
+- Make the website backwards compatible, this is due to our users may be on expired or out-of-date windows
+
+10/02/19
+---------
+- Got additions for Trello
+- Beginning tasks have been added
+- Kaitlyn has a mock up of the directory
+- Jace has his upload on the github branch
+- Al has the parse method down and formatting just has to be covered
+- Now working on the stylesheet
+
  
