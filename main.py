@@ -44,10 +44,10 @@ def upload_file():
 @app.route('/FLASK_BDDT/PARSE_File')
 def home():
     f_name = process_file
-    result = getTEXT(f_name)
-    new_str = strip_out_control_char(result)
-    return new_str
-
+    #result = getTEXT(f_name)
+    result = tika_parse(f_name)
+    #new_str = strip_out_control_char(result)
+    return result
 
 
 if __name__ == "__main__":
