@@ -48,3 +48,5 @@ with open(fname, "w", encoding="utf-8") as f:
 fname='str_test2.html'
 with open(fname, "w", encoding="utf-8") as f:
     f.write(result)
+
+
