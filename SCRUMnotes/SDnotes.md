@@ -167,4 +167,41 @@ Tasks
 - Al has the parse method down and formatting just has to be covered
 - Now working on the stylesheet
 
+10/10/19
+- Demo I due in two weeks
+- we will have the home page
+- Add a documentation link (doesn't have to be huge)
+- Still need to figure out the triggering function of the lambda
+- Will get the bucket up and running
+- Filtering out still a question
+- Copyright still a problem, (rules will still be manual moderators)
+
+10/14/19
+- Have a demo of the site up through amazons s3 bucket
+- Account may have to be renewed
+- Progress made on the website can be copied over
+- Uploading the file will do nothing
+- Index.html page on Jace's page for github
+- Angular has the site set up differently 
+- Al progress can parse the pdf
+- Everything that is handled on the page is in python script
+- May conflict with s3 bucket if not javascript
+- may have to have our own pi server for it as well
+- Still need to see how it works on the project side
+- Next thing would be to expand the parsing for other file formats
+
+10/16/19
+- Confident that front end can present there pages for demo on next Friday
+- Al's parser is working correctly remoteley
+- Need to finish up the upload part
+- move Al's parser into the AWS Lambda
+- do we have a particular page to merge the page
+- demo will have a fuctioning upload page 
+- file backend for upload 
+- We have the beginning and end but still need the middle for the directory
+- parser stores the html, generates an html file, and what is sent back is an html file
+- Formatting will be off, but at least be consistent
+- May have the back with a border
+
+
  
