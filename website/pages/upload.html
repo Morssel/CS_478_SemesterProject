@@ -1,0 +1,134 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>BDDTWebsite</title>
+<style>
+ a,
+  a:visited,
+  a:hover {
+    color: #1976d2;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: #125699;
+  }
+
+  footer {
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    line-height: 20px;
+  }
+
+.spacer {
+    flex: 1;
+  }
+
+  .toolbar {
+    height: 60px;
+    margin: -8px;
+    display: flex;
+    align-items: center;
+    background-color: #1976d2;
+    color: white;
+    font-weight: 600;
+    text-indent: 10;
+}
+
+  .content {
+    display: flex;
+    margin: 32px auto;
+    padding: 0 16px;
+    max-width: 960px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 16px;
+    font-size: x-large;
+  }
+  
+    .backgroud{
+    border-radius: 55px;
+    border: 1px solid #eee;
+    background-color: #fafafa;
+    height: 185px;
+    width: 500px;
+    margin: 0 8px 16px;
+    padding: 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease-in-out;
+    line-height: 24px;
+  }
+  
+    .link-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 16px;
+    font-size: x-large;
+  }
+  
+    .link {
+    border-radius: 4px;
+    border: 1px solid #eee;
+    background-color: #fafafa;
+    height: 40px;
+    width: 200px;
+    margin: 0 8px 16px;
+    padding: 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease-in-out;
+    line-height: 24px;
+  }
+  
+    .link-container .link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 17px rgba(black, 0.35);
+  }
+
+</style>
+</head>
+<body>
+
+ <div class="toolbar" role="banner">
+    BDDT: Upload
+</div>
+
+<div class="content" role="main">
+
+<svg class="spacer"></svg>
+  <div class="container">
+	<div class="backgroud">
+		<form method="post" enctype="multipart/form-data">
+		<input type="file" name="file"  />
+		<input type="submit" value="Upload File" name="submit" />
+		</form>
+	</div>
+  </div>
+  
+  <div class="link-container">
+    <a class="link" href="../index.html">
+      <span>Homepage</span>
+    </a>
+  </div>
+  
+  <svg class="spacer"></svg> 
+  <footer>
+      Copyright&copy; 2019 BDDT
+  </footer>
+</div>   
+</body>
+</html>
