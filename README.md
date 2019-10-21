@@ -58,11 +58,15 @@ subject at hand but can at least pull out a document.
 We want our front end to look as dynamically pleasant as possible without 
 causing a lack of time on already poor internet functions. For example, many modern sites add animations and other styles that although look fantastic for the site, would unfortunately be detrimental for our slow-end users. Therefore, we've proposed having two layouts. 
 
-The basic homage would feature two or three buttons: submit a document, go to directory, and another that can give them the more dynamic website. The dynamic website option can also be included in the directory that when a user goes through their can search for documents. Our front end developers will concentrate on using HTML, CSS, and Angular for this part of the project. An early example of what the homepage may look like is seen below:
+The basic homage would feature two or three buttons: submit a document, go to directory, and another that can give them the more dynamic website. The dynamic website option can also be included in the directory that when a user goes through their can search for documents. Our front end developers will concentrate on using HTML, CSS, and Angular for this part of the project. Some early examples of what the homepage and upload page may look like are seen below:
 
-<img src="/hompageupload.jpeg">
+<img src="/homepage.jpeg">
 
 *Figure 2: Proposed homepage for users*
+
+<img src="/uploadpage.jpeg">
+
+*Figure 3: Proposed upload page for users*
 
 When a user goes into the directory page, they can see all the documents that have been uploaded to the website. Each one will have a title corresponding to their text uploaded and when they were uploaded. 
 
