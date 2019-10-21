@@ -203,5 +203,9 @@ Tasks
 - Formatting will be off, but at least be consistent
 - May have the back with a border
 
-
+10/18/19
+- Jace's index file needs to work with Al 
+- try to get al's branch to work on lambda
+- Jospeh will be working the lambda to put Al's parser in
+- Upload page will be uploaded tonight for Al's code
  
