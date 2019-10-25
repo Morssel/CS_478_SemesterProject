@@ -1,6 +1,5 @@
 import os
 import boto3
-from flask import Flask, render_template, request
 import re
 import requests
 
@@ -20,8 +19,6 @@ def allowed_file(filename):
 # @app.route('/FLASK_BDDT/')
 @app.route('/')
 def upload_form():
-    s3 = boto3.client('s3') # New
-    s3.upload_file('/tmp/vin_qr_code.png', 'zappabucketjktest', 'static/vin_qr_code.png') # New
     return render_template('upload.html')
 
 
@@ -36,13 +33,18 @@ def upload_file():
         if file.filename == '':
             flash('No file selected for uploading')
             return redirect(request.url)
-        if file and allowed_file(file.filename):
+
+        if file and allowed_file(file.filename): # Successfully identified a file to upload
             filename = secure_filename(file.filename)
 # file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-
+            s3 = boto3.client('s3') # New
+            # is the file saved in the same folder? "Filename" enough?
+            staticFilename = "static/" + filename 
+            s3.upload_file(filename, 'BDDTbackend', 'static/' + filename) # New
             flash('File successfully uploaded')
             global process_file
-            process_file = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+
+            #process_file = os.path.join(app.config['UPLOAD_FOLDER'], filename)
             return redirect('/FLASK_BDDT/PARSE_File')
         else:
             flash('Allowed file types are txt, pdf')
