@@ -1,10 +1,10 @@
 {
-    "dev": {
+    "zappaProject": {
         "app_function": "main.app",
         "aws_region": "us-east-2",
         "profile_name": "zappaUserCredentials",
         "project_name": "BDDT_ClassProject",
         "runtime": "python3.7",
-        "s3_bucket": "BDDTbackend"
+        "s3_bucket": "bddtprojectbucket"
     }
 }

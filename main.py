@@ -19,7 +19,7 @@ def allowed_file(filename):
 # @app.route('/FLASK_BDDT/')
 @app.route('/')
 def upload_form():
-    return render_template('upload.html')
+    return render_template('Upload.html')
 
 
 @app.route('/', methods=['POST'])
@@ -40,7 +40,7 @@ def upload_file():
             s3 = boto3.client('s3') # New
             # is the file saved in the same folder? "Filename" enough?
             staticFilename = "static/" + filename 
-            s3.upload_file(filename, 'BDDTbackend', 'static/' + filename) # New
+            s3.upload_file(filename, 'bddtprojectbucket', staticFilename)
             flash('File successfully uploaded')
             global process_file
 
