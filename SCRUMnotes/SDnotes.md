@@ -208,4 +208,31 @@ Tasks
 - try to get al's branch to work on lambda
 - Jospeh will be working the lambda to put Al's parser in
 - Upload page will be uploaded tonight for Al's code
+
+10/30/19
+- SQL question needs to be rsearched
+- Homepage will probably go through some transition
+- How do want the user to interface 
+- Would SQL be the best case to use with S3 bucket?
+- What could make s3 and SQL compatibile
+- Athena may be something, but may be a paid 
+- Do we waht to keep an SQL database for the file directory?
+- Information only needs a link?
+- Specwise what do we want to do?
+- What capability do we want to give them for the directory 
+- How do we want them to search
+- What kind of search do we want to give them
+- Do we want to give them a textbox search or a key/password?
+- Hard part of the search, do we want to restrict the search
+- Should we give them a search at all? which would give them?
+- We may have to implement the user?
+- How do you filter out the public and private?
+- Six digit code is technically a user?
+- Everythings open, but have a strong enough url?
+- Possibly Cloudfare that can bloack ip addresses
+- Do we want the private section at all?
+- SureFire 
+- They keep track of the users, not us.
+
+
  
