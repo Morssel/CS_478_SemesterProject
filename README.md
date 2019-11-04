@@ -3,6 +3,8 @@ Semester project for CS 478 Software Development
 
 BDDT - Book and document Distribution Tool (BDDT) Proposal
 
+Task list https://trello.com/b/8nNMAYdC/semester-project
+
 ## TOC
 
 [Summary](#summary)<br>
