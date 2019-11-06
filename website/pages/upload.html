@@ -111,6 +111,38 @@
         position: fixed;
         bottom: 0;
     }
+	
+.upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.btn {
+  border: 2px solid gray;
+  color: gray;
+  background-color: white;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.upload-btn-wrapper input[type=file] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}	
+
+.upload-btn-wrapper input[type=submit] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}		
 
 </style>
 </head>
@@ -128,8 +160,14 @@
   <div class="container">
 	<div class="foreground">
 		<form method="post" enctype="multipart/form-data">
-		<input type="file" name="file"  />
-		<input type="submit" value="Upload File" name="submit" />
+          <div class="upload-btn-wrapper">
+            <button class="btn">Choose File</button>
+            <input type="file" name="myfile" />
+          </div>
+		  <div class="upload-btn-wrapper">
+            <button class="btn">Upload File</button>  
+		    <input type="submit" value="Upload File" name="submit" />
+		  </div>
 		</form>
 	</div>
   </div>
