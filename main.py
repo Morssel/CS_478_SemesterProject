@@ -38,12 +38,16 @@ def upload_file():
             filename = secure_filename(file.filename)
 # file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             s3 = boto3.client('s3') # New
-            # is the file saved in the same folder? "Filename" enough?
-            staticFilename = "static/" + filename 
-            s3.upload_file(filename, 'bddtprojectbucket', staticFilename)
+            for bucket in s3.buckets.all():
+                print(bucket.name)
+            #s3.upload_file('/tmp/vin_qr_code.png', 'vin-generator-python-flask', 'static/vin_qr_code.png')
+            #staticFilename = "static/" + filename 
+            #s3.upload_file(filename, 'bddtprojectbucket', staticFilename)
+            s3.upload_file('Test1.pdf', 'flaskfolder', 'Test1.pdf')
             flash('File successfully uploaded')
             global process_file
-
+            #s3.download_file('BUCKET_NAME', 'OBJECT_NAME', 'FILE_NAME')
+            s3.download_file('bddtprojectbucket', 'static/Test1.pdf', 'Test1.pdf')
             #process_file = os.path.join(app.config['UPLOAD_FOLDER'], filename)
             return redirect('/FLASK_BDDT/PARSE_File')
         else:
@@ -61,4 +65,8 @@ def home():
 
 
 if __name__ == "__main__":
-    app.run()
+    session = boto3.Session(profile_name='zappa-project')
+    s3 = session.resource('s3') # New
+    for bucket in s3.buckets.all():
+        print(bucket.name)
+    #App.run()
