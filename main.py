@@ -5,7 +5,7 @@ from flask import Flask, flash, request, redirect, render_template
 from werkzeug.utils import secure_filename
 from PDF_parser import *
 
-ALLOWED_EXTENSIONS = set(['txt', 'pdf'])
+ALLOWED_EXTENSIONS = set(['txt', 'pdf','doc','docx'])
 
 process_file = ''
 
