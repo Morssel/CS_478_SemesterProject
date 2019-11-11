@@ -16,13 +16,13 @@ def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 # app is defined as "app = Flask(__name__, static_folder="/tmp")"
-# @app.route('/FLASK_BDDT/')
-@app.route('/')
+@app.route('/FLASK_BDDT/')
+#@app.route('/')
 def upload_form():
     return render_template('Upload.html')
 
-
-@app.route('/', methods=['POST'])
+#@app.route('/', methods=['POST'])
+@app.route('/', methods=['POST', 'GET'])
 def upload_file():
     if request.method == 'POST':
         # check if the post request has the file part
@@ -37,17 +37,14 @@ def upload_file():
         if file and allowed_file(file.filename): # Successfully identified a file to upload
             filename = secure_filename(file.filename)
 # file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            s3 = boto3.client('s3') # New
-            for bucket in s3.buckets.all():
-                print(bucket.name)
-            #s3.upload_file('/tmp/vin_qr_code.png', 'vin-generator-python-flask', 'static/vin_qr_code.png')
-            #staticFilename = "static/" + filename 
-            #s3.upload_file(filename, 'bddtprojectbucket', staticFilename)
-            s3.upload_file('Test1.pdf', 'flaskfolder', 'Test1.pdf')
+            session = boto3.Session(profile_name='zappa-project')  # If you only have one AWS account in you .aws credentials then this can be default
+            # Note that the profile "zappa-project" will only work on Joseph's machine as it is unique
+            s3 = session.resource('s3')
+# !!! Need to change the filename in S3 so it is not the same as when it was uploaded, to prevent duplicate naming
+            #s3.meta.client.upload_file('Test1.pdf', 'zappabucketjktest', 'hello.pdf')
             flash('File successfully uploaded')
             global process_file
-            #s3.download_file('BUCKET_NAME', 'OBJECT_NAME', 'FILE_NAME')
-            s3.download_file('bddtprojectbucket', 'static/Test1.pdf', 'Test1.pdf')
+            process_file = s3.meta.client.upload_file(filename, 'zappabucketjktest', filename)
             #process_file = os.path.join(app.config['UPLOAD_FOLDER'], filename)
             return redirect('/FLASK_BDDT/PARSE_File')
         else:
@@ -57,16 +54,13 @@ def upload_file():
 
 @app.route('/FLASK_BDDT/PARSE_File')
 def home():
+    print("redirect to home() parsing")
     f_name = process_file
-    #result = getTEXT(f_name)
+    #result = getTEXT(f_name)  // getTEXT accepts PDF inputs
     result = tika_parse(f_name)
     #new_str = strip_out_control_char(result)
     return result
 
 
 if __name__ == "__main__":
-    session = boto3.Session(profile_name='zappa-project')
-    s3 = session.resource('s3') # New
-    for bucket in s3.buckets.all():
-        print(bucket.name)
-    #App.run()
+    app.run()

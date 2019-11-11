@@ -12,7 +12,7 @@ from tika import parser
 #f_name='Test1.pdf'
 
 #f_name='MidTermStudyGuide.pdf'
-f_name='Test1.pdf'
+#f_name='Test1.pdf'
 
 # This function grabs the string from a pdf file
 def getTEXT(pdf_file):
@@ -32,15 +32,18 @@ def getTEXT(pdf_file):
     #text = text.replace("\n", "<br />\n")
     return text
 
+# testing
+#print(getTEXT('Test1.pdf'))
+
 # This function strips out the control character
 def strip_out_control_char(input):
     regex = re.compile(r'[\n\r\t]')
     return regex.sub(" ", input)
 
 
-result = getTEXT(f_name)
+#result = getTEXT(f_name)
 
-new_str= strip_out_control_char(result)
+#new_str= strip_out_control_char(result)
 
 
 # Program to show various ways to read and
@@ -83,4 +86,6 @@ def tika_parse(f_name):
     text = text.replace("\n", "<br />\n")
     return text
 
-a=tika_parse(f_name)
+#testing
+#print(tika_parse('Test1.pdf'))
+#a=tika_parse(f_name)

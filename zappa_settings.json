@@ -5,6 +5,6 @@
         "profile_name": "zappa-project",
         "project_name": "BDDT_ClassProject",
         "runtime": "python3.7",
-        "s3_bucket": "bddtprojectbucket"
+        "s3_bucket": "zappabucketjktest"
     }
 }
