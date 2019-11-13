@@ -2,6 +2,7 @@ import os
 import boto3
 import re
 import requests
+import PyPDF2
 
 from app import app
 from flask import Flask, flash, request, redirect, render_template
@@ -33,7 +34,6 @@ def upload_file():
         if file.filename == '':
             flash('No file selected for uploading')
             return redirect(request.url)
-
         if file and allowed_file(file.filename): # Successfully identified a file to upload
             filename = secure_filename(file.filename)
 # file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
@@ -45,27 +45,69 @@ def upload_file():
             #s3.meta.client.upload_file('Test1.pdf', 'zappabucketjktest', 'hello.pdf')
             flash('File successfully uploaded')
             global process_file
-            process_file = s3.meta.client.download_file('zappabucketjktest', filename, filename)
+            s3.meta.client.download_file('zappabucketjktest', filename, 'downloadedfile.pdf')
+            outputTXT = home()
+            print(outputTXT)
+            #outputTXT = "really long string that is going on for pages and pages"
+            #s3.meta.client.download_file('zappabucketjktest', filename, 'downloadedfile.pdf')
             #process_file = os.path.join(app.config['UPLOAD_FOLDER'], filename)
             #return redirect('/FLASK_BDDT/PARSE_File')
-            #return home()
-            return "made it to inside the if"
+            return outputTXT
         else:
             flash('Allowed file types are txt, pdf')
             return redirect(request.url)
     return render_template('index.html') #every flask function needs a return, the above returns are encapsulated in if statements so this return is basically an else return
 
-
-#@app.route('/FLASK_BDDT/PARSE_File')
 #@app.route('/')
+#@app.route('/FLASK_BDDT/PARSE_File')
 def home():
-    print("redirect to home() parsing")
-    f_name = process_file
-    #result = getTEXT(f_name)  // getTEXT accepts PDF inputs
-    result = tika_parse(f_name)
-    #new_str = strip_out_control_char(result)
-    return result
+    theFile = open('downloadedfile.pdf', 'rb')
+    pdfReader = PyPDF2.PdfFileReader(theFile)
+    pageObj = pdfReader.getPage(2)
+    returnTXT0 = pageObj.extractText()
 
+    pageObj = pdfReader.getPage(3)
+    returnTXT0 = returnTXT0 + pageObj.extractText()
+
+    pageObj = pdfReader.getPage(4)
+    returnTXT0 = returnTXT0 + pageObj.extractText()
+
+    # pageObj = pdfReader.getPage(3)
+    # returnTXT1 = pageObj.extractText()
+    # pageObj = pdfReader.getPage(3)
+    # returnTXT1 = pageObj.extractText()
+    #returnTXT0 = returnTXT0 + returnTXT1
+    theFile.close()
+    # print(returnTXT0)
+    # theFile = open('downloadedfile.pdf', 'rb')
+    # text = getTEXT(theFile)
+    return returnTXT0
+
+    # #return 'its working'
+    # #print("redirect to home() parsing")
+    #f_name = process_file
+    #f_name = file.save(os.path.join(app.config['UPLOAD_FOLDER'], "example.pdf"))
+    #f_name = os.path.join(app.config['UPLOAD_FOLDER'], "example.pdf")
+    # # #result = getTEXT(f_name)  // getTEXT accepts PDF inputs
+    #result = tika_parse(f_name)
+    # # #new_str = strip_out_control_char(result)
+    # #myString = "this is a string for sure"
+    #process_file = os.path.join(app.config['UPLOAD_FOLDER'], "example1.pdf")
+    #process_file = 
+    #f_name = process_file
+    # # #result = getTEXT(f_name)  // getTEXT accepts PDF inputs
+    #result = " "
+    #result = tika_parse(f_name)
+    #myResult = "a simple string"
+    #myResult = myResult + result
+    # # #new_str = strip_out_control_char(result)
+    # #myString = "this is a string for sure"
+    #return "The book is %s " % (result)
+    #print(result)
+    #myReturnString = "there are things "
+    #print(type(result))
+    #print(result)
+    #return result
 
 if __name__ == "__main__":
     app.run()

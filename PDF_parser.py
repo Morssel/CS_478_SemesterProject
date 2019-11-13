@@ -28,7 +28,6 @@ def getTEXT(pdf_file):
         text += temp_text
         count += 1
         #print(text)
-
     #text = text.replace("\n", "<br />\n")
     return text
 

@@ -2,8 +2,42 @@ import logging
 import boto3
 from botocore.exceptions import ClientError
 import aws
+import os
+import re
+import requests
+import PyPDF2
 
+from app import app
+from flask import Flask, flash, request, redirect, render_template
+from werkzeug.utils import secure_filename
+from PDF_parser import *
 
+def decodeFile():
+    #theFile = open('downloadedfile.pdf', 'rb')
+    # pdfReader = PyPDF2.PdfFileReader(theFile)
+    # pageObj = pdfReader.getPage(2)
+    # print(pageObj.extractText())
+    # theFile.close()
+    # return pageObj.extractText()
+    # #return 'its working'
+    # #print("redirect to home() parsing")
+    #f_name = process_file
+    process_file = os.path.join(app.config['UPLOAD_FOLDER'], "example.pdf")
+    #process_file = 
+    f_name = process_file
+    # # #result = getTEXT(f_name)  // getTEXT accepts PDF inputs
+    result = " "
+    result = tika_parse(f_name)
+    if result == " ":
+        result = "no value"
+    # # #new_str = strip_out_control_char(result)
+    # #myString = "this is a string for sure"
+    #return "The book is %s " % (result)
+    print(type(result))
+    #print(result)
+
+if __name__ == "__main__":
+    decodeFile()
 
 #def upload_file(file_name, bucket, object_name=None):
     # """Upload a file to an S3 bucket
@@ -48,6 +82,6 @@ import aws
 # bucket.upload_file("Test1.pdf", "zappabucketjktest", "Test1.pdf")
 # print('finished running')
 
-session = boto3.Session(profile_name='zappa-project')
-s3 = session.resource('s3')
-s3.meta.client.upload_file('Test1.pdf', 'zappabucketjktest', 'hello.pdf')
+# session = boto3.Session(profile_name='zappa-project')
+# s3 = session.resource('s3')
+# s3.meta.client.upload_file('Test1.pdf', 'zappabucketjktest', 'hello.pdf')
