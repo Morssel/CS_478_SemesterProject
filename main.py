@@ -1,9 +1,13 @@
-import os
 
+import random
+import string
+import os
 from app import app
 from flask import Flask, flash, request, redirect, render_template
 from werkzeug.utils import secure_filename
 from PDF_parser import *
+from Utilities import *
+
 
 ALLOWED_EXTENSIONS = set(['txt', 'pdf','doc','docx'])
 
@@ -11,6 +15,12 @@ process_file = ''
 
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+
+
+def randomString(stringLength=15):
+    """Generate a random string of fixed length """
+    letters = string.ascii_lowercase
+    return ''.join(random.choice(letters) for i in range(stringLength))
 
 
 @app.route('/FLASK_BDDT/')
@@ -35,7 +45,14 @@ def upload_file():
             flash('File successfully uploaded')
             global process_file
             process_file = os.path.join(app.config['UPLOAD_FOLDER'], filename)
-            return redirect('/FLASK_BDDT/PARSE_File')
+            result = tika_parse(process_file)
+            web_link = randomString()
+            new_file_name = os.path.join(app.config['PARSED_FOLDER'], web_link)
+
+            with open(new_file_name, "w", encoding="utf-8") as f:
+                f.write(result)
+
+            return redirect('/FLASK_BDDT/'+web_link)
         else:
             flash('Allowed file types are txt, pdf')
             return redirect(request.url)
@@ -44,10 +61,15 @@ def upload_file():
 @app.route('/FLASK_BDDT/PARSE_File')
 def home():
     f_name = process_file
-    #result = getTEXT(f_name)
     result = tika_parse(f_name)
-    #new_str = strip_out_control_char(result)
     return result
+
+@app.route('/FLASK_BDDT/<web_link>')
+def get_stored_pages(web_link):
+    f_name = os.path.join(app.config['PARSED_FOLDER'], web_link)
+    with open(f_name, "r", encoding="utf-8") as f2:
+        retrieve_txt=f2.read()
+    return retrieve_txt
 
 
 if __name__ == "__main__":
