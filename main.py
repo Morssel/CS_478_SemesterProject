@@ -22,8 +22,18 @@ def randomString(stringLength=15):
     letters = string.ascii_lowercase
     return ''.join(random.choice(letters) for i in range(stringLength))
 
+'''
+@app.route('/FLASK_BDDT/')
+def upload_form():
+    return render_template('upload.html')
+'''
 
 @app.route('/FLASK_BDDT/')
+def homepage():
+    return render_template('index.html')
+
+
+@app.route('/FLASK_BDDT/UPLOAD.html')
 def upload_form():
     return render_template('upload.html')
 
@@ -64,7 +74,7 @@ def home():
     result = tika_parse(f_name)
     return result
 
-@app.route('/FLASK_BDDT/<web_link>')
+@app.route('/FLASK_BDDT/PARSED/<web_link>')
 def get_stored_pages(web_link):
     f_name = os.path.join(app.config['PARSED_FOLDER'], web_link)
     with open(f_name, "r", encoding="utf-8") as f2:
