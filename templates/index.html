@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+<!!DOCTYPE HTML>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -46,44 +46,20 @@
     align-items: center;
   }
 
-  .container {
+  .link-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 16px;
     font-size: x-large;
   }
-  
-    .foreground{
-    border-radius: 55px;
-    border: 1px solid #eee;
-    background-color: #f2f2f2;
-    height: 185px;
-    width: 500px;
-    margin: 0 8px 16px;
-    padding: 16px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    transition: all 0.2s ease-in-out;
-    line-height: 24px;
-  }
-  
-    .link-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 16px;
-    font-size: x-large;
-  }
-  
-    .link {
+
+  .link {
     border-radius: 4px;
     border: 1px solid #eee;
     background-color: #f2f2f2;
-    height: 30px;
-    width: 120px;
+    height: 40px;
+    width: 200px;
     margin: 0 8px 16px;
     padding: 16px;
     display: flex;
@@ -92,21 +68,19 @@
     align-items: center;
     transition: all 0.2s ease-in-out;
     line-height: 24px;
-	font-size: large;
-	text-align: center;
   }
-  
-    .link-container .link:hover {
+
+  .link-container .link:hover {
     transform: translateY(-3px);
     box-shadow: 0 4px 17px rgba(black, 0.35);
   }
   
-      body {
+    body {
   background-color: #d9d9d9;
 }
 
 .toptext {
- margin: 0 auto;
+  margin: 0 auto;
 }
 
 .copyright {
@@ -114,38 +88,6 @@
         bottom: 0;
     }
 	
-.upload-btn-wrapper {
-  position: relative;
-  overflow: hidden;
-  display: inline-block;
-}
-
-.btn {
-  border: 2px solid gray;
-  color: gray;
-  background-color: white;
-  padding: 8px 20px;
-  border-radius: 8px;
-  font-size: 20px;
-  font-weight: bold;
-}
-
-.upload-btn-wrapper input[type=file] {
-  font-size: 100px;
-  position: absolute;
-  left: 0;
-  top: 0;
-  opacity: 0;
-}	
-
-.upload-btn-wrapper input[type=submit] {
-  font-size: 100px;
-  position: absolute;
-  left: 0;
-  top: 0;
-  opacity: 0;
-}
-
 .checkbox-container {
   display: block;
   float: left;
@@ -255,17 +197,7 @@
 .menu-content ul li:hover {
   color: white;
   background: black;
-}		
-
-.text-box {
-	border:2px solid #1976d2;
-	border-radius:10px;
-	height: 22px;
-	width: 230px;
-	align: center;
 }
-
-
 
 </style>
 </head>
@@ -273,73 +205,35 @@
 
  <div class="toolbar" role="banner">
  
+    <div class="toptext">
+    Welcome To The BDDT
+	</div>
+	
+</div>
+
  <!--<span class="container">
       <span class="checkbox-container">
         <input class="checkbox-trigger" type="checkbox"  />  
           <span class="menu-content">
             <ul>
-			  <li><a href="../index.html" target="_self">Homepage</a></li>
+			  <li><a href="pages/upload.html" target="_self">Upload</a></li>
               <li><a href="directory.html" target="_self">Directory</a></li>
             </ul>
             <span class="hamburger-menu"></span>
           </span>
        </span>
- </span> -->
- 
-    <div class="toptext">
-    BDDT: Upload
-	</div>
+  </span> -->
 
-</div>
+<div class="content" role="main">
 
- <div class="content" role="main">
-
-<!-- <svg class="spacer"></svg> -->
-  <div class="container">
-	<div class="foreground">
-		<form method="post" enctype="multipart/form-data">
-          <div class="upload-btn-wrapper">
-            <button class="btn">Choose File</button>
-			<input type="file" name="file" autocomplete="off" required/>
-            <!--input type="file" name="myfile" /-->
-          </div>
-		  <div class="upload-btn-wrapper">
-            <button class="btn">Upload File</button>  
-		    <!--input type="submit" value="Upload File" name="submit" /-->
-			<input type="submit" value="Submit">
-		  </div>
-		</form> 
-	</div>
-  </div>
-
-	 
-  <div>
-      <p>
-       
-         <input class="text-box" type = "text" id = "myText" value = "Enter Title"/>
-      </p>    
-  </div>
-  
-   <div>
-      <p>
-     
-         <input class="text-box" type = "text" id = "myText" value = "Enter Author"/>
-      </p>    
-  </div>
-  
-  <div>
-    <label>Make Document Private
-    <input type="checkbox" checked="checked">
-    </label>
-  </div> 
-  
+<svg class="spacer"></svg>
   <div class="link-container">
-    <a class="link" href="../FLASK_BDDT">
-      <span>Homepage</span>
+    <a class="link" href="UPLOAD.html">
+      <span>Upload Document</span>
     </a>
   </div>
-  
-    <div class="link-container">
+
+  <div class="link-container">
     <a class="link" href="directory.html">
       <span>View Documents</span>
     </a>
@@ -350,7 +244,6 @@
       Copyright&copy; 2019 BDDT
   </footer>
 </div>
-  
 
 </div>   
 </body>

@@ -33,8 +33,32 @@ def homepage():
     return render_template('index.html')
 
 
-@app.route('/FLASK_BDDT/UPLOAD.html')
+@app.route('/FLASK_BDDT/UPLOAD.html', methods=['GET', 'POST'])
 def upload_form():
+    if request.method == 'POST':
+        # check if the post request has the file part
+        if 'file' not in request.files:
+            flash('No file part')
+            return redirect(request.url)
+        file = request.files['file']
+        if file.filename == '':
+            flash('No file selected for uploading')
+            return redirect(request.url)
+        if file and allowed_file(file.filename):
+            filename = secure_filename(file.filename)
+            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            flash('File successfully uploaded')
+            global process_file
+            process_file = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+            result = tika_parse(process_file)
+            web_link = randomString()
+            new_file_name = os.path.join(app.config['PARSED_FOLDER']) + '/' + web_link + '.html'
+            with open(new_file_name, "w", encoding="utf-8") as f:
+                f.write(result)
+            return redirect('/FLASK_BDDT/PARSED/' + web_link + '.html')
+        else:
+            flash('Allowed file types are txt, pdf')
+            return redirect(request.url)
     return render_template('upload.html')
 
 
@@ -57,15 +81,15 @@ def upload_file():
             process_file = os.path.join(app.config['UPLOAD_FOLDER'], filename)
             result = tika_parse(process_file)
             web_link = randomString()
-            new_file_name = os.path.join(app.config['PARSED_FOLDER'], web_link)
+            new_file_name = os.path.join(app.config['PARSED_FOLDER'], web_link, ".html")
 
             with open(new_file_name, "w", encoding="utf-8") as f:
                 f.write(result)
-
-            return redirect('/FLASK_BDDT/'+web_link)
+            return redirect('/FLASK_BDDT/PARSED/'+web_link)
         else:
             flash('Allowed file types are txt, pdf')
             return redirect(request.url)
+
 
 
 @app.route('/FLASK_BDDT/PARSE_File')

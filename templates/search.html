@@ -265,6 +265,49 @@
 	align: center;
 }
 
+#searchheader{
+	background-color:#c3dfef;
+}
+
+.searchinput{
+	margin: 0;
+	padding: 5px 15px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:14px;
+	border:1px solid #1976d2; border-right:0px;
+	border-top-left-radius: 5px 5px;
+	border-bottom-left-radius: 5px 5px;
+}
+.searchbutton {
+	margin: 0;
+	padding: 5px 15px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:14px;
+	outline: none;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	color: #ffffff;
+	border: solid 1px #0076a3; border-right:0px;
+	background: #1976d2;
+	background: -webkit-gradient(linear, left top, left bottom, from(#00adee), to(#0078a5));
+	background: -moz-linear-gradient(top,  #00adee,  #0078a5);
+	border-top-right-radius: 5px 5px;
+	border-bottom-right-radius: 5px 5px;
+}
+.searchbutton:hover {
+	text-decoration: none;
+	background: #007ead;
+	background: -webkit-gradient(linear, left top, left bottom, from(#0095cc), to(#00678e));
+	background: -moz-linear-gradient(top,  #0095cc,  #00678e);
+}
+
+.searchbutton::-moz-focus-inner {
+	 border: 0;
+}
+.clear{
+	clear:both;
+}
 
 
 </style>
@@ -287,7 +330,7 @@
  </span> -->
  
     <div class="toptext">
-    BDDT: Upload
+    BDDT: Search
 	</div>
 
 </div>
@@ -297,45 +340,23 @@
 <!-- <svg class="spacer"></svg> -->
   <div class="container">
 	<div class="foreground">
-		<form method="post" enctype="multipart/form-data">
-          <div class="upload-btn-wrapper">
-            <button class="btn">Choose File</button>
-			<input type="file" name="file" autocomplete="off" required/>
-            <!--input type="file" name="myfile" /-->
-          </div>
-		  <div class="upload-btn-wrapper">
-            <button class="btn">Upload File</button>  
-		    <!--input type="submit" value="Upload File" name="submit" /-->
-			<input type="submit" value="Submit">
-		  </div>
-		</form> 
+	  
+		<form id="search" method="get" action="">
+		 <input class="searchinput" type = "text" id = "myText" value = "Search by Title or Author"/><input type="submit" value="search" class="searchbutton">	 
+		</form>
 	</div>
   </div>
-
-	 
-  <div>
-      <p>
-       
-         <input class="text-box" type = "text" id = "myText" value = "Enter Title"/>
-      </p>    
-  </div>
   
-   <div>
-      <p>
-     
-         <input class="text-box" type = "text" id = "myText" value = "Enter Author"/>
-      </p>    
-  </div>
-  
-  <div>
-    <label>Make Document Private
-    <input type="checkbox" checked="checked">
-    </label>
-  </div> 
   
   <div class="link-container">
-    <a class="link" href="../FLASK_BDDT">
+    <a class="link" href="../index.html">
       <span>Homepage</span>
+    </a>
+  </div>
+  
+    <div class="link-container">
+    <a class="link" href="upload.html">
+      <span>Upload Document</span>
     </a>
   </div>
   
