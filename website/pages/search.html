@@ -46,20 +46,20 @@
     align-items: center;
   }
 
-  .link-container {
+  .container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 16px;
     font-size: x-large;
   }
-
-  .link {
-    border-radius: 4px;
+  
+    .foreground{
+    border-radius: 55px;
     border: 1px solid #eee;
     background-color: #f2f2f2;
-    height: 40px;
-    width: 200px;
+    height: 185px;
+    width: 500px;
     margin: 0 8px 16px;
     padding: 16px;
     display: flex;
@@ -69,18 +69,44 @@
     transition: all 0.2s ease-in-out;
     line-height: 24px;
   }
-
-  .link-container .link:hover {
+  
+    .link-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 16px;
+    font-size: x-large;
+  }
+  
+    .link {
+    border-radius: 4px;
+    border: 1px solid #eee;
+    background-color: #f2f2f2;
+    height: 30px;
+    width: 120px;
+    margin: 0 8px 16px;
+    padding: 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease-in-out;
+    line-height: 24px;
+	font-size: large;
+	text-align: center;
+  }
+  
+    .link-container .link:hover {
     transform: translateY(-3px);
     box-shadow: 0 4px 17px rgba(black, 0.35);
   }
   
-    body {
+      body {
   background-color: #d9d9d9;
 }
 
 .toptext {
-  margin: 0 auto;
+ margin: 0 auto;
 }
 
 .copyright {
@@ -88,6 +114,38 @@
         bottom: 0;
     }
 	
+.upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.btn {
+  border: 2px solid gray;
+  color: gray;
+  background-color: white;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.upload-btn-wrapper input[type=file] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}	
+
+.upload-btn-wrapper input[type=submit] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+
 .checkbox-container {
   display: block;
   float: left;
@@ -197,7 +255,60 @@
 .menu-content ul li:hover {
   color: white;
   background: black;
+}		
+
+.text-box {
+	border:2px solid #1976d2;
+	border-radius:10px;
+	height: 22px;
+	width: 230px;
+	align: center;
 }
+
+#searchheader{
+	background-color:#c3dfef;
+}
+
+.searchinput{
+	margin: 0;
+	padding: 5px 15px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:14px;
+	border:1px solid #1976d2; border-right:0px;
+	border-top-left-radius: 5px 5px;
+	border-bottom-left-radius: 5px 5px;
+}
+.searchbutton {
+	margin: 0;
+	padding: 5px 15px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:14px;
+	outline: none;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	color: #ffffff;
+	border: solid 1px #0076a3; border-right:0px;
+	background: #1976d2;
+	background: -webkit-gradient(linear, left top, left bottom, from(#00adee), to(#0078a5));
+	background: -moz-linear-gradient(top,  #00adee,  #0078a5);
+	border-top-right-radius: 5px 5px;
+	border-bottom-right-radius: 5px 5px;
+}
+.searchbutton:hover {
+	text-decoration: none;
+	background: #007ead;
+	background: -webkit-gradient(linear, left top, left bottom, from(#0095cc), to(#00678e));
+	background: -moz-linear-gradient(top,  #0095cc,  #00678e);
+}
+
+.searchbutton::-moz-focus-inner {
+	 border: 0;
+}
+.clear{
+	clear:both;
+}
+
 
 </style>
 </head>
@@ -205,43 +316,53 @@
 
  <div class="toolbar" role="banner">
  
-    <div class="toptext">
-    Welcome To The BDDT
-	</div>
-	
-</div>
-
  <!--<span class="container">
       <span class="checkbox-container">
         <input class="checkbox-trigger" type="checkbox"  />  
           <span class="menu-content">
             <ul>
-			  <li><a href="pages/upload.html" target="_self">Upload</a></li>
+			  <li><a href="../index.html" target="_self">Homepage</a></li>
               <li><a href="directory.html" target="_self">Directory</a></li>
             </ul>
             <span class="hamburger-menu"></span>
           </span>
        </span>
-  </span> -->
+ </span> -->
+ 
+    <div class="toptext">
+    BDDT: Search
+	</div>
 
-<div class="content" role="main">
+</div>
 
-<svg class="spacer"></svg>
-  <div class="link-container">
-    <a class="link" href="pages/upload.html">
-      <span>Upload Document</span>
-    </a>
+ <div class="content" role="main">
+
+<!-- <svg class="spacer"></svg> -->
+  <div class="container">
+	<div class="foreground">
+	  
+		<form id="search" method="get" action="">
+		 <input class="searchinput" type = "text" id = "myText" value = "Search by Title or Author"/><input type="submit" value="search" class="searchbutton">	 
+		</form>
+	</div>
   </div>
-
+  
+  
   <div class="link-container">
-    <a class="link" href="directory.html">
-      <span>View Documents</span>
+    <a class="link" href="../index.html">
+      <span>Homepage</span>
     </a>
   </div>
   
     <div class="link-container">
-    <a class="link" href="pages/search.html">
-      <span>Search Documents</span>
+    <a class="link" href="upload.html">
+      <span>Upload Document</span>
+    </a>
+  </div>
+  
+    <div class="link-container">
+    <a class="link" href="directory.html">
+      <span>View Documents</span>
     </a>
   </div>
 
@@ -250,6 +371,7 @@
       Copyright&copy; 2019 BDDT
   </footer>
 </div>
+  
 
 </div>   
 </body>
