@@ -63,7 +63,7 @@
     margin: 0 8px 16px;
     padding: 16px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     transition: all 0.2s ease-in-out;
@@ -342,9 +342,21 @@
 	<div class="foreground">
 	  
 		<form id="search" method="get" action="">
-		 <input class="searchinput" type = "text" id = "myText" value = "Search by Title or Author"/><input type="submit" value="search" class="searchbutton">	 
+		 <input class="searchinput" type = "text" id = "myText" placeholder = "Search by Title or Author"/><input type="submit" value="search" class="searchbutton">	 
 		</form>
+		
+		
+		<div>
+		<p>
+		<form id="search" method="get" action="">
+		 <input class="searchinput" type = "text" id = "myText" placeholder = "Search Within Documents"/><input type="submit" value="search" class="searchbutton">	 
+		</form>
+		</p>
+		</div>
+		
 	</div>
+	
+	
   </div>
   
   
