@@ -63,7 +63,7 @@
     margin: 0 8px 16px;
     padding: 16px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     transition: all 0.2s ease-in-out;
@@ -341,28 +341,40 @@
   <div class="container">
 	<div class="foreground">
 	  
-		<form id="search" method="get" action="">
-		 <input class="searchinput" type = "text" id = "myText" value = "Search by Title or Author"/><input type="submit" value="search" class="searchbutton">	 
+		<form id="search" method="post" action="">
+		 <input class="searchinput" type = "text" name = "author_title_search" id = "myText" placeholder = "Search by Title or Author"/><input type="submit" name="a_submit" value="search" class="searchbutton">	 
 		</form>
+		
+		
+		<div>
+		<p>
+		<form id="search" method="post" action="">
+		 <input class="searchinput" type = "text" name = "text_search" id = "myText" placeholder = "Search Within Documents"/><input type="submit" name="t_submit" value="search" class="searchbutton">	 
+		</form>
+		</p>
+		</div>
+		
 	</div>
+	
+	
   </div>
   
   
   <div class="link-container">
-    <a class="link" href="../index.html">
+    <a class="link" href="/FLASK_BDDT/">
       <span>Homepage</span>
     </a>
   </div>
   
     <div class="link-container">
-    <a class="link" href="upload.html">
+    <a class="link" href="/FLASK_BDDT/UPLOAD">
       <span>Upload Document</span>
     </a>
   </div>
   
     <div class="link-container">
-    <a class="link" href="directory.html">
-      <span>View Documents</span>
+    <a class="link" href="/FLASK_BDDT/SEARCH">
+      <span>Search Documents</span>
     </a>
   </div>
 

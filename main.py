@@ -33,7 +33,21 @@ def homepage():
     return render_template('index.html')
 
 
-@app.route('/FLASK_BDDT/UPLOAD.html', methods=['GET', 'POST'])
+@app.route('/FLASK_BDDT/SEARCH/', methods=['GET', 'POST'])
+def searchpage():
+    if request.method == 'POST':
+        if 'a_submit' in request.form:
+            author_title_text = request.form['author_title_search']
+            print(author_title_text)
+        if 't_submit' in request.form:
+            text_search = request.form['text_search']
+            print(text_search)
+
+    return render_template('search.html')
+
+
+
+@app.route('/FLASK_BDDT/UPLOAD/', methods=['GET', 'POST'])
 def upload_form():
     if request.method == 'POST':
         # check if the post request has the file part
@@ -59,6 +73,7 @@ def upload_form():
         else:
             flash('Allowed file types are txt, pdf')
             return redirect(request.url)
+
     return render_template('upload.html')
 
 
@@ -89,6 +104,7 @@ def upload_file():
         else:
             flash('Allowed file types are txt, pdf')
             return redirect(request.url)
+
 
 
 
