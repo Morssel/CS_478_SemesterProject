@@ -1,0 +1,3851 @@
+1<br />
+ Chapter<br />
+1<br />
+The Scope of Software <br />
+Engineering <br />
+   Learning Objectives <br />
+ After studying this chapter, you should be able to<br />
+   <br />
+† De˚<br />
+ ne what is meant by software engineering.  <br />
+  † Describe the classical software engineering life-cycle model.  <br />
+  † Explain why the object-oriented paradigm is now so widely accepted.  <br />
+<br />
+  † Discuss the implications of the various aspects of software engineering.  <br />
+<br />
+  † Distinguish between the classical and modern views of maintenance.  <br />
+<br />
+  † Discuss the importance of continual planning, testing, and documentation.  <br />
+<br />
+ †  Appreciate the importance of adhering to a code of ethics.      <br />
+  A well-known story tells of an executive who received a computer-generated bill for $0.00. <br />
+After having a good laugh with friends about ﬁidiot computers,ﬂ the executive tossed the <br />
+<br />
+bill away. A month later, a similar bill arrived, this time marked 30 days. Then came the <br />
+<br />
+third bill. The fourth bill arrived a month later, accompanied by a message hinting at pos-<br />
+<br />
+sible legal action if the bill for $0.00 was not paid at once. <br />
+<br />
+  The ˚<br />
+ fth bill, marked 120 days, did not hint at anythingŠthe message was rude and <br />
+forthright, threatening all manner of legal actions if the bill was not immediately paid. <br />
+<br />
+Fearful of his organization™s credit rating in the hands of this maniacal machine, the execu-<br />
+<br />
+tive called an acquaintance who was a software engineer and related the whole sorry story. <br />
+<br />
+Trying not to laugh, the software engineer told the executive to mail a check for $0.00. This <br />
+<br />
+had the desired effect, and a receipt for $0.00 was received a few days later. The executive <br />
+<br />
+meticulously ˚ led it away in case at some future date the computer might allege that $0.00 <br />
+<br />
+was still owed. <br />
+sch76183_ch01_001-034.indd   1<br />
+sch76183_ch01_001-034.indd   1<br />
+04/06/10   12:30 PM<br />
+<br />
+04/06/10   12:30 PM<br />
+  This well-known story has a less well-known sequel. A few days later, the executive <br />
+was summoned by his bank manager. The banker held up a check and asked, ﬁIs this your <br />
+<br />
+check?ﬂ <br />
+<br />
+  The executive agreed that it was. <br />
+<br />
+  ﬁWould you mind telling me why you wrote a check for $0.00?ﬂ asked the banker. <br />
+<br />
+  So the whole story was retold. When the executive had ˚ nished, the banker turned to <br />
+<br />
+him and she quietly asked, ﬁHave you any idea what your check for $0.00 did to   <br />
+our<br />
+   com-<br />
+puter system?ﬂ <br />
+<br />
+  A computer professional can laugh at this story, albeit somewhat nervously. After all, <br />
+<br />
+every one of us has designed or implemented a product that, in its original form, would <br />
+<br />
+have resulted in the equivalent of sending dunning letters for $0.00. Up to now, we have <br />
+<br />
+always caught this sort of fault during testing. But our laughter has a hollow ring to it, <br />
+<br />
+because at the back of our minds is the fear that someday we will not detect the fault before <br />
+<br />
+the product is delivered to the customer. <br />
+<br />
+  A decidedly less humorous software fault was detected on November 9, 1979. The <br />
+<br />
+Strategic Air Command had an alert scramble when the worldwide military command <br />
+<br />
+and control system (WWMCCS) computer network reported that the Soviet Union <br />
+<br />
+had launched missiles aimed toward the United States [Neumann, 1980]. What actu-<br />
+<br />
+ally happened was that a simulated attack was interpreted as the real thing, just as in <br />
+<br />
+the movie   <br />
+WarGames<br />
+   some 5 years later. Although the U.S. Department of Defense <br />
+understandably has not given details about the precise mechanism by which test data <br />
+<br />
+were taken for actual data, it seems reasonable to ascribe the problem to a software <br />
+<br />
+fault. Either the system as a whole was not designed to differentiate between simula-<br />
+<br />
+tions and reality or the user interface did not include the necessary checks for ensur-<br />
+<br />
+ing that end users of the system would be able to distinguish fact from fiction. In other <br />
+<br />
+words, a software fault, if indeed the problem was caused by software, could have <br />
+<br />
+brought civilization as we know it to an unpleasant and abrupt end. (See Just in Case <br />
+<br />
+You Wanted to Know Box 1.1 for information on disasters caused by other software <br />
+<br />
+faults.) <br />
+<br />
+  Whether we are dealing with billing or air defense, much of our software is delivered <br />
+<br />
+late, over budget, and with residual faults, and does not meet the client™s needs. Software <br />
+<br />
+engineering is an attempt to solve these problems. In other words,   <br />
+software engineering<br />
+   <br />
+is a discipline w<br />
+hose aim is the production of fault-free software, delivered on time and <br />
+within budget, that satis˚<br />
+ es the client™s needs. Furthermore, the software must be easy to <br />
+modify when the user™s needs change. <br />
+<br />
+  The scope of software engineering is extremely broad. Some aspects of software engi-<br />
+<br />
+neering can be categorized as mathematics or computer science; other aspects fall into the <br />
+<br />
+areas of economics, management, or psychology. To display the wide-reaching realm of <br />
+<br />
+software engineering, we now examine ˚ ve different aspects. <br />
+  <br />
+1.1 Historical Aspects <br />
+  It is a fact that electric power generators fail, but far less frequently than payroll prod-<br />
+ucts. Bridges sometimes collapse but considerably less often than operating systems. In <br />
+<br />
+the belief that software design, implementation, and maintenance could be put on the same <br />
+2<br />
+  Chapter 1  <br />
+The Scope of Softw<br />
+are Engineering<br />
+sch76183_ch01_001-034.indd   2<br />
+sch76183_ch01_001-034.indd   2<br />
+04/06/10   12:30 PM<br />
+<br />
+04/06/10   12:30 PM<br />
+ Just in Case You Wanted to Know <br />
+Box 1.1<br />
+ <br />
+ <br />
+<br />
+In the case of the WWMCCS network, disaster was averted at the last minute. However, <br />
+the consequences of other software faults have been fatal. For example, between 1985 and <br />
+<br />
+1987, at least two patients died as a consequence of severe overdoses of radiation delivered <br />
+<br />
+by the Therac-25 medical linear accelerator [Leveson and Turner, 1993]. The cause was a <br />
+<br />
+fault in the control software. <br />
+<br />
+ <br />
+ Also, during the 1991 Gulf War, a Scud missile penetrated the Patriot antimissile shield <br />
+and struck a barracks near Dhahran, Saudi Arabia. In all, 28 Americans were killed and 98 <br />
+<br />
+wounded. The software for the Patriot missile contained a cumulative timing fault. The <br />
+<br />
+Patriot was designed to operate for only a few hours at a time, after which the clock was <br />
+<br />
+reset. As a result, the fault never had a signi˚<br />
+ cant effect and therefore was not detected. <br />
+In the Gulf War, however, the Patriot missile battery at Dhahran ran continuously for over <br />
+<br />
+100 hours. This caused the accumulated time discrepancy to become large enough to <br />
+<br />
+render the system inaccurate. <br />
+<br />
+  <br />
+During the Gulf War, the United States shipped Patriot missiles to Israel for protection <br />
+against the Scuds. Israeli forces detected the timing problem after only 8 hours and imme-<br />
+<br />
+diately reported it to the manufacturer in the United States. The manufacturer corrected the <br />
+<br />
+fault as quickly as it could, but tragically, the new software arrived the day after the direct <br />
+<br />
+hit by the Scud [Mellor, 1994]. <br />
+<br />
+ <br />
+ Fortunately, it is extremely rare for death or serious injury to be caused by a software <br />
+fault. However, one fault can cause major problems for thousands and thousands of people. <br />
+<br />
+For example, in February 2003, a software fault resulted in the U.S. Treasury Department <br />
+<br />
+mailing 50,000 Social Security checks that had been printed without the name of the ben-<br />
+<br />
+e˚<br />
+ ciary, so the checks could not be deposited or cashed [St. Petersburg Times Online, <br />
+2003]. In April 2003, borrowers were informed by SLM Corp. (commonly known as Sallie <br />
+<br />
+Mae) that the interest on their student loans had been miscalculated as a consequence of a <br />
+<br />
+software fault from 1992 but detected only at the end of 2002. Nearly 1 million borrowers <br />
+<br />
+were told that they would have to pay more, either in the form of higher monthly payments <br />
+<br />
+or extra interest payments on loans extending beyond their original 10-year terms [GJSenti-<br />
+<br />
+nel.com, 2003]. Both faults were quickly corrected, but together they resulted in nontrivial <br />
+<br />
+˚ nancial consequences for about a million people. <br />
+<br />
+ <br />
+ The Belgian government overestimated its 2007 budget by <br />
+883,000,000 (more than <br />
+$1,100,000,000 at time of writing). This mistake was caused by a software fault compounded <br />
+<br />
+by the manual overriding of an error-detection mechanism [La Libre Online, 2007a; <br />
+<br />
+2007b]. The Belgian tax authorities used scanners and optical character recognition soft-<br />
+<br />
+ware to process tax returns. If the software encountered an unreadable return, it recorded <br />
+<br />
+the taxpayer™s income as <br />
+99,999,999.99 (over $125,000,000). Presumably, the ﬁmagic <br />
+<br />
+numberﬂ <br />
+99,999,999.99 was chosen to be quickly detected by employees of the data pro-<br />
+cessing department, so that the return in question would then be processed manually. This <br />
+<br />
+worked ˚ ne when the tax returns were analyzed for tax assessment purposes, but not when <br />
+<br />
+the tax returns were reanalyzed for budgetary purposes. Ironically, the software product did <br />
+<br />
+have ˚ lters to detect this sort of problem, but the ˚ lters were manually bypassed to speed <br />
+up processing. <br />
+<br />
+ <br />
+ There were at least two faults in the software. First, the software engineers assumed that <br />
+there would always be adequate manual scrutiny before further processing of the data. <br />
+<br />
+Second, the software allowed the ˚ lters to be manually overridden. <br />
+sch76183_ch01_001-034.indd   3<br />
+sch76183_ch01_001-034.indd   3<br />
+04/06/10   12:30 PM<br />
+<br />
+04/06/10   12:30 PM<br />
+footing as traditional engineering disciplines, a NATO study group in 1967 coined the term <br />
+  <br />
+software engineering<br />
+  . The claim that building software is similar to other engineering tasks <br />
+<br />
+was endorsed by the 1968 NATO Software Engineering Conference held in Garmisch, <br />
+<br />
+Germany [Naur, Randell, and Buxton, 1976]. This endorsement is not too surprising; the <br />
+<br />
+very name of the conference re˜ ected the belief that software production should be an <br />
+<br />
+engineering-like activity (but see Just in Case You Wanted to Know Box 1.2). A conclusion <br />
+<br />
+of the conferees was that software engineering should use the philosophies and paradigms <br />
+<br />
+of established engineering disciplines to solve what they termed the   <br />
+software crisis <br />
+ <br />
+, <br />
+namel<br />
+y, that the quality of software generally was unacceptably low and that deadlines and <br />
+budgets were not being met. <br />
+  Despite many software success stories, an unacceptably large proportion of software <br />
+<br />
+products still are being delivered late, over budget, and with residual faults. For exam-<br />
+<br />
+ple, the Standish Group is a research ˚ rm that analyzes software development projects. <br />
+<br />
+Their study of development projects completed in 2006 is summarized in  Figure 1.1  <br />
+<br />
+[Rubenstein, 2007]. Only 35 percent of the projects were successfully completed, whereas <br />
+<br />
+19 percent were canceled before completion or were never implemented. The remaining <br />
+<br />
+46 percent of the projects were completed and installed on the client™s computer. How-<br />
+<br />
+ever, those projects were over budget, late, or had fewer features and functionality than <br />
+<br />
+initially speci˚ ed. In other words, during 2006, just over one in three software develop-<br />
+<br />
+ment projects was successful; almost half the projects displayed one or more symptoms <br />
+<br />
+of the software crisis. <br />
+ <br />
+As stated in Section 1.1, the aim of the Garmisch conference was to make software develop-<br />
+ment as successful as traditional engineering. But by no means are all traditional engineer-<br />
+<br />
+ing projects successful. For example, consider bridge building. <br />
+<br />
+ <br />
+ In July 1940, construction of a suspension bridge over the Tacoma Narrows, in Wash-<br />
+ington State, was completed. Soon after, it was discovered that the bridge swayed and <br />
+<br />
+buckled dangerously in windy conditions. Approaching cars would alternately disappear <br />
+<br />
+into valleys and then reappear as that part of the bridge rose again. From this behavior, <br />
+<br />
+the bridge was given the nickname ﬁGalloping Gertie.ﬂ Finally, on November 7, 1940, <br />
+<br />
+the bridge collapsed in a 42 mile per hour wind; fortunately, the bridge had been closed <br />
+<br />
+to all traf˚ c some hours earlier. The last 15 minutes of its life were captured on ˚<br />
+ lm, now <br />
+stored in the U.S. National Film Registry. <br />
+<br />
+ <br />
+ A somewhat more humorous bridge construction failure was observed in January <br />
+2004. A new bridge was being built over the Upper Rhine River near the German <br />
+<br />
+town of Laufenberg, to connect Germany and Switzerland. The German half of the <br />
+<br />
+bridge was designed and constructed by a team of German engineers; the Swiss half <br />
+<br />
+by a Swiss team. When the two parts were connected, it immediately became appar-<br />
+<br />
+ent that the German half was some 21 inches (54 centimeters) higher than the Swiss <br />
+<br />
+half. Major reconstruction was needed to correct the problem, which was caused by <br />
+<br />
+wrongly correcting for the fact that ﬁsea levelﬂ is taken by Swiss engineers to be the <br />
+<br />
+average level of the Mediterranean Sea, whereas German engineers use the North Sea. <br />
+<br />
+To compensate for the difference in sea levels, the Swiss side should have been raised <br />
+<br />
+10.5 inches. Instead, it was lowered 10.5 inches, resulting in the gap of 21 inches <br />
+<br />
+[Spiegel Online, 2004]. <br />
+ Just in Case You Wanted to Know <br />
+Box 1.2 <br />
+sch76183_ch01_001-034.indd   4<br />
+sch76183_ch01_001-034.indd   4<br />
+04/06/10   12:30 PM<br />
+<br />
+04/06/10   12:30 PM<br />
+  The ˚<br />
+ nancial implications of the software crisis are horrendous. In a survey conducted <br />
+by the Cutter Consortium [2002], the following was reported:<br />
+  <br />
+†<br />
+  An astounding 78 percent of information technology organizations have been involved <br />
+in disputes that ended in litigation. <br />
+ <br />
+  <br />
+†<br />
+ In 67 percent of those cases, the functionality or performance of the software products <br />
+as deli<br />
+vered did not measure up to the claims of the software developers.  <br />
+  <br />
+†<br />
+ In 56 percent of those cases, the promised delivery date slipped several times.  <br />
+  <br />
+†<br />
+ In 45 percent of those cases, the faults were so severe that the software product was <br />
+unusab<br />
+le.    <br />
+  It is clear that far too little software is delivered on time, within budget, fault free, and <br />
+meeting its client™s needs. To achieve these goals, a software engineer has to acquire a broad <br />
+<br />
+range of skills, both technical and managerial. These skills have to be applied not just to <br />
+<br />
+programming but to every step of software production, from requirements to postdelivery <br />
+<br />
+maintenance. <br />
+<br />
+  That the software crisis still is with us, some 40 years later, tells us two things. First, the <br />
+<br />
+  software<br />
+ process <br />
+,<br />
+  <br />
+that is, the way we produce software, has its own unique properties and <br />
+prob<br />
+lems, even though it resembles traditional engineering in many respects. Second, the <br />
+software crisis perhaps should be renamed the   <br />
+software depression <br />
+ <br />
+,<br />
+ <br />
+in view of its long <br />
+duration and poor pro<br />
+gnosis. <br />
+  We now consider economic aspects of software engineering.   <br />
+  <br />
+<br />
+1.2 Economic Aspects <br />
+  A software organization currently using coding technique CT<br />
+ old<br />
+  discovers that new coding <br />
+technique CT <br />
+new<br />
+  would result in code being produced in only nine-tenths of the time needed <br />
+by CT <br />
+old<br />
+  and, hence, at nine-tenths the cost. Common sense seems to dictate that CT<br />
+ new<br />
+  is <br />
+the appropriate technique to use. In fact, although common sense certainly dictates that <br />
+Chapter 1  <br />
+The Scope of Software Engineering<br />
+  <br />
+5<br />
+ <br />
+ FIGURE 1.1   <br />
+ The outcomes <br />
+of o<br />
+ver 9,000 <br />
+development <br />
+<br />
+projects <br />
+<br />
+completed <br />
+<br />
+in 2006 <br />
+  <br />
+[Rubenstein, <br />
+<br />
+2007]<br />
+.  <br />
+Success<br />
+f<br />
+u<br />
+l<br />
+3<br />
+5<br />
+%<br />
+C<br />
+om<br />
+p<br />
+leted late<br />
+,<br />
+over bud<br />
+g<br />
+et, and/o<br />
+r<br />
+w<br />
+it<br />
+h<br />
+ <br />
+f<br />
+eatures missing<br />
+46%<br />
+Ca<br />
+n<br />
+ce<br />
+l<br />
+ed<br />
+19%<br />
+sch76183_ch01_001-034.indd   5<br />
+sch76183_ch01_001-034.indd   5<br />
+04/06/10   12:30 PM<br />
+<br />
+04/06/10   12:30 PM<br />
+the faster technique is the technique of choice, the economics of software engineering may <br />
+imply the opposite. <br />
+  <br />
+†<br />
+  One reason is the cost of introducing new technology into an organization. The fact <br />
+that coding is 10 percent f<br />
+aster w<br />
+hen technique CT<br />
+ new <br />
+ is used may be less important <br />
+than the costs incurred in introducing CT <br />
+new<br />
+  into the organization. It may be necessary <br />
+to complete two or three projects before recouping the cost of training. Also, while <br />
+attending courses on CT<br />
+ new <br />
+, software personnel are unable to do productive work. Even <br />
+when they return, a steep learning curve may be involved; it may take many months of <br />
+<br />
+practice with CT <br />
+new <br />
+ before software professionals become as pro˚ cient with CT <br />
+new<br />
+  as <br />
+they currently are with CT <br />
+old<br />
+ . Therefore, initial projects using CT <br />
+new<br />
+  may take far longer <br />
+to complete than if the organization had continued to use CT <br />
+old <br />
+. All these costs need to <br />
+be taken into account when deciding whether to change to CT <br />
+new <br />
+.  <br />
+  <br />
+†<br />
+ A second reason why the economics of software engineering may dictate that CT <br />
+old <br />
+ <br />
+be retained is the maintenance consequence. Coding technique CT <br />
+new <br />
+ indeed may be <br />
+10 percent faster than CT <br />
+old <br />
+, and the resulting code may be of comparable quality from <br />
+the viewpoint of satisfying the client™s current needs. But the use of technique CT <br />
+new<br />
+  <br />
+may result in code that is dif˚ cult to maintain, making the cost of CT <br />
+new <br />
+ higher over <br />
+the life of the product. Of course, if the software developer is not responsible for any <br />
+<br />
+postdelivery maintenance, then, from the viewpoint of just that developer, CT <br />
+new<br />
+  is a <br />
+more attractive proposition. After all, the use of CT <br />
+new<br />
+  would cost 10 percent less. The <br />
+client should insist that technique CT <br />
+old<br />
+  be used and pay the higher initial costs with the <br />
+expectation that the total lifetime cost of the software will be lower. Unfortunately, often <br />
+<br />
+the sole aim of both the client and the software provider is to produce code as quickly as <br />
+<br />
+possible. The long-term effects of using a particular technique generally are ignored in <br />
+<br />
+the interests of short-term gain. Applying economic principles to software engineering <br />
+<br />
+requires the client to choose techniques that reduce long-term costs.   <br />
+  This example deals with coding, which constitutes less than 10 percent of the software <br />
+<br />
+development effort. The economic principles, however, apply to all other aspects of soft-<br />
+<br />
+ware production as well. <br />
+<br />
+  We now consider the importance of maintenance.   <br />
+  <br />
+1.3 Maintenance Aspects <br />
+  In this section, we describe maintenance within the context of the software life cycle. <br />
+A   <br />
+life-cycle model<br />
+   is a description of the steps that should be performed when build-<br />
+ing a softw<br />
+are product. Many different life-cycle models have been proposed; several of <br />
+them are described in  Chapter 2 . Because it is almost always easier to perform a sequence <br />
+<br />
+of smaller tasks than one large task, the overall life-cycle model is broken into a series of <br />
+<br />
+smaller steps, called   <br />
+phases<br />
+  . The number of phases varies from model to modelŠfrom <br />
+as fe<br />
+w as four to as many as eight. In contrast to a life-cycle model, which is a theoretical <br />
+description of what should be done, the actual series of steps performed on a speci˚<br />
+ c soft-<br />
+ware product, from concept exploration through ˚ nal retirement, is termed the   <br />
+life cycle <br />
+  <br />
+of <br />
+that product. In practice, the phases of the life c<br />
+ycle of a software product may not be car-<br />
+ried out exactly as speci˚ ed in the life-cycle model, especially when time and cost overruns <br />
+6<br />
+  Chapter 1  <br />
+The Scope of Softw<br />
+are Engineering<br />
+sch76183_ch01_001-034.indd   6<br />
+sch76183_ch01_001-034.indd   6<br />
+04/06/10   12:30 PM<br />
+<br />
+04/06/10   12:30 PM<br />
+are encountered. It has been claimed that more software projects have gone wrong for <br />
+lack of time than for all other reasons combined [Brooks, 1975]. <br />
+<br />
+  Until the end of the 1970s, most organizations were producing software using as their <br />
+<br />
+life-cycle model what now is termed the   <br />
+waterfall model<br />
+  . There are many variations <br />
+of this model, but b<br />
+y and large, a product developed using this classical life-cycle model <br />
+goes through the six phases shown in  Figure 1.2 . These phases probably do not correspond <br />
+<br />
+exactly to the phases of any one particular organization, but they are suf˚ ciently close to <br />
+<br />
+most practices for the purposes of this book. Similarly, the precise name of each phase <br />
+<br />
+varies from organization to organization. The names used here for the various phases have <br />
+<br />
+been chosen to be as general as possible in the hope that the reader will feel comfortable <br />
+<br />
+with them. <br />
+   1.   <br />
+Requirements phase<br />
+    <br />
+.  <br />
+ During the   <br />
+requirements phase<br />
+  , the concept is explored and <br />
+re˚ <br />
+ned, and the client™s requirements are elicited.  <br />
+  2.   <br />
+Analysis (speciÞ cation) phase.<br />
+   The client™s requirements are analyzed and presented <br />
+in the form of the   <br />
+speciÞ<br />
+ cation <br />
+document<br />
+  , ﬁwhat the product is supposed to do.ﬂ  <br />
+The  <br />
+ <br />
+analysis phase<br />
+   sometimes is called the   <br />
+speciÞ<br />
+ cation <br />
+phase<br />
+.<br />
+ <br />
+  At the end of this <br />
+phase, a plan is dra<br />
+wn up, the   <br />
+software project management plan<br />
+  , describing the <br />
+proposed softw<br />
+are development in full detail.  <br />
+  3.   <br />
+Design phase<br />
+  . The speci˚<br />
+ cations undergo two consecutive design procedures during the <br />
+  <br />
+design phase<br />
+  . First comes   <br />
+architectural design<br />
+  , in which the product as a whole is <br />
+brok<br />
+en down into components, called   <br />
+modules<br />
+  . Then, each module is designed; this <br />
+procedure is ter<br />
+med   <br />
+detailed design<br />
+  . The two resulting   <br />
+design documents<br />
+   describe <br />
+ﬁho<br />
+w the product does it.ﬂ  <br />
+  4.   <br />
+Implementation phase<br />
+  . The various components undergo   <br />
+coding<br />
+   and testing (  <br />
+unit <br />
+testing<br />
+  ) separately. Then, the components of the product are combined and tested as a <br />
+w<br />
+hole; this is termed   <br />
+integration<br />
+  . When the developers are satis˚ <br />
+ed that the product <br />
+functions correctly, it is tested by the client (  <br />
+acceptance testing<br />
+  ). The   <br />
+implementa-<br />
+tion phase<br />
+   ends when the product is accepted by the client and installed on the client™s <br />
+<br />
+computer<br />
+. (We see in  Chapter 15  that coding and integration should be performed in <br />
+parallel.)  <br />
+  5.   <br />
+Postdelivery maintenance.<br />
+   The product is used to perform the tasks for which it <br />
+was developed. During this time, it is maintained.   <br />
+Postdelivery maintenance<br />
+   <br />
+includes all changes to the product once the product has been deli<br />
+vered and installed <br />
+on the client™s computer and passes its acceptance test. Postdelivery maintenance <br />
+Chapter 1  <br />
+The Scope of Software Engineering<br />
+  <br />
+7<br />
+ FIGURE 1.2 <br />
+ The six phases <br />
+of the classical <br />
+<br />
+life-c<br />
+ycle <br />
+model. <br />
+1.  Requirements phase<br />
+2.  Analysis (specification) phase<br />
+<br />
+3.  Design phase<br />
+<br />
+4.  Implementation phase<br />
+<br />
+5.  Postdelivery maintenance<br />
+<br />
+6.  Retirement<br />
+sch76183_ch01_001-034.indd   7<br />
+sch76183_ch01_001-034.indd   7<br />
+04/06/10   12:30 PM<br />
+<br />
+04/06/10   12:30 PM<br />
+includes   <br />
+corrective maintenance<br />
+   (or   <br />
+software repair<br />
+  ), which consists of the <br />
+remo<br />
+val of residual faults while leaving the specifications unchanged, as well as <br />
+  <br />
+enhancement<br />
+   (or software update), which consists of changes to the specifi-<br />
+cations and the implementation of those changes. <br />
+There are, in turn, two types <br />
+of enhancement. The first is   <br />
+perfective maintenance<br />
+  , changes that the client <br />
+thinks will impro<br />
+ve the effectiveness of the product, such as additional functional-<br />
+ity or decreased response time. The second is   <br />
+adaptive maintenance<br />
+  , changes <br />
+made in response to changes in the en<br />
+vironment in which the product operates, <br />
+such as a new hardware/operating system or new government regulations. (For <br />
+<br />
+an insight into the three types of postdelivery maintenance, see Just in Case You <br />
+<br />
+Wanted to Know Box 1.3.)   <br />
+   6.    <br />
+Retirement<br />
+  .   <br />
+Retirement<br />
+   occurs when the product is removed from service. This occurs <br />
+w<br />
+hen the functionality provided by the product no longer is of any use to the client <br />
+organization.   <br />
+  Now we examine the de˚ nition of   <br />
+maintenance<br />
+   in greater detail. <br />
+ Just in Case You Wanted to Know <br />
+Box 1.3 <br />
+ <br />
+One of the most widely quoted results in software engineering is that 17.4 percent of <br />
+the postdelivery maintenance effort is corrective in nature; 18.2 percent is adaptive; 60.3 <br />
+<br />
+percent is perfective; and 4.1 percent can be categorized as ﬁother.ﬂ This result is taken <br />
+<br />
+from a paper published in 1978 [Lientz, Swanson, and Tompkins, 1978]. <br />
+<br />
+ <br />
+ However, the result in that paper was not derived from  <br />
+ <br />
+<br />
+measurements<br />
+  <br />
+ on maintenance <br />
+data. Instead, the authors conducted a survey of maintenance managers who were asked <br />
+to  <br />
+ <br />
+estimate<br />
+  <br />
+ how much time was devoted to each category within their organization as <br />
+a whole and to state how con˚ dent they felt about their estimate. More speci˚<br />
+ cally, the <br />
+participating software maintenance managers were asked whether their response was <br />
+based on reasonably accurate data, minimal data, or no data; 49.3 percent stated that <br />
+<br />
+their answer was based on reasonably accurate data, 37.7 percent on minimal data, and <br />
+<br />
+8.7 percent on no data. <br />
+<br />
+ <br />
+ In fact, one should seriously question whether any respondents had ﬁreasonably <br />
+accurate dataﬂ regarding the percentage of time devoted to the categories of mainte-<br />
+<br />
+nance included in the survey; most of them probably did not have even ﬁminimal data.ﬂ <br />
+ <br />
+In that survey, participants were asked to state what percentage of maintenance consisted <br />
+<br />
+of items like ﬁemergency ˚ xesﬂ or ﬁroutine debuggingﬂ; from this raw information, the <br />
+<br />
+percentage of adaptive, corrective, and perfective maintenance was deduced. Software <br />
+<br />
+engineering was just starting to emerge as a discipline in 1978, and it was the exception <br />
+<br />
+for software maintenance managers to collect the detailed information needed to re-<br />
+<br />
+spond to such a survey.  Indeed, in modern terminology, in 1978 virtually every organiza-<br />
+<br />
+tion was still at CMM level 1 (see Section 3.13). <br />
+<br />
+ <br />
+ Hence, we have strong grounds for questioning whether the actual distribution of post-<br />
+delivery maintenance activities back in 1978 was anything like the estimates of the man-<br />
+<br />
+agers who took part in the survey.  The distribution of maintenance activities is certainly <br />
+<br />
+nothing like that today.  For example, results on actual maintenance data for the Linux <br />
+<br />
+kernel [Schach et al., 2002] and the gcc compiler [Schach et al., 2003] show that at least <br />
+<br />
+50 percent of postdelivery maintenance is corrective, as opposed to the 17.4 percent ˚<br />
+ gure <br />
+claimed in the survey. <br />
+sch76183_ch01_001-034.indd   8<br />
+sch76183_ch01_001-034.indd   8<br />
+04/06/10   12:30 PM<br />
+<br />
+04/06/10   12:30 PM<br />
+  1.3.1<br />
+ Classical and Modern Views of Maintenance <br />
+ In the 1970s, software production was viewed as consisting of two distinct activities <br />
+performed sequentially:   <br />
+development<br />
+   followed by   <br />
+maintenance<br />
+  . Starting from scratch, the <br />
+software product was developed, and then installed on the client™s computer. Any change <br />
+<br />
+to the software after installation on the client™s computer and acceptance by the client, <br />
+<br />
+whether to ˚ x a residual fault or extend the functionality, constituted classical maintenance  <br />
+<br />
+[IEEE 610.12, 1990]. Hence, the way that software was developed classically can be de-<br />
+<br />
+scribed as the   <br />
+development-then-maintenance model<br />
+  . <br />
+ <br />
+ This is a   <br />
+temporal deÞ<br />
+ nition<br />
+  ; that is, an activity is classi˚ <br />
+ed as development or main-<br />
+tenance depending on when it is performed. Suppose that a fault in the software is detected <br />
+<br />
+and corrected a day after the software has been installed. By de˚ nition, this constitutes <br />
+<br />
+classical maintenance. But if the identical fault is detected and corrected the day before <br />
+<br />
+the software is installed, in terms of the de˚<br />
+ nition, this constitutes classical development. <br />
+Now suppose that a software product has just been installed but the client wants to increase <br />
+<br />
+the functionality of the software product. Classically, that would be described as perfec-<br />
+<br />
+tive maintenance. However, if the client wants the same change to be made just before the <br />
+<br />
+software product is installed, this would be classical development. Again, there is no differ-<br />
+<br />
+ence whatsoever between the nature of the two activities, but classically one is considered <br />
+<br />
+development, the other perfective maintenance. <br />
+<br />
+  In addition to such inconsistencies, two other reasons explain why the development-<br />
+<br />
+then-maintenance model is unrealistic today:<br />
+   1. Nowadays, it is certainly not unusual for construction of a product to take a year or <br />
+more. During this time, the client™s requirements may well change. For example, the <br />
+client might insist that the product now be implemented on a faster processor, which <br />
+<br />
+has just become available. Alternatively, the client organization may have expanded into <br />
+<br />
+Belgium while development was under way, and the product now has to be modi˚<br />
+ ed <br />
+so it can also handle sales in Belgium. To see how a change in requirements can affect <br />
+<br />
+the software life cycle, suppose that the client™s requirements change while the design <br />
+<br />
+is being developed. The software engineering team has to suspend development and <br />
+<br />
+modify the speci˚ cation document to re˜ ect the changed requirements. Furthermore, it <br />
+<br />
+then may be necessary to modify the design as well, if the changes to the speci˚<br />
+ cations <br />
+necessitate corresponding changes to those portions of the design already completed. <br />
+<br />
+Only when these changes have been made can development proceed. In other words, <br />
+<br />
+developers have to perform ﬁmaintenanceﬂ long before the product is installed.  <br />
+  2. A second problem with the classical development-then-maintenance model arose as a <br />
+result of the way in which we now construct software. In classical software engineering, <br />
+<br />
+a characteristic of development was that the development team built the target product <br />
+<br />
+starting from scratch. In contrast, as a consequence of the high cost of software produc-<br />
+<br />
+tion today, wherever possible developers try to reuse parts of existing software products <br />
+<br />
+in the software product to be constructed (reuse is discussed in detail in  Chapter 8 ). <br />
+<br />
+Therefore, the development-then-maintenance model is inappropriate today because <br />
+<br />
+reuse is so widespread.    <br />
+  A more realistic way of looking at maintenance is that given in the standard for life-<br />
+<br />
+cycle processes published by the International Organization for Standardization (ISO) <br />
+Chapter 1  <br />
+The Scope of Software Engineering<br />
+  <br />
+9<br />
+sch76183_ch01_001-034.indd   9<br />
+sch76183_ch01_001-034.indd   9<br />
+04/06/10   12:30 PM<br />
+<br />
+04/06/10   12:30 PM<br />
+and the International Electrotechnical Commission (IEC). That is, maintenance is the <br />
+process that occurs when ﬁsoftware undergoes modi˚ cations to code and associated <br />
+<br />
+documentation due to a problem or the need for improvement or adaptationﬂ [ISO/IEC <br />
+<br />
+12207, 1995]. In terms of this   <br />
+operational deÞ<br />
+ nition<br />
+  , maintenance occurs whenever <br />
+a f<br />
+ault is ˚ xed or the requirements change, irrespective of whether this takes place <br />
+before or after installation of the product. The Institute for Electrical and Electronics <br />
+<br />
+Engineers (IEEE) and the Electronic Industries Alliance (EIA) subsequently adopted <br />
+<br />
+this de˚ nition [IEEE/EIA 12207.0-1996, 1998] when IEEE standards were modi˚<br />
+ ed to <br />
+comply with ISO/IEC 12207. (See Just in Case You Wanted to Know Box 1.4 for more <br />
+<br />
+on ISO.) <br />
+<br />
+  In this book, the term   <br />
+postdelivery maintenance<br />
+   refers to the 1990 IEEE de˚<br />
+ nition of <br />
+maintenance as any change to the software after it has been delivered and installed on <br />
+<br />
+the client™s computer, and   <br />
+modern maintenance<br />
+   or just   <br />
+maintenance<br />
+   refers to the 1995 <br />
+ISO/IEC de˚ <br />
+nition of corrective, perfective, or adaptive activities performed at any time. <br />
+Postdelivery maintenance is therefore a subset of (modern) maintenance.  <br />
+  1.3.2<br />
+ The Importance of Postdelivery Maintenance <br />
+ It is sometimes said that only bad software products undergo postdelivery mainte-<br />
+<br />
+nance. In fact, the opposite is true: Bad products are thrown away, whereas good prod-<br />
+<br />
+ucts are repaired and enhanced, for 10, 15, or even 20 years. Furthermore, a software <br />
+<br />
+product is a model of the real world, and the real world is perpetually changing. As <br />
+<br />
+a consequence, software has to be maintained constantly for it to remain an accurate <br />
+<br />
+reflection of the real world. <br />
+<br />
+  For instance, if the sales tax rate changes from 6 to 7 percent, almost every software <br />
+<br />
+product that deals with buying or selling has to be changed. Suppose the product contains <br />
+<br />
+the C++ statement<br />
+      <br />
+ const ß<br />
+ oat<br />
+ salesTax <br />
+ 6.0;<br />
+or the equivalent Java statement<br />
+      <br />
+<br />
+ public static Þ<br />
+ nal ß oat<br />
+ salesTax <br />
+ (ß<br />
+ oat)<br />
+ 6.0;<br />
+ Just in Case You Wanted to Know <br />
+Box 1.4<br />
+ <br />
+ <br />
+<br />
+The International Organization for Standardization (ISO) is a network of the national stan-<br />
+dards institutes of 147 countries, with a central secretariat based in Geneva, Switzerland. <br />
+ <br />
+ISO has published over 13,500 internationally accepted standards, ranging from standards <br />
+<br />
+for photographic ˚<br />
+ lm speed (ﬁISO numberﬂ) to many of the standards presented in this <br />
+book. For example, ISO 9000 is discussed in  Chapter 3 . <br />
+<br />
+ <br />
+ ISO is not an acronym. It is derived from the Greek word <br />
+, meaning  <br />
+ <br />
+equal<br />
+  <br />
+, the <br />
+root of the English pre˚<br />
+ x  <br />
+ <br />
+<br />
+iso<br />
+  <br />
+- found in words such as  <br />
+ <br />
+<br />
+isotope<br />
+  <br />
+,  <br />
+ <br />
+<br />
+isobar<br />
+  <br />
+, and  <br />
+ <br />
+<br />
+isosceles<br />
+  <br />
+. The <br />
+International Organization for Standardization chose ISO as the short form of its name to <br />
+avoid having multiple acronyms arising from the translation of the name ﬁInternational <br />
+<br />
+Organization for Standardizationﬂ into the languages of the different member countries. <br />
+<br />
+Instead, to achieve international standardization, a universal short form of its name was <br />
+<br />
+chosen. <br />
+            <br />
+sch76183_ch01_001-034.indd   10<br />
+sch76183_ch01_001-034.indd   10<br />
+04/06/10   12:30 PM<br />
+<br />
+04/06/10   12:30 PM<br />
+declaring that <br />
+salesTax<br />
+ is a ˜ oating-point constant initialized to the value <br />
+6.0.<br />
+ In this case, <br />
+maintenance is relatively simple. With the aid of a text editor the value <br />
+6.0<br />
+ is replaced <br />
+by <br />
+7.0<br />
+ and the code is recompiled and relinked. However, if instead of using the name <br />
+salesTax<br />
+, the actual value <br />
+6.0<br />
+ has been used in the product wherever the value of the sales <br />
+<br />
+tax is invoked, then such a product is extremely dif˚ cult to modify. For example, there may <br />
+<br />
+be occurrences of the value <br />
+6.0<br />
+ in the source code that should be changed to <br />
+7.0<br />
+ but are <br />
+<br />
+overlooked, or instances of <br />
+6.0 <br />
+that do not refer to sales tax but are incorrectly changed to <br />
+7.0<br />
+. Finding these faults almost always is dif˚ cult and time consuming. In fact, with some <br />
+<br />
+software, it might be less expensive in the long run to throw away the product and recode <br />
+<br />
+it rather than try to determine which of the many constants need to be changed and how to <br />
+<br />
+make the modi˚<br />
+ cations. <br />
+  The real-time real world also is constantly changing. The missiles with which a jet ˚<br />
+ ghter <br />
+is armed may be replaced by a new model, requiring a change to the weapons control com-<br />
+<br />
+ponent of the associated avionics system. A six-cylinder engine is to be offered as an option <br />
+<br />
+in a popular four-cylinder automobile; this implies changing the onboard computers that <br />
+<br />
+control the fuel injection system, timing, and so on. <br />
+<br />
+  But just how much time (= money) is devoted to postdelivery maintenance? The pie <br />
+<br />
+chart in  Figure 1.3(a)  shows that, some 40 years ago, approximately two-thirds of total <br />
+<br />
+software costs went to postdelivery maintenance; the data were obtained by averaging <br />
+<br />
+information from various sources, including [Elshoff, 1976], [Daly, 1977], [Zelkowitz, <br />
+<br />
+Shaw, and Gannon, 1979], and [Boehm, 1981]. Newer data show that an even larger pro-<br />
+<br />
+portion is devoted to postdelivery maintenance. Many organizations devote 70Œ80 percent <br />
+<br />
+or more of their software budget to postdelivery maintenance [Yourdon, 1992; Hatton, <br />
+<br />
+1998], as shown in  Figure 1.3(b) . <br />
+<br />
+  Surprisingly, the average cost percentages of the classical development phases have <br />
+<br />
+hardly changed. This is shown in  Figure 1.4 , which compares the data used to derive <br />
+<br />
+ Figure 1.3(a)  <br />
+with more recent data on 132 Hewlett-Packard projects [Grady, 1994]. <br />
+Chapter 1  <br />
+The Scope of Software Engineering<br />
+  <br />
+11<br />
+ FIGURE 1.3   <br />
+ Approximate <br />
+a<br />
+verage cost <br />
+percentages of <br />
+<br />
+development <br />
+<br />
+and postdelivery <br />
+<br />
+maintenance <br />
+<br />
+(a) between <br />
+<br />
+1976 and 1981 <br />
+<br />
+and (b) between <br />
+<br />
+1992 and 1998. <br />
+(a)<br />
+(b)<br />
+Development<br />
+33%<br />
+Postdelivery<br />
+maintenance<br />
+67%<br />
+Development<br />
+25%<br />
+Postdelivery<br />
+maintenance<br />
+75%<br />
+sch76183_ch01_001-034.indd   11<br />
+sch76183_ch01_001-034.indd   11<br />
+04/06/10   12:30 PM<br />
+<br />
+04/06/10   12:30 PM<br />
+12<br />
+  Chapter 1  <br />
+The Scope of Softw<br />
+are Engineering<br />
+  FIGURE 1.4  <br />
+ A comparison of the approximate average cost percentages of the classical <br />
+de<br />
+velopment phases for various projects between 1976 and 1981 and for 132 more recent Hewlett-<br />
+Packard projects.          <br />
+     <br />
+<br />
+  <br />
+ Various Projects  <br />
+  <br />
+ 132 More Recent   <br />
+     <br />
+<br />
+  <br />
+ between 1976 and 1981  <br />
+  <br />
+ Hewlett-Packard Projects    <br />
+      Requirements and analysis  <br />
+  <br />
+ 21%  <br />
+  <br />
+ 18%   <br />
+   <br />
+<br />
+   (speci˚<br />
+ cation) phases <br />
+ <br />
+<br />
+  <br />
+   <br />
+<br />
+  <br />
+    <br />
+  <br />
+<br />
+   <br />
+Design phase  <br />
+  <br />
+ 18  <br />
+  <br />
+ 19   <br />
+     Implementation phase  <br />
+  <br />
+   <br />
+<br />
+  <br />
+    <br />
+  <br />
+<br />
+   <br />
+ Coding (including unit testing)  <br />
+  <br />
+ 36  <br />
+  <br />
+ 34   <br />
+   <br />
+<br />
+   Integration <br />
+ <br />
+<br />
+  <br />
+ 24  <br />
+  <br />
+ 29       <br />
+  Now consider again the software organization currently using coding technique CT <br />
+old<br />
+  <br />
+that learns that CT <br />
+new<br />
+  will reduce coding time by 10 percent. Even if CT<br />
+ new <br />
+ has no ad-<br />
+verse effect on maintenance, an astute software manager will think twice before chang-<br />
+ing coding practices. The entire staff has to be retrained, new software development tools <br />
+<br />
+purchased, and perhaps additional staff members hired who are experienced in the new <br />
+<br />
+technique. All this expense and disruption has to be endured for a decrease of at most 0.85 <br />
+<br />
+percent in software costs because, as shown in  Figures 1.3(b)  and  1.4 , coding together <br />
+<br />
+with unit testing constitutes on average only 34 percent of 25 percent or 8.5 percent of <br />
+<br />
+total software costs. <br />
+<br />
+  Now suppose a new technique that reduces postdelivery maintenance costs by 10 percent <br />
+<br />
+is developed. This probably should be introduced at once, because on average, it will reduce <br />
+<br />
+overall costs by 7.5 percent. The overhead involved in changing to this technique is a small <br />
+<br />
+price to pay for such large overall savings. <br />
+<br />
+  Because postdelivery maintenance is so important, a major aspect of software engineer-<br />
+<br />
+ing consists of those techniques, tools, and practices that lead to a reduction in postdelivery <br />
+<br />
+maintenance costs.    <br />
+  1.4 Requirements, Analysis, and Design Aspects <br />
+  Software professionals are human and therefore sometimes make a mistake while develop-<br />
+<br />
+ing a product. As a result, there will be a fault in the software. If the mistake is made while <br />
+<br />
+eliciting the requirements, the resulting fault will probably also appear in the speci˚<br />
+ cations, <br />
+the design, and the code. Clearly, the earlier we correct a fault, the better. <br />
+<br />
+  The relative costs of ˚ xing a fault at various phases in the classical software life cycle are <br />
+<br />
+shown in  Figure 1.5  [Boehm, 1981]. The ˚<br />
+ gure re˜<br />
+ ects data from IBM [Fagan, 1974], GTE <br />
+[Daly, 1977], the Safeguard project [Stephenson, 1976], and some smaller TRW projects <br />
+<br />
+[Boehm, 1980]. The solid line in  Figure 1.5  is the best ˚ t for the data relating to the larger <br />
+<br />
+projects, and the dashed line is the best ˚<br />
+ t for the smaller projects. For each of the phases <br />
+of the classical software life cycle, the corresponding relative cost to detect and correct a <br />
+sch76183_ch01_001-034.indd   12<br />
+sch76183_ch01_001-034.indd   12<br />
+04/06/10   12:30 PM<br />
+<br />
+04/06/10   12:30 PM<br />
+fault is depicted in  Figure 1.6 . Each step on the solid line in  Figure 1.6  is constructed by <br />
+taking the corresponding point on the solid straight line of  Figure 1.5  and plotting the data <br />
+<br />
+on a linear scale. <br />
+<br />
+  Suppose it costs $40 to detect and correct a specific fault during the design phase. <br />
+<br />
+From the solid line in  Figure 1.6  (projects between 1974 and 1980), that same fault <br />
+<br />
+would cost only about $30 to fix during the analysis phase. But during postdelivery <br />
+<br />
+maintenance, that fault would cost around $2000 to detect and correct. Newer data <br />
+<br />
+show that now it is even more important to detect faults early. The dashed line in <br />
+<br />
+ Figure 1.6  shows the cost of detecting and correcting a fault during the development <br />
+<br />
+of system software for the IBM AS/400 [Kan et al., 1994]. On average, the same <br />
+<br />
+fault would have cost $3680 to fix during postdelivery maintenance of the AS/400 <br />
+<br />
+software. <br />
+<br />
+  The reason that the cost of correcting a fault increases so steeply is related to what has to <br />
+<br />
+be done to correct a fault. Early in the development life cycle, the product essentially exists <br />
+<br />
+only on paper, and correcting a fault may simply mean making a change to a document. <br />
+<br />
+The other extreme is a product already delivered to a client. At the very least, correcting <br />
+<br />
+a fault at that time means editing the code, recompiling and relinking it, and then care-<br />
+<br />
+fully testing that the problem is solved. Next, it is critical to check that making the change <br />
+<br />
+has not created a new problem elsewhere in the product. All the relevant documentation, <br />
+<br />
+including manuals, needs to be updated. Finally, the corrected product must be delivered <br />
+Chapter 1  <br />
+The Scope of Software Engineering<br />
+  <br />
+13<br />
+ FIGURE 1.5    <br />
+ The relative cost of ˚ <br />
+xing a fault at each phase of the classical software life cycle. <br />
+The solid line is the best ˚ t for the data relating to the larger software projects, and the dashed line <br />
+is the best ˚ t for the smaller software projects.  <br />
+ <br />
+(Barry Boehm,   <br />
+Software Engineering Economics  ,<br />
+ <br />
+© 1981, p. 40. Adapted by permission of Prentice Hall, Inc.,  <br />
+ Englewood Cliffs<br />
+  <br />
+, NJ.) <br />
+1000<br />
+Maintenance<br />
+Acceptance<br />
+test<br />
+Integration<br />
+Implementation<br />
+Design<br />
+500<br />
+200<br />
+100<br />
+50<br />
+20<br />
+10<br />
+5<br />
+2<br />
+1<br />
+Larger software projects<br />
+IBM-SSD<br />
+GTE<br />
+80%<br />
+Median (TRW survey)<br />
+<br />
+20%<br />
+SAFEGUARD<br />
+Relative cost to Þx fault<br />
+Smaller software projects<br />
+[Boehm, 1980]<br />
+Requirements<br />
+and specification<br />
+Phase in which fault was detected and corrected<br />
+sch76183_ch01_001-034.indd   13<br />
+sch76183_ch01_001-034.indd   13<br />
+04/06/10   12:30 PM<br />
+<br />
+04/06/10   12:30 PM<br />
+and reinstalled. The moral of the story is this: We must ˚ nd faults early or else it will cost us <br />
+money. We therefore should employ techniques for detecting faults during the requirements <br />
+<br />
+and analysis (speci˚<br />
+ cation) phases. <br />
+  There is a further need for such techniques. Studies have shown [Boehm, 1979] that <br />
+<br />
+between 60 and 70 percent of all faults detected in large projects are requirements, <br />
+<br />
+analysis, or design faults. Newer results from inspections bear out this preponderance <br />
+<br />
+of requirements, analysis, or design faults (an inspection is a meticulous examination <br />
+<br />
+of a document by a team, as described in Section 6.2.3). During 203 inspections of Jet <br />
+<br />
+Propulsion Laboratory software for the NASA unmanned interplanetary space pro-<br />
+<br />
+gram, on average, about 1.9 faults were detected per page of a speci˚<br />
+ cation document, <br />
+0.9 faults per page of a design, but only 0.3 faults per page of code [Kelly, Sherif, and <br />
+<br />
+Hops, 1992]. <br />
+<br />
+  Therefore it is important that we improve our requirements, analysis, and design tech-<br />
+<br />
+niques, not only so that faults can be found as early as possible but also because require-<br />
+<br />
+ments, analysis, and design faults constitute such a large proportion of all faults. Just as the <br />
+<br />
+example in Section 1.3 showed that reducing postdelivery maintenance costs by 10 percent <br />
+<br />
+reduces overall costs by about 7.5 percent, reducing requirements, analysis, and design <br />
+<br />
+faults by 10 percent reduces the overall number of faults by 6Œ7 percent. <br />
+<br />
+  That so many faults are introduced early in the software life cycle highlights another <br />
+<br />
+important aspect of software engineering: techniques that yield better requirements, speci-<br />
+<br />
+˚ cations, and designs. <br />
+<br />
+  Most software is produced by a team of software engineers rather than by a single indi-<br />
+<br />
+vidual responsible for every aspect of the development and maintenance life cycle. We now <br />
+<br />
+consider the implications of this.   <br />
+14<br />
+  Chapter 1  <br />
+The Scope of Softw<br />
+are Engineering<br />
+ FIGURE 1.6   <br />
+ The solid line <br />
+depicts the <br />
+<br />
+points on the <br />
+<br />
+solid line of <br />
+<br />
+ F<br />
+igure 1.5  <br />
+plotted on a <br />
+<br />
+linear scale. <br />
+<br />
+The dashed <br />
+<br />
+line depicts <br />
+<br />
+newer data. <br />
+  <br />
+Requirements<br />
+400<br />
+350<br />
+<br />
+300<br />
+<br />
+250<br />
+<br />
+200<br />
+<br />
+150<br />
+<br />
+100<br />
+50<br />
+368<br />
+200<br />
+Design<br />
+Analysis<br />
+(specification)<br />
+ImplementationPostdelivery<br />
+maintenance<br />
+1<br />
+3<br />
+4<br />
+52<br />
+30<br />
+Approximate relative cost to detect<br />
+and correct a fault<br />
+Projects between 1974 and 1980<br />
+IBM AS/400 [Kan et al.,1994]<br />
+sch76183_ch01_001-034.indd   14<br />
+sch76183_ch01_001-034.indd   14<br />
+04/06/10   12:30 PM<br />
+<br />
+04/06/10   12:30 PM<br />
+  1.5 Team Development Aspects <br />
+  The cost of hardware continues to decrease rapidly. A mainframe computer of the 1950s <br />
+that cost in excess of a million prein˜ ation dollars was considerably less powerful in every <br />
+<br />
+way than a laptop computer of today costing less than $1000. As a result, organizations easily <br />
+<br />
+can afford hardware that can run large products, that is, products too large (or too complex) <br />
+<br />
+to be implemented by one person within the allowed time constraints. For example, if a <br />
+<br />
+product has to be delivered within 18 months but would take a single software profes-<br />
+<br />
+sional 15 years to complete, then the product must be developed by a team. However, team <br />
+<br />
+development leads to interfacing problems among code components and communication <br />
+<br />
+problems among team members. <br />
+<br />
+  For example, Jeff and Juliet code modules <br />
+p<br />
+ and <br />
+q<br />
+, respectively, where module <br />
+p <br />
+<br />
+calls module <br />
+q<br />
+. When Jeff codes <br />
+p<br />
+, he inserts a call to <br />
+q<br />
+ with ˚ ve arguments in the <br />
+<br />
+argument list. Juliet codes <br />
+q<br />
+ with ˚ ve arguments, but in a different order from those of <br />
+<br />
+Jeff. Some software tools, such as the Java interpreter and loader, or   <br />
+lint<br />
+   for C (Section <br />
+8.11.4), detect such a type violation but only if the interchanged arguments are of dif-<br />
+<br />
+ferent types; if they are of the same type, then the problem may not be detected for a <br />
+<br />
+long period of time. It may be debated that this is a design problem, and if the modules <br />
+<br />
+had been more carefully designed, this problem would not have happened. That may be <br />
+<br />
+true, but in practice a design often is changed after coding commences, and noti˚<br />
+ cation <br />
+of a change may not be distributed to all members of the development team. Therefore, <br />
+<br />
+when a design that affects two or more programmers has been changed, poor com-<br />
+<br />
+munication can lead to the interface problems Jeff and Juliet experienced. This sort of <br />
+<br />
+problem is less likely to occur when only one individual is responsible for every aspect <br />
+<br />
+of the product, as was the case before powerful computers that can run huge products <br />
+<br />
+became affordable. <br />
+<br />
+  But interfacing problems are merely the tip of the iceberg when it comes to problems <br />
+<br />
+that can arise when software is developed by teams. Unless the team is properly organized, <br />
+<br />
+an inordinate amount of time can be wasted in conferences between team members. Sup-<br />
+<br />
+pose that a product takes a single programmer 1 year to complete. If the same task is <br />
+<br />
+assigned to a team of six programmers, the time for completing the task frequently is closer <br />
+<br />
+to 1 year than the expected 2 months, and the quality of the resulting code may well be <br />
+<br />
+lower than if the entire task had been assigned to one individual (see Section 4.1). Because <br />
+<br />
+a considerable proportion of today™s software is developed and maintained by teams, the <br />
+<br />
+scope of software engineering must include techniques for ensuring that teams are properly <br />
+<br />
+organized and managed. <br />
+<br />
+  As has been shown in the preceding sections, the scope of software engineering is <br />
+<br />
+extremely broad. It includes every step of the software life cycle, from requirements to <br />
+<br />
+postdelivery retirement. It also includes human aspects, such as team organization; eco-<br />
+<br />
+nomic aspects; and legal aspects, such as copyright law. All these aspects implicitly are <br />
+<br />
+incorporated in the de˚ nition of software engineering given at the beginning of this chap-<br />
+<br />
+ter, that software engineering is a discipline whose aim is the production of fault-free soft-<br />
+<br />
+ware delivered on time, within budget, and satisfying the user™s needs. <br />
+<br />
+  We return to the classical phases of  Figure 1.2  to ask why there is no planning, testing, <br />
+<br />
+or documentation phase.   <br />
+Chapter 1  <br />
+The Scope of Software Engineering<br />
+  <br />
+15<br />
+sch76183_ch01_001-034.indd   15<br />
+sch76183_ch01_001-034.indd   15<br />
+04/06/10   12:30 PM<br />
+<br />
+04/06/10   12:30 PM<br />
+  1.6 Why There Is No Planning Phase <br />
+  Clearly it is impossible to develop a software product without a plan. Accordingly, it appears <br />
+to be essential to have a   <br />
+planning phase<br />
+   at the very beginning of the project. <br />
+ <br />
+ The key point is that, until it is known exactly what is to be developed, there is <br />
+no way an accurate, detailed plan can be drawn up. Therefore, three types of plan-<br />
+<br />
+ning activities take place when a software product is developed using the classical <br />
+<br />
+paradigm:<br />
+   1. At the beginning of the project, preliminary planning takes place for managing the <br />
+requirements and analysis phases.  <br />
+  2. Once what is going to be developed is known precisely, the   <br />
+software project manage-<br />
+ment plan<br />
+   (SPMP) is drawn up. This includes the budget, staf˚<br />
+ ng requirements, and <br />
+detailed schedule. The earliest we can draw up the project management plan is when the <br />
+speci˚<br />
+ cation document has been approved by the client, that is, at the end of the analysis <br />
+phase. Until that time, planning has to be preliminary and partial.  <br />
+  3. All through the project, management needs to monitor the SPMP and be on the watch <br />
+for any deviation from the plan.    <br />
+  For example, suppose that the SPMP for a speci˚<br />
+ c project states that the project as a <br />
+whole will take 16 months and that the design phase will take 4 of those months. After a <br />
+<br />
+year, management notices that the project as a whole seems to be progressing much more <br />
+<br />
+slowly than anticipated. A detailed investigation shows that, so far, 8 months have been <br />
+<br />
+devoted to the design phase, which is still far from complete. The project almost certainly <br />
+<br />
+will have to be abandoned, and the funds spent to date are wasted. Instead, management <br />
+<br />
+should have tracked progress by phase, and noticed, after at most 2 months, a serious <br />
+<br />
+problem in the design phase. At that time, a decision could have been made how best to <br />
+<br />
+proceed. The usual initial step in such a situation is to call in a consultant to determine if <br />
+<br />
+the project is feasible and to determine whether the design team is competent to carry out <br />
+<br />
+the task or the risk of proceeding is too great. Based on the report of the consultant, vari-<br />
+<br />
+ous alternatives are now considered, including reducing the scope of the target product, <br />
+<br />
+and then designing and implementing a less ambitious one. Only if all other alternatives <br />
+<br />
+are considered unworkable does the project have to be canceled. In the case of the speci˚<br />
+ c <br />
+project, this cancellation would have taken place some 6 months earlier if management <br />
+<br />
+had monitored the plan closely, saving a considerable sum of money. <br />
+<br />
+  In conclusion, there is no separate planning phase. Instead, planning activities are car-<br />
+<br />
+ried out all through the life cycle. However, there are times when planning activities pre-<br />
+<br />
+dominate. These include the beginning of the project (preliminary planning) and directly <br />
+<br />
+after the speci˚<br />
+ cation document has been signed off on by the client (software project <br />
+management plan).   <br />
+  1.7 Why There Is No Testing Phase <br />
+  It is essential to check a software product meticulously after it has been developed. <br />
+<br />
+Accordingly, it is reasonable to ask why there is no testing phase after the product has been <br />
+<br />
+implemented. <br />
+16<br />
+  Chapter 1  <br />
+The Scope of Softw<br />
+are Engineering<br />
+sch76183_ch01_001-034.indd   16<br />
+sch76183_ch01_001-034.indd   16<br />
+04/06/10   12:30 PM<br />
+<br />
+04/06/10   12:30 PM<br />
+  Unfortunately, checking a software product once it is ready to be delivered to the client <br />
+is far too late. For instance, if there is a fault in the speci˚ cation document, this fault will <br />
+<br />
+have been carried forward into the design and implementation. There are times in the soft-<br />
+<br />
+ware <br />
+process w<br />
+hen testing is carried out almost to the total exclusion of other activities. This <br />
+occurs toward the end of each phase (  <br />
+veriÞ<br />
+ cation<br />
+  ) and is especially true before the product <br />
+is handed o<br />
+ver to the client (  <br />
+validation<br />
+  ). Although there are times when testing predomi-<br />
+nates, there should ne<br />
+ver be times when no testing is being performed. If testing is treated as <br />
+a separate (  <br />
+testing<br />
+  )   <br />
+phase<br />
+  , then there is a very real danger that testing will not be carried out <br />
+constantl<br />
+y throughout every phase of the product development and maintenance process. <br />
+  But even this is not enough. What is needed is continual checking of a software product. <br />
+<br />
+Meticulous checking should automatically accompany every software development and <br />
+<br />
+maintenance activity. A separate testing phase is incompatible with the goal of ensuring <br />
+<br />
+that a software product is as fault free as possible at all times. <br />
+<br />
+  Every software development organization should contain an independent group whose <br />
+<br />
+primary responsibility is to ensure that the delivered product is what the client needs and <br />
+<br />
+that the product has been built correctly in every way. This group is called the   <br />
+software <br />
+quality assurance<br />
+   (SQA) group. The   <br />
+quality<br />
+   of software is the extent to which it meets <br />
+its speci˚ <br />
+cations. Quality and software quality assurance are described in more detail in <br />
+ Chapter 6 , as is the role of SQA in setting and enforcing standards.   <br />
+  1.8 Why There Is No Documentation Phase <br />
+  Just as there should never be a separate planning phase or testing phase, there also should <br />
+<br />
+never be a separate   <br />
+documentation phase<br />
+  . On the contrary, at all times, the documenta-<br />
+tion of a softw<br />
+are product must be complete, correct, and up to date. For instance, during <br />
+the analysis phase, the speci˚ cation document must re˜ ect the current version of the speci-<br />
+<br />
+˚ cations, and this is also true for the other phases. <br />
+   1. One reason why it is essential to ensure that the documentation is always up to date is <br />
+the large turnover in personnel in the software industry. For example, suppose that the <br />
+design documentation has not been kept current and the chief designer leaves to take <br />
+<br />
+another job. It is now extremely hard to update the design document to re˜ ect all the <br />
+<br />
+changes made while the system was being designed.  <br />
+  2. It is almost impossible to perform the steps of a speci˚ c phase unless the documentation <br />
+of the previous phase is complete, correct, and up to date. For instance, an incomplete <br />
+<br />
+speci˚<br />
+ cation document must inevitably result in an incomplete design and then in an <br />
+incomplete implementation.  <br />
+  3. It is virtually impossible to test whether a software product is working correctly unless <br />
+documents are available that state how that software product is supposed to behave.  <br />
+  4. Maintenance is almost impossible unless there is a complete and correct set of docu-<br />
+mentation that describes precisely what the current version of the product does.   <br />
+  Therefore, just as there is no separate planning phase or testing phase, there is no sepa-<br />
+<br />
+rate documentation phase. Instead, planning, testing, and documentation should be activi-<br />
+<br />
+ties that accompany all other activities while a software product is being constructed. <br />
+<br />
+  Now we examine the object-oriented paradigm.   <br />
+Chapter 1  <br />
+The Scope of Software Engineering<br />
+  <br />
+17<br />
+sch76183_ch01_001-034.indd   17<br />
+sch76183_ch01_001-034.indd   17<br />
+04/06/10   12:30 PM<br />
+<br />
+04/06/10   12:30 PM<br />
+  1.9 The Object-Oriented Paradigm <br />
+  Before 1975, most software organizations used no speci˚<br />
+ c techniques; each individual <br />
+worked his or her own way. Major breakthroughs were made between approximately 1975 <br />
+and 1985, with the development of the so-called   <br />
+structured<br />
+   or   <br />
+classical paradigm<br />
+  . The <br />
+techniques constituting the classical paradigm include str<br />
+uctured systems analysis (Section <br />
+12.3), data ˜ ow analysis (Section 14.3), structured programming, and structured testing <br />
+<br />
+(Section 15.13.2). These techniques seemed extremely promising when ˚<br />
+ rst used. How-<br />
+ever, as time passed, they proved to be somewhat less successful in two respects:<br />
+   1. The techniques sometimes were unable to cope with the increasing size of software <br />
+products. That is, the classical techniques were adequate when dealing with small-scale <br />
+products (typically 5000 lines of code) or even medium-scale products of 50,000 lines <br />
+<br />
+of code. Today, however, large-scale products of 500,000 lines of code are relatively <br />
+<br />
+common; even products of 5 million or more lines of code are not considered unusual. <br />
+<br />
+However, the classical techniques frequently could not scale up suf˚ ciently to handle the <br />
+<br />
+development of today™s larger products.  <br />
+  2. The classical paradigm did not live up to earlier expectations during postdelivery main-<br />
+tenance. A major driving force behind the development of the classical paradigm some <br />
+<br />
+40 years ago was that, on average, two-thirds of the software budget was being devoted <br />
+<br />
+to postdelivery maintenance (see  Figure 1.3 ). Unfortunately, the classical paradigm has <br />
+<br />
+not solved this problem; as pointed out in Section 1.3.2, many organizations still spend <br />
+<br />
+70Œ80 percent or more of their time and effort on postdelivery maintenance [Yourdon, <br />
+<br />
+1992; Hatton, 1998].    <br />
+  A major reason for the limited success of the classical paradigm is that classical tech-<br />
+<br />
+niques are either operation oriented or attribute (data) oriented but not both. The basic <br />
+<br />
+components of a software product are the operations of the product and the attributes on <br />
+<br />
+which those operations operate. For example, <br />
+determine_average_height<br />
+  1<br />
+  <br />
+ is an opera-<br />
+tion that operates on a collection of heights (attributes) and returns the average of those <br />
+heights (attribute). Some classical techniques, such as data ˜<br />
+ ow analysis (Section 14.3), are <br />
+operation oriented. That is, such techniques concentrate on the operations of the product; <br />
+<br />
+the attributes are of secondary importance. Conversely, techniques such as Jackson system <br />
+<br />
+development (Section 14.5) are attribute oriented. The emphasis here is on the attributes; <br />
+<br />
+the operations that operate on the attributes are less signi˚<br />
+ cant. <br />
+  In contrast, the object-oriented paradigm considers both attributes and operations to be <br />
+<br />
+equally important. A simplistic way of looking at an object is as a uni˚ ed software artifact <br />
+<br />
+that incorporates both the attributes and the operations performed on the attributes (an <br />
+<br />
+  <br />
+artifact<br />
+   is a component of a software product, such as a speci˚ <br />
+cation document, a code <br />
+module, or a manual). This de˚<br />
+ nition of an object is incomplete and is ˜ eshed out later <br />
+in the book, once   <br />
+inheritance<br />
+   has been de˚ ned (Section 7.8). Nevertheless, the de˚<br />
+ nition <br />
+captures much of the essence of an object. <br />
+18<br />
+  Chapter 1  <br />
+The Scope of Softw<br />
+are Engineering<br />
+ <br />
+ 1<br />
+ In this book, the name of a variable in a classical software product is written using the classical convention of <br />
+separating the parts of a variable name with underscores, for example, <br />
+this_is_a_classical_variable<br />
+.  A variable <br />
+in an object-oriented software product is written using the object-oriented convention of using an uppercase <br />
+letter to mark the start of a new part of the name of a variable; for example, <br />
+thisIsAnObjectOrientedVariable<br />
+. <br />
+sch76183_ch01_001-034.indd   18<br />
+sch76183_ch01_001-034.indd   18<br />
+04/06/10   12:30 PM<br />
+<br />
+04/06/10   12:30 PM<br />
+  A bank account is one example of an object (see  Figure 1.7 ). The attribute component <br />
+of the object is the <br />
+accountBalance<br />
+. The operations that can be performed on that account <br />
+<br />
+balance include <br />
+deposit<br />
+ money in the account, <br />
+withdraw<br />
+ money from the account, and <br />
+<br />
+determineBalance<br />
+. The bank account object combines an attribute with the three opera-<br />
+<br />
+tions performed on that attribute in a single artifact. From the viewpoint of the classical <br />
+<br />
+paradigm, a product that deals with banking would have to incorporate an attribute, the <br />
+<br />
+account_balance<br />
+, and three operations, <br />
+deposit<br />
+,<br />
+ withdraw<br />
+, and <br />
+determine_balance<br />
+. <br />
+<br />
+  Up to now, there seems to be little difference between the two approaches. However, <br />
+<br />
+a key point is the way in which an object is implemented. Speci˚ cally, details as to how <br />
+<br />
+the attributes of an object are stored are not known from outside the object. This is an <br />
+<br />
+instance of ﬁinformation hiding,ﬂ discussed in more detail in Section 7.6. In the case of <br />
+<br />
+the bank account object shown in  Figure 1.7(b) , the rest of the software product is aware <br />
+<br />
+that there is such a thing as a balance within a bank account object, but it has no idea as <br />
+<br />
+to the format of <br />
+accountBalance<br />
+. That is, there is no knowledge outside the object as to <br />
+<br />
+whether the account balance is implemented as an integer or a ˜<br />
+ oating-point number or a <br />
+˚<br />
+ eld (component) of some larger structure. This information barrier surrounding the object <br />
+is denoted by the solid black line in  Figure 1.7(b) , which depicts an implementation using <br />
+<br />
+the object-oriented paradigm. In contrast, a dashed line surrounds <br />
+account_balance<br />
+ in <br />
+<br />
+ Figure 1.7(a) , because all the details of <br />
+account_balance<br />
+ are known to the modules in the <br />
+<br />
+implementation using the classical paradigm, and the value of <br />
+account_balance<br />
+ therefore <br />
+can be changed by any of them. <br />
+<br />
+  Returning to  Figure 1.7(b) , the object-oriented implementation, if a customer deposits <br />
+<br />
+$10 in an account, then a   <br />
+message<br />
+   is sent to the <br />
+deposit<br />
+ method of the rele<br />
+vant object tell-<br />
+ing it to increment the <br />
+accountBalance<br />
+ attribute by $10 (a   <br />
+method<br />
+   is an implementation <br />
+of an operation). <br />
+The <br />
+deposit<br />
+ method is within the bank account object and knows how <br />
+the <br />
+accountBalance<br />
+ is implemented; this is denoted by the dashed circular line inside the <br />
+Chapter 1  <br />
+The Scope of Software Engineering<br />
+  <br />
+19<br />
+ <br />
+FIGURE 1.7   <br />
+  A comparison of implementations of a bank account using (a) the classical paradigm and (b) the object-<br />
+oriented paradigm. <br />
+The solid black line surrounding the object denotes that details as to how <br />
+accountBalance<br />
+ is <br />
+implemented are not known outside the object. <br />
+message<br />
+message<br />
+message<br />
+accountBalance<br />
+withdraw<br />
+deposit<br />
+determineBalance<br />
+(a)<br />
+(b)<br />
+deposit<br />
+withdraw<br />
+account_balance<br />
+determine_balance<br />
+sch76183_ch01_001-034.indd   19<br />
+<br />
+sch76183_ch01_001-034.indd   19<br />
+04/06/10   12:30 PM<br />
+<br />
+04/06/10   12:30 PM<br />
+object. But no entity external to the object needs this knowledge. That the three methods in <br />
+ Figure 1.7(b)  shield <br />
+accountBalance<br />
+ from the rest of the product symbolizes this localiza-<br />
+tion of knowledge. The fact that implementation details are local to an object illustrates the <br />
+<br />
+˚ rst of the many strengths of the object-oriented paradigm:<br />
+   1. Consider postdelivery maintenance. Suppose that the banking product has been con-<br />
+structed using the classical paradigm. If the way an <br />
+account_balance<br />
+ is represented <br />
+is changed from (say) an integer to a ˚ eld of a structure, then every part of that product <br />
+<br />
+that has anything to do with an <br />
+account_balance<br />
+ has to be changed, and these changes <br />
+<br />
+have to be made consistently. In contrast, if the object-oriented paradigm is used, then <br />
+<br />
+changes need be made only within the bank account object itself. No other part of the <br />
+<br />
+product has knowledge of how an <br />
+accountBalance<br />
+ is implemented, so no other part <br />
+<br />
+can have access to an <br />
+accountBalance<br />
+. Consequently, no other part of the banking <br />
+<br />
+product needs to be changed. Accordingly, the object-oriented paradigm makes mainte-<br />
+<br />
+nance quicker and easier, and the chance of introducing a   <br />
+regression fault<br />
+   (that is, a <br />
+f<br />
+ault inadvertently introduced into one part of a product as a consequence of making an <br />
+apparently unrelated change to another part of the product) is greatly reduced.  <br />
+  2. In addition to maintenance, the object-oriented paradigm also makes development eas-<br />
+ier. In many instances, an object has a physical counterpart. For example, a bank account <br />
+<br />
+object in the bank product corresponds to an actual bank account in the bank for which <br />
+<br />
+this product is being implemented. As will be shown in Part B, modeling plays a major <br />
+<br />
+role in the object-oriented paradigm. The close correspondence between the objects in a <br />
+<br />
+product and their counterparts in the real world should lead to better-quality software.  <br />
+  3. Well-designed objects are independent units. As has been explained, an object consists <br />
+of both attributes and the operations performed on the attributes. If all the operations <br />
+<br />
+performed on the attributes of an object are included in that object, then the object <br />
+<br />
+can be considered a conceptually independent entity. Everything in the product that <br />
+<br />
+relates to the portion of the real world modeled by that object can be found in the <br />
+<br />
+object itself. This conceptual independence sometimes is termed   <br />
+encapsulation<br />
+   <br />
+(Section 7.4). But there is an additional for<br />
+m of independence, physical indepen-<br />
+dence. In a well-designed object, information hiding ensures that implementation <br />
+<br />
+details are hidden from everything outside that object. The only allowable form <br />
+<br />
+of communication is sending a message to the object to carry out a speci˚<br />
+ c op-<br />
+eration. The way that the operation is carried out is entirely the responsibility of <br />
+<br />
+the object itself. For this reason, object-oriented design sometimes is referred to <br />
+<br />
+as   <br />
+responsibility-driven design<br />
+   [Wirfs-Brock, Wilkerson, and Wiener, 1990] or <br />
+  <br />
+design by contract<br />
+   [Meyer, 1992]. (For another view of responsibility-driven de-<br />
+<br />
+sign, see Just in Case <br />
+You Wanted to Know Box 1.5, derived from an example in <br />
+[Budd, 2002].) Another way of looking at both encapsulation and information hiding <br />
+<br />
+is as instances of separation of concerns (Section 5.4).    <br />
+   4. A product built using the classical paradigm is implemented as a set of modules, but <br />
+conceptually it is essentially a single unit. This is one reason why the classical paradigm <br />
+<br />
+has been less successful when applied to larger products. In contrast, when the object-<br />
+<br />
+oriented paradigm is used correctly, the resulting product consists of a number of smaller, <br />
+<br />
+largely independent units. The object-oriented paradigm reduces the level of complexity <br />
+<br />
+of a software product and hence simpli˚ es both development and maintenance.  <br />
+20<br />
+  Chapter 1  <br />
+The Scope of Softw<br />
+are Engineering<br />
+sch76183_ch01_001-034.indd   20<br />
+sch76183_ch01_001-034.indd   20<br />
+04/06/10   12:30 PM<br />
+<br />
+04/06/10   12:30 PM<br />
+  5.  The object-oriented paradigm promotes reuse; because objects are independent entities, they <br />
+can generally be utilized in future products (but see Problem 1.17). This reuse of objects <br />
+reduces the time and cost of both development and maintenance, as explained in  Chapter 8 .   <br />
+  When the object-oriented paradigm is utilized, the classical software life cycle of  Figure <br />
+<br />
+1.2  has to be modi˚ ed.  Figure 1.8  compares the life-cycle model of the classical paradigm <br />
+<br />
+with that of the object-oriented paradigm. <br />
+<br />
+  The ˚<br />
+ rst difference appears to be purely terminological; the word   <br />
+phase<br />
+   is used for the <br />
+classical paradigm, whereas   <br />
+workß ow<br />
+   is used for the object-oriented paradigm. In fact, as <br />
+will be explained in detail in  Chapter 2 , there is no correspondence between a phase and a <br />
+<br />
+work˜<br />
+ ow. On the contrary, the two terms are totally distinct, and this distinction epitomizes <br />
+the differences between the life-cycle models that underlie the two paradigms. <br />
+<br />
+  In this chapter, we consider another difference between the two paradigms, the role <br />
+<br />
+played by modules (in the classical paradigm) versus that played by objects (in the object-<br />
+<br />
+oriented paradigm). First consider the design phase of the classical paradigm. As stated <br />
+<br />
+in Section 1.3, this phase is divided into two subphases: architectural design followed by <br />
+<br />
+detailed design. In the architectural design subphase, the product is decomposed into com-<br />
+<br />
+ponents, called   <br />
+modules<br />
+  . Then, during the detailed design subphase, the data structures and <br />
+algorithms of each module are designed in turn. Finally, during the implementation phase, <br />
+<br />
+these modules are implemented. <br />
+<br />
+  If the object-oriented paradigm is used instead, one of the steps of the object-<br />
+<br />
+oriented analysis work˜ ow is to determine the classes. Because a class is a kind of <br />
+<br />
+module, architectural design is performed during the object-oriented analysis work˜<br />
+ ow. <br />
+ Just in Case You Wanted to Know <br />
+Box 1.5<br />
+ <br />
+ <br />
+Suppose that you live in New Orleans, and you want to send a Mother™s Day bouquet to <br />
+your mother in Chicago. One strategy would be to consult the Chicago yellow pages (on <br />
+<br />
+the World Wide Web), determine which ˜ orist is located closest to your mother™s apart-<br />
+<br />
+ment, and place your order with that ˜ orist. A more convenient way is to order the ˜<br />
+ owers <br />
+at <br />
+1-800-ß<br />
+ owers.com,<br />
+ leaving the total responsibility for delivering the ˜ owers to that <br />
+company. It is irrelevant where <br />
+1-800-ß<br />
+ owers.com<br />
+ is physically located or which ˜<br />
+ orist is <br />
+given your order to deliver. In any event, the company does not divulge that information, <br />
+<br />
+an instance of information hiding. <br />
+<br />
+ <br />
+ In exactly the same way, when a message is sent to an object, not only is it entirely <br />
+irrelevant how the request is carried out, but the unit that sends the message is not even <br />
+<br />
+allowed to know the internal structure of the object.  The object itself is entirely responsible <br />
+<br />
+for every detail of carrying out the message. <br />
+ FIGURE 1.8 <br />
+ Comparison of <br />
+the life-c<br />
+ycle <br />
+models of <br />
+<br />
+the classical <br />
+<br />
+paradigm and <br />
+<br />
+the object-<br />
+<br />
+oriented <br />
+<br />
+paradigm. <br />
+       <br />
+   Classical Paradigm  <br />
+  <br />
+ Object-Oriented Paradigm   <br />
+   1. Requirements phase  <br />
+  <br />
+ 1. Requirements work˜<br />
+ ow <br />
+   <br />
+    2. Analysis (speci˚<br />
+ cation) phase <br />
+ <br />
+  <br />
+ 2<br />
+. Object-oriented analysis work˜<br />
+ ow <br />
+  <br />
+   3. Design phase  <br />
+  <br />
+ 3<br />
+. Object-oriented design work˜<br />
+ ow <br />
+  <br />
+   4. Implementation phase  <br />
+  <br />
+ 4<br />
+. Object-oriented implementation work˜<br />
+ ow <br />
+  <br />
+   5. Postdelivery maintenance  <br />
+  <br />
+ 5. Postdelivery maintenance   <br />
+   6. Retirement  <br />
+  <br />
+ 6. Retirement      <br />
+sch76183_ch01_001-034.indd   21<br />
+<br />
+sch76183_ch01_001-034.indd   21<br />
+04/06/10   12:30 PM<br />
+<br />
+04/06/10   12:30 PM<br />
+Consequently, object-oriented analysis goes further than the corresponding analysis (speci-<br />
+˚ cation) phase of the classical paradigm. This is shown in  Figure 1.9 . <br />
+<br />
+  This difference between the two paradigms has major consequences. When the classical <br />
+<br />
+paradigm is used, there almost always is a sharp transition between the analysis phase and <br />
+<br />
+the design phase. After all, the aim of the analysis phase is to determine   <br />
+what<br />
+   the product is <br />
+to do, whereas the purpose of the design phase is to decide   <br />
+how<br />
+   to do it. In contrast, when <br />
+object-oriented analysis is used, objects enter the life cycle from the very beginning. The <br />
+<br />
+objects are extracted in the analysis work˜<br />
+ ow, designed in the design work˜<br />
+ ow, and coded <br />
+in the implementation work˜ ow. The object-oriented paradigm is therefore an integrated <br />
+<br />
+approach; the transition from work˜<br />
+ ow to work˜<br />
+ ow is far smoother than with the classical <br />
+paradigm, reducing the number of faults introduced during development. <br />
+<br />
+  As already mentioned, it is inadequate to de˚ ne an object merely as a software artifact that <br />
+<br />
+encapsulates both attributes and operations and implements the principle of information hid-<br />
+<br />
+ing. A more complete de˚ nition is given in  Chapter 7 , where objects are examined in depth. <br />
+  <br />
+  1.10 The Object-Oriented Paradigm in Perspective <br />
+   Figure 1.1  is evidence of the many shortcomings of the classical (structured) paradigm. <br />
+<br />
+However, the object-oriented paradigm is by no means a panacea for all ills:<br />
+   <br />
+†<br />
+ Like all approaches to software production, the object-oriented paradigm has to be used <br />
+cor<br />
+rectly; it is just as easy to misuse the object-oriented paradigm as any other paradigm.  <br />
+ <br />
+†<br />
+  When correctly applied, the object-oriented paradigm can solve some (but not all) of the <br />
+prob<br />
+lems of the classical paradigm.  <br />
+  <br />
+†<br />
+ The object-oriented paradigm has some problems of its own, as described in Section 7.9.  <br />
+  <br />
+†<br />
+ The object-oriented paradigm is the best approach available today. However, like all <br />
+technolo<br />
+gies, it is certain to be superseded by a superior technology in the future.    <br />
+  In this book, strengths and weaknesses of both the classical and the object-oriented <br />
+paradigm are pointed out within the context of the speci˚<br />
+ c topic under discussion. Con-<br />
+sequently, the comparison of the two paradigms does not appear in one single place but is <br />
+<br />
+spread over the entire book. <br />
+<br />
+  We now de˚ ne a number of software engineering terms.   <br />
+22<br />
+  Chapter 1  <br />
+The Scope of Softw<br />
+are Engineering<br />
+ FIGURE 1.9 <br />
+ Differences <br />
+betw<br />
+een the <br />
+classical <br />
+<br />
+paradigm and <br />
+<br />
+the object-<br />
+<br />
+oriented <br />
+<br />
+paradigm. <br />
+       <br />
+   Classical Paradigm  <br />
+  <br />
+ Object-Oriented Paradigm   <br />
+ <br />
+    2. Analysis (speci˚<br />
+ cation) <br />
+    phase  2<br />
+. Object-oriented analysis work˜<br />
+ ow <br />
+  <br />
+     † Determine what the product is to do  <br />
+  <br />
+    † Determine what the product is to do   <br />
+        <br />
+    † Extract the classes   <br />
+   3. Design phase  <br />
+  <br />
+ 3<br />
+. Object-oriented design work˜<br />
+ ow <br />
+  <br />
+     † Architectural design (extract the modules)  <br />
+  <br />
+    † Detailed design   <br />
+     <br />
+   <br />
+ † Detailed design   <br />
+   4. Implementation phase  <br />
+  <br />
+ 4<br />
+. Object-oriented implementation work˜<br />
+ ow <br />
+  <br />
+     † Code the modules in an appropriate  <br />
+  <br />
+    † Code the classes in an appropriate   <br />
+       programming language       object-oriented programming language   <br />
+     <br />
+   <br />
+ † Integrate     † Integrate      <br />
+sch76183_ch01_001-034.indd   22<br />
+<br />
+sch76183_ch01_001-034.indd   22<br />
+04/06/10   12:30 PM<br />
+<br />
+04/06/10   12:30 PM<br />
+  <br />
+<br />
+1.11 Terminology <br />
+  The   <br />
+client<br />
+   is the individual who wants a product to be built (developed). The   <br />
+developers<br />
+   <br />
+are the members of a team responsib<br />
+le for building that product. The developers may be <br />
+responsible for every aspect of the software process, from the requirements onward, or they <br />
+may be responsible for only the implementation of an already designed product. <br />
+<br />
+  Both the client and developers may be part of the same organization. For example, the <br />
+<br />
+client may be the head actuary of an insurance company and the developers a team headed <br />
+<br />
+by the vice-president for software development of that insurance company. This is termed <br />
+<br />
+  <br />
+internal software development<br />
+  . On the other hand, with   <br />
+contract software<br />
+   the cli-<br />
+ent and de<br />
+velopers are members of totally independent organizations. For instance, the <br />
+client may be a senior of˚ cial in the Department of Defense and the developers employees <br />
+<br />
+of a major defense contractor specializing in software for weapons systems. On a much <br />
+<br />
+smaller scale, the client may be an accountant in a one-person practice and the developer a <br />
+<br />
+student who earns income by developing software on a part-time basis. <br />
+<br />
+  The third party involved in software production is the   <br />
+user<br />
+  . The user is the person or <br />
+persons on w<br />
+hose behalf the client has commissioned the product and who will utilize the <br />
+software. In the insurance company example, the users may be insurance agents, who will <br />
+<br />
+use the software to select the most appropriate policies. In some instances, the client and <br />
+<br />
+the user are the same person (for example, the accountant discussed previously). <br />
+<br />
+  As opposed to expensive custom software developed for one client, multiple copies <br />
+<br />
+of software, such as word processors or spreadsheets, are sold at much lower prices to a <br />
+<br />
+large numbers of buyers. That is, the manufacturers of such software (such as Microsoft <br />
+<br />
+or Borland) recover the cost of developing a product by volume selling. This type of <br />
+<br />
+software usually is called   <br />
+commercial off-the-shelf (COTS) software<br />
+  . The earlier <br />
+ter<br />
+m for this type of software was   <br />
+shrink-wrapped software<br />
+   because the box con-<br />
+taining the CD or disk<br />
+ettes, the manuals, and the license agreement almost always was <br />
+shrink-wrapped. Nowadays, COTS software often is downloaded over the World Wide <br />
+<br />
+WebŠthere is no box to shrink-wrap. For this reason, COTS software nowadays some-<br />
+<br />
+times is referred to as   <br />
+clickware<br />
+  . COTS software is developed for ﬁthe marketﬂ; that is, <br />
+the softw<br />
+are is not targeted to a speci˚ c client or users until it has been developed and is <br />
+available for purchase. <br />
+<br />
+    <br />
+Open-source software<br />
+   is becoming extremely popular. An open-source software <br />
+product is de<br />
+veloped and maintained by a team of volunteers and may be downloaded <br />
+and used free of charge by anyone. Widely used open-source products include the Linux <br />
+<br />
+operating system, the Firefox Web browser, and the Apache Web server. The term   <br />
+open <br />
+source<br />
+   refers to the availability of the source code to all, unlike most commercial products <br />
+<br />
+where only the executable version is sold. Because any user of an open-source product can <br />
+<br />
+scrutinize the source code and report faults to the developers, many open-source software <br />
+<br />
+products are of high quality. The expected consequence of the public nature of faults in <br />
+<br />
+open-source software was formalized by Raymond in   <br />
+The Cathedral and the Bazaar<br />
+   as <br />
+  <br />
+LinusÕs Law<br />
+  , named after Linus Torvalds, the creator of Linux [Raymond, 2000].   <br />
+LinusÕs <br />
+Law<br />
+   states that ﬁgiven enough eyeballs, all bugs are shallow.ﬂ In other words, if enough <br />
+<br />
+indi<br />
+viduals scrutinize the source code of an open-source software product, someone should <br />
+be able to locate that fault and suggest how to ˚<br />
+ x it (but see Just in Case You Wanted to <br />
+Know Box 1.6). A related principle is ﬁRelease early. Release oftenﬂ [Raymond, 2000]. <br />
+Chapter 1  <br />
+The Scope of Software Engineering<br />
+  <br />
+23<br />
+sch76183_ch01_001-034.indd   23<br />
+sch76183_ch01_001-034.indd   23<br />
+04/06/10   12:30 PM<br />
+<br />
+04/06/10   12:30 PM<br />
+That is, open-source developers tend to spend less time on testing than closed-source de-<br />
+velopers, preferring to release a new version of a product virtually as soon as it is ˚<br />
+ nished, <br />
+leaving much of the responsibility for testing to users. <br />
+<br />
+  A word used on almost every page of this book is   <br />
+software<br />
+  . Software consists of not <br />
+just code in machine-readab<br />
+le form but also all the documentation that is an intrinsic com-<br />
+ponent of every project. Software includes the speci˚ cation document, the design docu-<br />
+<br />
+ment, legal and accounting documents of all kinds, the software project management plan, <br />
+<br />
+and other management documents as well as all types of manuals. <br />
+<br />
+  Since the 1970s, the difference between a   <br />
+program<br />
+   and a   <br />
+system<br />
+   has become blurred. <br />
+In the ﬁgood old da<br />
+ys,ﬂ the distinction was clear. A program was an autonomous piece of <br />
+code, generally in the form of a deck of punched cards that could be executed. A system <br />
+<br />
+was a related collection of programs. A system might consist of programs <br />
+P<br />
+,<br />
+ Q<br />
+,<br />
+ R<br />
+,<br />
+ <br />
+and <br />
+S<br />
+. <br />
+Magnetic tape <br />
+T<br />
+1<br />
+ was mounted, and then program <br />
+P<br />
+ was run. It caused a deck of data cards <br />
+to be read in and produced as output tapes <br />
+T<br />
+2<br />
+ and <br />
+T<br />
+3<br />
+. Tape <br />
+T<br />
+2<br />
+ then was rewound, and pro-<br />
+gram <br />
+Q<br />
+ was run, producing tape <br />
+T<br />
+4<br />
+ as output. Program <br />
+R<br />
+ now merged tapes <br />
+T<br />
+3<br />
+ and <br />
+T<br />
+4<br />
+ into <br />
+tape <br />
+T<br />
+5<br />
+; <br />
+T<br />
+5<br />
+ served as input for program <br />
+S<br />
+, which printed a series of reports. <br />
+  Compare that situation with a product, running on a machine with a front-end com-<br />
+<br />
+munications processor and a back-end database manager, that performs real-time control <br />
+<br />
+of a steel mill. The single piece of software controlling the steel mill does far more than <br />
+<br />
+the old-fashioned system, but in terms of the classic de˚<br />
+ nitions of program and system, <br />
+this software undoubtedly is a program. To add to the confusion, the term   <br />
+system<br />
+   now is <br />
+also used to denote the hardwareŒsoftware combination. For example, the ˜<br />
+ ight control <br />
+system in an aircraft consists of both the in-˜<br />
+ ight computers and the software running <br />
+on them. Depending on who is using the term, the ˜ ight control system also may include <br />
+<br />
+the controls, such as the joystick, that send commands to the computer and the parts of <br />
+<br />
+the aircraft, such as the wing ˜ aps, controlled by the computer. Furthermore, within the <br />
+<br />
+context of traditional software development, the term   <br />
+systems analysis<br />
+   refers to the ˚<br />
+ rst <br />
+tw<br />
+o phases (requirements and analysis phases) and   <br />
+systems design<br />
+   refers to the third <br />
+phase (design phase). <br />
+<br />
+ <br />
+ To minimize confusion, this book uses the term   <br />
+product<br />
+   to denote a nontrivial piece of <br />
+softw<br />
+are. There are two reasons for this convention. The ˚<br />
+ rst is simply to obviate the pro-<br />
+gram versus system confusion by using a third term. The second reason is more important. <br />
+<br />
+This book deals with the process of software production, that is, the way we produce soft-<br />
+<br />
+ware, and the end result of a process is termed a   <br />
+product<br />
+  . Finally, the term   <br />
+system<br />
+   is used <br />
+in its modern sense, that is, the combined hardware and software, or as part of universally <br />
+<br />
+accepted phrases, such as operating system and management information system. <br />
+<br />
+  Two words widely used within the context of software engineering are   <br />
+methodology<br />
+   <br />
+and   <br />
+paradigm<br />
+  . In the 1970s, the word   <br />
+methodology<br />
+   began to be used in the sense of <br />
+ﬁa w<br />
+ay of developing a software productﬂ; the word actually means the ﬁscience of meth-<br />
+ods.ﬂ Then, in the 1980s, the word   <br />
+paradigm<br />
+   became a major buzzword of the busi-<br />
+ness w<br />
+orld, as in the phrase, ﬁIt™s a whole new paradigm.ﬂ The software industry soon <br />
+ Just in Case You Wanted to Know <br />
+Box 1.6<br />
+ <br />
+ <br />
+It is self-evident that the more people who carefully examine a piece of code, the more likely <br />
+it is that someone will be able to ˚ nd and ˚ x a fault in that code. Accordingly, Linus™s Law <br />
+should perhaps be called ﬁTorvalds™s Truism.ﬂ <br />
+sch76183_ch01_001-034.indd   24<br />
+sch76183_ch01_001-034.indd   24<br />
+04/06/10   12:30 PM<br />
+<br />
+04/06/10   12:30 PM<br />
+started using the word   <br />
+paradigm<br />
+   in the phrases   <br />
+object-oriented paradigm<br />
+   and classical <br />
+(or  <br />
+ <br />
+traditional<br />
+  )   <br />
+paradigm<br />
+   to mean ﬁa style of software development.ﬂ This was another <br />
+unfor<br />
+tunate choice of terminology, because a paradigm is a model or a pattern. Erudite <br />
+readers offended by this corruption of the English language are warmly invited to take up <br />
+the cudgels of linguistic accuracy on the author™s behalf; he is tired of tilting at windmills. <br />
+<br />
+  A methodology or a paradigm is a component of the software process as a whole. In <br />
+<br />
+contrast, a   <br />
+technique<br />
+   is a component of a portion of the software process. Examples <br />
+include coding techniques, documentation techniques, and planning techniques. <br />
+<br />
+ <br />
+ When a programmer makes a   <br />
+mistake<br />
+  , the consequence of that mistake is a   <br />
+fault<br />
+   in the <br />
+code. Ex<br />
+ecuting the software product then results in a   <br />
+failure<br />
+  , that is, the observed incor-<br />
+rect beha<br />
+vior of the product as a consequence of the fault. An   <br />
+error<br />
+   is the amount by which <br />
+a result is incor<br />
+rect. The terms   <br />
+mistake<br />
+  ,   <br />
+fault<br />
+  ,   <br />
+failure<br />
+  , and   <br />
+error<br />
+   are de˚<br />
+ ned in IEEE Stan-<br />
+dard 610.12, ﬁA Glossary of Software Engineering Terminologyﬂ [IEEE 610.12, 1990], <br />
+<br />
+reaf˚<br />
+ rmed in 2002 [IEEE Standards, 2003]. The word   <br />
+defect<br />
+   is a generic term that refers <br />
+to a f<br />
+ault, failure, or error. In the interests of precision, in this book we therefore minimize <br />
+use of the umbrella term   <br />
+defect<br />
+  . <br />
+  One term that is avoided as far as possible is   <br />
+bug<br />
+   (the history of this word is in Just in <br />
+Case <br />
+You Wanted to Know Box 1.7). The term   <br />
+bug<br />
+   nowadays is simply a euphemism for <br />
+a   <br />
+fault<br />
+  . Although there generally is no real harm in using euphemisms, the word <br />
+bug<br />
+ has <br />
+overtones that are not conducive to good software production. Speci˚ cally, instead of say-<br />
+<br />
+ing, ﬁI made a mistake,ﬂ a programmer will say, ﬁA bug crept into the codeﬂ (not   <br />
+my<br />
+   code <br />
+but   <br />
+the<br />
+   code), thereby transferring responsibility for the mistake from the programmer to <br />
+the bug. No one blames a programmer for coming down with a case of in˜<br />
+ uenza, because <br />
+the ˜ u is caused by the ˜<br />
+ u bug. Referring to a mistake as a bug is a way of casting off <br />
+responsibility. In contrast, the programmer who says, ﬁI made a mistake,ﬂ is a computer <br />
+<br />
+professional who takes responsibility for his or her actions. <br />
+<br />
+  Considerable confusion surrounds object-oriented terminology. For example, in addi-<br />
+<br />
+tion to the term   <br />
+attribute<br />
+   for a data component of an object, the term   <br />
+state variable<br />
+   <br />
+sometimes is used in the object-oriented literature. In Ja<br />
+va, the term is   <br />
+instance variable<br />
+  . <br />
+In C++ the ter<br />
+m   <br />
+Þ<br />
+ eld<br />
+   is used, and in Visual Basic .NET, the term is   <br />
+property<br />
+  . With regard <br />
+to the implementation of the operations of an object, the ter<br />
+m   <br />
+method<br />
+   usually is used; in <br />
+  Just in Case You Wanted to Know <br />
+Box 1.7<br />
+ <br />
+ <br />
+The ˚ rst use of the word  <br />
+ <br />
+<br />
+bug<br />
+  <br />
+ to denote a fault is attributed to the late Rear Admiral Grace <br />
+Murray Hopper, one of the designers of COBOL. On September 9, 1945, a moth ˜<br />
+ ew into <br />
+the Mark II computer that Hopper and her colleagues used at Harvard and lodged between <br />
+the contact plates of a relay. Accordingly, there was actually a bug in the system. Hopper <br />
+<br />
+taped the bug to the logbook and wrote, ﬁFirst actual case of bug being found.ﬂ The <br />
+<br />
+logbook, with moth still attached, is in the Naval Museum at the Naval Surface Weapons <br />
+<br />
+Center, in Dahlgren, Virginia. <br />
+<br />
+ <br />
+ Although this may have been the ˚ rst use of  <br />
+ <br />
+<br />
+bug<br />
+  <br />
+ in a computer context, the word was <br />
+used in engineering slang in the 19th century [Shapiro, 1994].  For example, Thomas Alva <br />
+Edison wrote on November 18, 1878, ﬁThis thing gives out and then thatŠ‚Bugs™Šas such <br />
+<br />
+little faults and dif˚<br />
+ culties are called . . .ﬂ [Josephson, 1992]. One of the de˚ nitions of  <br />
+ <br />
+bug<br />
+  <br />
+ in <br />
+the 1934 edition of  <br />
+ <br />
+<br />
+Webster™s New English Dictionary<br />
+  <br />
+ is, ﬁA defect in apparatus or its opera-<br />
+tion.ﬂ It is clear from Hopper™s remark that she, too, was familiar with the use of the word <br />
+in that context; otherwise, she would have explained what she meant.  <br />
+sch76183_ch01_001-034.indd   25<br />
+sch76183_ch01_001-034.indd   25<br />
+04/06/10   12:30 PM<br />
+<br />
+04/06/10   12:30 PM<br />
+C++, however, the term is   <br />
+member function<br />
+  . In C++, a   <br />
+member<br />
+ <br />
+  of an object refers to <br />
+either an attribute (ﬁ˚<br />
+ eldﬂ) or a method. In Java, the term   <br />
+Þ eld<br />
+   is used to denote either an <br />
+attribute (ﬁinstance variableﬂ) or a method. To avoid confusion, wherever possible, the ge-<br />
+neric terms   <br />
+attribute<br />
+   and   <br />
+method<br />
+   are used in this book. <br />
+  Fortunately, some terminology is widely accepted. For example, when a method <br />
+<br />
+within an object is invoked, this almost universally is termed   <br />
+sending a message<br />
+   to <br />
+the object.<br />
+   <br />
+  <br />
+1.12 Ethical Issues <br />
+  We conclude this chapter on a cautionary note. Software products are developed and <br />
+maintained by humans. If those individuals are hard working, intelligent, sensible, up <br />
+<br />
+to date, and above all,   <br />
+ethical<br />
+  , then the chances are good that the way that the software <br />
+products they develop and maintain will be satisfactory. Unfortunately, the converse is <br />
+<br />
+equally true. <br />
+<br />
+  Most societies for professionals have a code of   <br />
+ethics<br />
+   to which all its members must <br />
+adhere. <br />
+The two major societies for computer professionals, the Association for Computing <br />
+Machinery (ACM) and the Computer Society of the Institute of Electrical and Electronics <br />
+<br />
+Engineers (IEEE-CS) jointly approved a Software Engineering Code of Ethics and Profes-<br />
+<br />
+sional Practice as the standard for teaching and practicing software engineering [IEEE/<br />
+<br />
+ACM, 1999]. It is lengthy, so a short version, consisting of a preamble and eight principles, <br />
+<br />
+was also produced. Here is the short version: <br />
+  Software Engineering Code of Ethics and Professional Practice  <br />
+2 <br />
+  (Version 5.2) <br />
+as recommended by the IEEE-CS/ACM Joint Task Force on <br />
+Software Engineering Ethics and Professional Practices <br />
+Short Version <br />
+Preamble  <br />
+  The short version of the code summarizes aspirations at a high level of abstraction; the <br />
+clauses that are included in the full version give examples and details of how these aspira-<br />
+<br />
+tions change the way we act as software engineering professionals. Without the aspira-<br />
+<br />
+tions, the details can become legalistic and tedious; without the details, the aspirations can <br />
+<br />
+become high sounding but empty; together, the aspirations and the details form a cohesive <br />
+<br />
+code. <br />
+<br />
+  Software engineers shall commit themselves to making the analysis, speci˚<br />
+ cation, design, <br />
+development, testing and maintenance of software a bene˚ cial and respected profession. In <br />
+<br />
+accordance with their commitment to the health, safety and welfare of the public, software <br />
+<br />
+engineers shall adhere to the following Eight Principles:<br />
+   1.   <br />
+Public<br />
+  ŠSoftware engineers shall act consistently with the public interest.  <br />
+  2.    <br />
+Client and EmployerÑ<br />
+  Software engineers shall act in a manner that is in the best interests <br />
+of their client and employer consistent with the public interest.  <br />
+26<br />
+  Chapter 1  <br />
+The Scope of Softw<br />
+are Engineering<br />
+ <br />
+ 2<br />
+ © 1999 by the Institute of Electrical and Electronics Engineers, Inc., and the Association for Computing <br />
+Machinery, Inc. <br />
+sch76183_ch01_001-034.indd   26<br />
+sch76183_ch01_001-034.indd   26<br />
+04/06/10   12:30 PM<br />
+<br />
+04/06/10   12:30 PM<br />
+Chapter 1  <br />
+The Scope of Software Engineering<br />
+  <br />
+27<br />
+  3.    <br />
+Product<br />
+  ŠSoftware engineers shall ensure that their products and related modi˚<br />
+ cations <br />
+meet the highest professional standards possible.  <br />
+  4.    <br />
+Judgment<br />
+  ŠSoftware engineers shall maintain integrity and independence in their profes-<br />
+sional judgment.  <br />
+  5.    <br />
+Management<br />
+  ŠSoftware engineering managers and leaders shall subscribe to and promote <br />
+an ethical approach to the management of software development and maintenance.  <br />
+  6.    <br />
+Profession<br />
+  ŠSoftware engineers shall advance the integrity and reputation of the profes-<br />
+sion consistent with the public interest.  <br />
+  7.   <br />
+Colleagues<br />
+  ŠSoftware engineers shall be fair to and supportive of their colleagues.  <br />
+  8.    <br />
+SelfÑ<br />
+  Software engineers shall participate in lifelong learning regarding the practice of <br />
+their profession and shall promote an ethical approach to the practice of the profession. <br />
+   <br />
+  The codes of ethics of other societies for computer professionals express similar senti-<br />
+ments. It is vital for the future of our profession that we adhere rigorously to such codes of <br />
+<br />
+ethics. <br />
+<br />
+  In  Chapter 2 , we examine various life-cycle models to shed further light on the differ-<br />
+<br />
+ences between the classical and the object-oriented paradigm.    <br />
+   Chapter <br />
+Review <br />
+  <br />
+Software engineering is de˚ ned (Section 1.1) as a discipline whose aim is the production of fault-free <br />
+software that satis˚ es the user™s needs and is delivered on time and within budget. To achieve this goal, <br />
+<br />
+appropriate techniques have to be used throughout software production, including when performing <br />
+<br />
+analysis (speci˚ cation) and design (Section 1.4) and postdelivery maintenance (Section 1.3). Software <br />
+<br />
+engineering addresses all the steps of the software life cycle and incorporates aspects of many different <br />
+<br />
+areas of human knowledge, including economics (Section 1.2) and the social sciences (Section 1.5). <br />
+<br />
+There is no separate planning phase (Section 1.6), no testing phase (Section 1.7), and no documenta-<br />
+<br />
+tion phase (Section 1.8). In Section 1.9, objects are introduced, and a comparison between the classi-<br />
+<br />
+cal and object-oriented paradigms is made. Then the object-oriented paradigm is evaluated (Section <br />
+<br />
+1.10). Next, in Section 1.11, the terminology used in this book is explained. Finally, ethical issues are <br />
+<br />
+discussed in Section 1.12. <br />
+ <br />
+  <br />
+For <br />
+Further <br />
+<br />
+Reading <br />
+  <br />
+The earliest source of information on the scope of software engineering is [Boehm, 1976]. <br />
+The future of <br />
+software engineering is discussed in [Finkelstein, 2000]. The current state of the practice of software <br />
+engineering is described in a variety of articles in the NovemberŒDecember 2003 issue of   <br />
+IEEE Soft-<br />
+ware. <br />
+  An investigation of the factors leading to successful software development appears in [Procac-<br />
+cino, Verner, and Lorenzet, 2006]. <br />
+<br />
+  For a view on the importance of postdelivery maintenance in software engineering and how to <br />
+<br />
+plan for it, see [Parnas, 1994]. Software development for COTS-based products is the subject of <br />
+<br />
+[Brownsword, Oberndorf, and Sledge, 2000]. Acquiring COTS components is described in [Ulkuni-<br />
+<br />
+emi and Seppanen, 2004] and in [Keil and Tiwana, 2005]. Risk management when software is devel-<br />
+<br />
+oped using COTS components is described in [Li et al., 2008]. The JulyŒAugust 2005 issue of   <br />
+IEEE <br />
+Software<br />
+   contains six articles on integrating COTS components into software products, including <br />
+<br />
+[Donzelli et al., 2005] and [Yang, Bhuta, Boehm, and Port, 2005]. A reassessment of risk manage-<br />
+<br />
+ment appears in [Bannerman, 2008]. <br />
+<br />
+  Risks in enterprise systems are described in [Scott and Vessey, 2002] and in information systems <br />
+<br />
+in general in [Longstaff, Chittister, Pethia, and Haimes, 2000]. Zvegintzov [1998] explains just how <br />
+<br />
+little accurate data on software engineering practice actually are available. <br />
+sch76183_ch01_001-034.indd   27<br />
+sch76183_ch01_001-034.indd   27<br />
+04/06/10   12:30 PM<br />
+<br />
+04/06/10   12:30 PM<br />
+  The fact that mathematics underpins software engineering is stressed in [Devlin, 2001]. The <br />
+importance of economics in software engineering is discussed in [Boehm and Huang, 2003]. <br />
+<br />
+The NovemberŒDecember 2002 issue of   <br />
+IEEE Software<br />
+   contains a number of articles on software <br />
+engineering economics. <br />
+<br />
+  Two classic books on the social sciences and software engineering are [Weinberg, 1971] and <br />
+<br />
+[Shneiderman, 1980]. Neither book requires prior knowledge of psychology or the behavioral sci-<br />
+<br />
+ences in general. <br />
+<br />
+  Brooks™s [1975] timeless work,   <br />
+The Mythical Man-Month<br />
+  , is a highly recommended introduction <br />
+to the realities of software engineering. The book includes material on all the topics mentioned in this <br />
+<br />
+chapter. <br />
+<br />
+  An excellent introduction to open-source software is [Raymond, 2000]. Paulsen, Succi, and <br />
+<br />
+Eberlein [2004] present an empirical study comparing open- and closed-source software products. <br />
+<br />
+Reuse of open-source components is described in [Madanmohan and De™, 2004]. A variety of <br />
+<br />
+articles on open-source software appears in the January/February 2004 issue of   <br />
+IEEE Software<br />
+   and <br />
+in issue No. 2, 2005, of   <br />
+IBM Systems Journal<br />
+  . The issue of whether open-source software leads to <br />
+increased security is discussed in [Hoepman and Jacobs, 2007]. The interplay between business <br />
+<br />
+and open-source software is the subject of [Watson et al., 2008], [Ven, Verelst, and Mannaert, <br />
+<br />
+2008], and [Wesselius, 2008]. <br />
+<br />
+  An excellent introduction to the object-oriented paradigm is [Budd, 2002]. Three successful <br />
+<br />
+projects carried out using the object-oriented paradigm are described in [Capper, Colgate, Hunter, <br />
+<br />
+and James, 1994], with a detailed analysis. A survey of the attitudes of 150 experienced software <br />
+<br />
+developers toward the object-oriented paradigm is reported in [Johnson, 2000]. With regard to eth-<br />
+<br />
+ics, an ethical code common to both business and software professionals is presented in [Payne and <br />
+<br />
+Landry, 2006].  <br />
+28<br />
+  Chapter 1  <br />
+The Scope of Softw<br />
+are Engineering<br />
+   acceptance testing   <br />
+7<br />
+ <br />
+   adaptive maintenance   <br />
+8<br />
+ <br />
+   analysis phase   <br />
+7<br />
+ <br />
+   architectural design   <br />
+7<br />
+ <br />
+   artifact   <br />
+18<br />
+ <br />
+   attribute   <br />
+25<br />
+ <br />
+   bug   <br />
+25<br />
+ <br />
+   classical paradigm   <br />
+18<br />
+ <br />
+   clickware   <br />
+23<br />
+ <br />
+   client   <br />
+23<br />
+ <br />
+   coding   <br />
+7<br />
+ <br />
+   commercial-off-the-shelf <br />
+(COTS) software <br />
+  <br />
+23<br />
+ <br />
+   contract software   <br />
+23<br />
+ <br />
+   corrective maintenance   <br />
+8<br />
+ <br />
+   defect   <br />
+25<br />
+ <br />
+   design by contract   <br />
+20<br />
+ <br />
+   design document   <br />
+7<br />
+ <br />
+   design phase   <br />
+7<br />
+ <br />
+   detailed design   <br />
+7<br />
+ <br />
+   developer   <br />
+23 <br />
+   development-then-<br />
+maintenance model <br />
+  <br />
+9<br />
+ <br />
+   documentation phase   <br />
+17<br />
+ <br />
+   encapsulation   <br />
+20<br />
+ <br />
+   enhancement   <br />
+8<br />
+ <br />
+   error   <br />
+25<br />
+ <br />
+   ethics   <br />
+26<br />
+ <br />
+   failure   <br />
+25<br />
+ <br />
+   fault   <br />
+25<br />
+ <br />
+   ˚<br />
+ eld   <br />
+25<br />
+ <br />
+   implementation phase   <br />
+7<br />
+ <br />
+   instance variable   <br />
+25<br />
+ <br />
+   integration   <br />
+7<br />
+ <br />
+   internal software <br />
+development   <br />
+23<br />
+ <br />
+   life <br />
+cycle   <br />
+6<br />
+ <br />
+   life-cycle model   <br />
+6<br />
+ <br />
+   Linus™s Law   <br />
+23<br />
+ <br />
+   maintenance   <br />
+10<br />
+ <br />
+   message   <br />
+19<br />
+ <br />
+   member function   <br />
+26<br />
+ <br />
+   method   <br />
+19<br />
+ <br />
+   methodology   <br />
+24<br />
+ <br />
+   mistake   <br />
+25<br />
+ <br />
+   module   <br />
+7<br />
+ <br />
+   object-oriented paradigm   <br />
+25<br />
+ <br />
+   open-source software   <br />
+23<br />
+ <br />
+   operational de˚<br />
+ nition (of <br />
+maintenance) <br />
+  <br />
+10<br />
+ <br />
+   paradigm   <br />
+24<br />
+ <br />
+   perfective maintenance   <br />
+8<br />
+ <br />
+   phase   <br />
+6<br />
+ <br />
+   planning phase   <br />
+16<br />
+ <br />
+   postdelivery <br />
+maintenance <br />
+  <br />
+7<br />
+ <br />
+   process   <br />
+5<br />
+ <br />
+   product   <br />
+24<br />
+ <br />
+   program   <br />
+24<br />
+ <br />
+   property   <br />
+25<br />
+ <br />
+  Key Terms <br />
+sch76183_ch01_001-034.indd   28<br />
+sch76183_ch01_001-034.indd   28<br />
+04/06/10   12:30 PM<br />
+<br />
+04/06/10   12:30 PM<br />
+   1.1 You are in charge of automating a multi-site architectural practice. The cost of developing the <br />
+software has been estimated to be $530,000. Approximately how much additional money will <br />
+be needed for postdelivery maintenance of the software?  <br />
+   1.2  Is there a way of reconciling the classical temporal de˚ nition of maintenance with the opera-<br />
+tional de˚ nition we now use? Explain your answer.  <br />
+   1.3  You are a software-engineering consultant. The chief information of˚<br />
+ cer of a regional gaso-<br />
+line distribution corporation wants you to develop a software product that will carry out all the <br />
+<br />
+accounting functions of the company and provide online information to the head of˚ ce staff re-<br />
+<br />
+garding orders and inventory in the various company storage tanks. Computers are required for <br />
+<br />
+21 accounting clerks, 15 order clerks, and 37 storage tank clerks. In addition, 14 managers need <br />
+<br />
+access to the data. The company is willing to pay $30,000 for the hardware and the software to-<br />
+<br />
+gether and wants the complete software product in 4 weeks. What do you tell him? Bear in mind <br />
+<br />
+that your company wants his corporation™s business, no matter how unreasonable his request. <br />
+ <br />
+   1.4  You are a vice-admiral in the Velorian Navy. It has been decided to call in a software develop-<br />
+ment organization to develop the control software for a new generation of ship-to-ship missiles. <br />
+<br />
+You are in charge of supervising the project. To protect the government of Veloria, what clauses <br />
+<br />
+do you include in the contract with the software developers?  <br />
+   1.5  You are a software engineer whose job is to supervise the development of the software in Prob-<br />
+lem 1.4. List ways your company can fail to satisfy the contract with the navy. What are the <br />
+<br />
+probable causes of such failures?  <br />
+   1.6 Nine months after delivery, a fault is detected in the software of a product that analyzes mRNA <br />
+using the SteinŒRöntgen reagent. The cost of ˚ xing the fault is $18,900. The cause of the fault <br />
+<br />
+is an ambiguous sentence in the speci˚ cation document. Approximately how much would it <br />
+<br />
+have cost to correct the fault during the analysis phase?  <br />
+   1.7  Suppose that the fault in Problem 1.6 had been detected during the implementation phase. <br />
+Approximately how much would it have cost to ˚<br />
+ x then?  <br />
+   1.8 You are the president of an organization that builds large-scale software. You show  Figure 1.6  to <br />
+your employees, urging them to ˚<br />
+ nd faults early in the software life cycle. Someone responds <br />
+that it is unreasonable to expect anyone to remove faults before they have entered the product. <br />
+<br />
+For example, how can anyone remove a fault while the design is being produced if the fault in <br />
+<br />
+question is a coding fault? What do you reply?  <br />
+   1.9  Describe a situation in which the client, developer, and user are the same person.  <br />
+   1.10  What problems can arise if the client, developer, and user are the same person? How can these <br />
+problems be solved?  <br />
+Chapter 1  <br />
+The Scope of Software Engineering<br />
+  <br />
+29<br />
+   quality   <br />
+17<br />
+ <br />
+   regression fault   <br />
+20<br />
+ <br />
+   requirements phase   <br />
+7<br />
+ <br />
+   responsibility-driven design   <br />
+20<br />
+ <br />
+   retirement   <br />
+8<br />
+ <br />
+   send a message   <br />
+26<br />
+ <br />
+   shrink-wrapped <br />
+software <br />
+  <br />
+23<br />
+ <br />
+   software   <br />
+24<br />
+ <br />
+   software crisis   <br />
+4<br />
+ <br />
+   software depression   <br />
+5<br />
+ <br />
+   software engineering   <br />
+2<br />
+ <br />
+   software project management <br />
+plan   <br />
+7<br />
+ <br />
+   software repair   <br />
+8<br />
+ <br />
+   speci˚ cation document   <br />
+7<br />
+ <br />
+   speci˚ cation phase   <br />
+7<br />
+ <br />
+   state variable   <br />
+25<br />
+ <br />
+   structured paradigm   <br />
+18<br />
+ <br />
+   system   <br />
+24<br />
+ <br />
+   systems analysis   <br />
+24<br />
+ <br />
+   systems design   <br />
+24<br />
+ <br />
+   technique   <br />
+25<br />
+ <br />
+   temporal de˚<br />
+ nition <br />
+(of maintenance) <br />
+  <br />
+9<br />
+ <br />
+   testing phase   <br />
+17<br />
+ <br />
+   traditional paradigm   <br />
+25<br />
+ <br />
+   unit testing   <br />
+7<br />
+ <br />
+   user   <br />
+23<br />
+ <br />
+   validation   <br />
+17<br />
+ <br />
+   veri˚ cation   <br />
+17<br />
+ <br />
+   waterfall model   <br />
+7<br />
+  <br />
+  Problems <br />
+  <br />
+sch76183_ch01_001-034.indd   29<br />
+sch76183_ch01_001-034.indd   29<br />
+04/06/10   12:30 PM<br />
+<br />
+04/06/10   12:30 PM<br />
+  1.11  What potential advantages accrue if the client, developer, and user are the same person?  <br />
+   1.12  Look up the word   <br />
+system<br />
+   in a dictionary. How many different deÞ nitions are there? Write <br />
+down those deÞ nitions that are applicable within the context of software engineering.  <br />
+  1.13  It is your Þ<br />
+ rst day at your Þ rst job. Your manager hands you a program listing and says, ÒSee if <br />
+you can Þ<br />
+ nd the bug.Ó What do you reply?  <br />
+  1.14  You are in charge of developing the product in Problem 1.1. Will you use the object-oriented <br />
+paradigm or the classical paradigm? Give reasons for your answer.  <br />
+  1.15  Instead of implementing component <br />
+c9<br />
+ of a software product, the developers decide to buy a <br />
+COTS component with the same speciÞ cations as component <br />
+c9<br />
+. What are the advantages and <br />
+disadvantages of this approach?  <br />
+  1.16  Instead of implementing component <br />
+c37<br />
+ of a software product, the developers decide to uti-<br />
+lize an open-source component with the same speciÞ cations as component <br />
+c37<br />
+. What are the <br />
+<br />
+advantages and disadvantages of this approach?  <br />
+  1.17  Object <br />
+P<br />
+ invokes method <br />
+m1<br />
+ of object <br />
+Q<br />
+. Suppose we wish to reuse object <br />
+P<br />
+ in a new soft-<br />
+ware product. Can <br />
+P<br />
+ be reused without reusing <br />
+Q<br />
+ as well? What does this say about objects as <br />
+<br />
+Òindependent entitiesÓ (as stated in Section 1.9)?  <br />
+  1.18  Is it correct to state that, as a consequence of LinusÕs Law, all open-source software is of high <br />
+quality?  <br />
+  1.19  (Term Project) Suppose that the product for Chocoholics Anonymous of Appendix A has been <br />
+implemented exactly as described. Now the product has to be modiÞ ed to include endocrinolo-<br />
+<br />
+gists as providers. In what ways will the existing product have to be changed? Would it be better <br />
+<br />
+to discard everything and start again from scratch?  <br />
+  1.20  (Readings in Software Engineering) Your instructor will distribute copies of Schach et al. <br />
+[2003]. What is your opinion of the relative merits of results based on managersÕ estimates <br />
+<br />
+compared to results computed from actual data? <br />
+    <br />
+30<br />
+  Chapter 1  <br />
+The Scope of Softw<br />
+are Engineering<br />
+  [Bannerman, 2008]  P. L. B<br />
+ANNERMAN<br />
+, ÒRisk and Risk Management in Software Projects: A Reas-<br />
+sessment,Ó   <br />
+Journal of Systems and Software<br />
+     <br />
+81<br />
+   (December 2008), pp. 2118Ð33. <br />
+ [Boehm, 1976]  B. W. B<br />
+OEHM<br />
+, ÒSoftware Engineering,Ó   <br />
+IEEE Transactions on Computers<br />
+     <br />
+C-25<br />
+   <br />
+(December 1976), pp. 1226Ð41. <br />
+ [Boehm, 1979]  B. W. B<br />
+OEHM<br />
+, ÒSoftware Engineering, R & D Trends and Defense Needs,Ó in: <br />
+  <br />
+Research Directions in Software Technology<br />
+  , P. Wegner (Editor), The MIT Press, Cambridge, <br />
+MA, 1979. <br />
+ [Boehm, 1980]  B. W. B<br />
+OEHM<br />
+, ÒDeveloping Small-Scale Application Software Products: Some Ex-<br />
+perimental Results,Ó   <br />
+Proceedings of the Eighth IFIP World Computer Congress,<br />
+   October 1980, <br />
+IFIP, pp. 321Ð26. <br />
+ [Boehm, 1981]  B. W. B<br />
+OEHM<br />
+,   <br />
+Software Engineering Economics,<br />
+   Prentice Hall, Englewood Cliffs, <br />
+NJ, 1981. <br />
+ [Boehm and Huang, 2003]  B. B<br />
+OEHM<br />
+ <br />
+AND<br />
+ L. G. H<br />
+UANG<br />
+, ÒValue-Based Software Engineering: A <br />
+Case Study,Ó   <br />
+IEEE Computer<br />
+     <br />
+36<br />
+   (March 2003), pp. 33Ð41. <br />
+ [Brooks, 1975]  F. P. B<br />
+ROOKS<br />
+, J<br />
+R<br />
+.,   <br />
+The Mythical Man-Month: Essays on Software Engineering,<br />
+   <br />
+Addison-Wesley, Reading, MA, 1975; Twentieth Anniversary Edition, Addison-Wesley, Reading, <br />
+<br />
+MA, 1995. <br />
+ [Brownsword, Oberndorf, and Sledge, 2000]  L. B<br />
+ROWNSWORD<br />
+, T. O<br />
+BERNDORF<br />
+, <br />
+AND<br />
+ C. A. S<br />
+LEDGE<br />
+, <br />
+ÒDeveloping New Process for COTS-Based Systems,Ó   <br />
+IEEE Software<br />
+     <br />
+17<br />
+   (JulyÐAugust 2000), <br />
+pp. 40Ð47. <br />
+  References <br />
+sch76183_ch01_001-034.indd   30<br />
+sch76183_ch01_001-034.indd   30<br />
+10/06/10   2:08 PM<br />
+<br />
+10/06/10   2:08 PM<br />
+ [Budd, 2002]  T. A. B<br />
+UDD<br />
+,   <br />
+An Introduction to Object-Oriented Programming<br />
+  , 3rd ed., Addison-<br />
+Wesley, Reading, MA, 2002. <br />
+ [Capper, Colgate, Hunter, and James, 1994]  N. P. C<br />
+APPER<br />
+, R. J. C<br />
+OLGATE<br />
+, J. C. H<br />
+UNTER<br />
+, <br />
+AND<br />
+ M. F. <br />
+J<br />
+AMES<br />
+, ﬁThe Impact of Object-Oriented Technology on Software Quality: Three Case Histories,ﬂ <br />
+  <br />
+IBM Systems Journal<br />
+     <br />
+33<br />
+   (No. 1, 1994), pp. 131Œ57. <br />
+ [Cutter Consortium, 2002]  Cutter Consortium, ﬁ78% of IT Organizations Have Litigated,ﬂ   <br />
+The Cut-<br />
+ter Edge<br />
+  , <br />
+www.cutter.com/research/2002/edge020409.html<br />
+,<br />
+  <br />
+3<br />
+  <br />
+<br />
+ April 09, 2002. <br />
+ [Daly, 1977]  E. B. D<br />
+ALY<br />
+, ﬁManagement of Software Development,ﬂ   <br />
+IEEE Transactions on Software <br />
+Engineering<br />
+     <br />
+SE-3<br />
+   (May 1977), pp. 229Œ42. <br />
+ [Devlin, 2001]  K. D<br />
+EVLIN<br />
+, ﬁThe Real Reason Why Software Engineers Need Math,ﬂ   <br />
+Communica-<br />
+tions of the ACM<br />
+     <br />
+44<br />
+   (October 2001), pp. 21Œ22. <br />
+ [Donzelli et al., 2005]  P. D<br />
+ONZELLI<br />
+, M. Z<br />
+ELKOWITZ<br />
+, V. B<br />
+ASILI<br />
+, D. A<br />
+LLARD<br />
+, <br />
+AND<br />
+ K. N. M<br />
+EYER<br />
+, <br />
+ﬁEvaluating COTS Component Dependability in Context,ﬂ   <br />
+IEEE Software<br />
+     <br />
+22<br />
+   (JulyŒAugust <br />
+2005), pp. 46Œ53. <br />
+ [Elshoff, 1976]  J. L. E<br />
+LSHOFF<br />
+, ﬁAn Analysis of Some Commercial PL/I Programs,ﬂ   <br />
+IEEE Transac-<br />
+tions on Software Engineering<br />
+     <br />
+SE-2<br />
+   (June 1976), pp. 113Œ20. <br />
+ [Fagan, 1974]  M. E. F<br />
+AGAN<br />
+, ﬁDesign and Code Inspections and Process Control in the Development <br />
+of Programs,ﬂ Technical Report IBM-SSD TR 21.572, IBM Corporation, December 1974. <br />
+ [Finkelstein, 2000]  A. F<br />
+INKELSTEIN<br />
+ (Editor),   <br />
+The Future of Software Engineering<br />
+  , IEEE Computer <br />
+Society Press, Los Alamitos, CA, 2000. <br />
+ [GJSentinel.com, 2003]  ﬁSallie Mae™s Errors Double Some Bills,ﬂ <br />
+www.gjsentinel.com/news/<br />
+content/coxnet/headlines/0522_salliemae.html<br />
+, May 22, 2003. <br />
+ [Grady, 1994]  R. B. G<br />
+RADY<br />
+, ﬁSuccessfully Applying Software Metrics,ﬂ   <br />
+IEEE Computer<br />
+     <br />
+27<br />
+   <br />
+(September 1994), pp. 18Œ25.<br />
+  [Hatton, 1998]  L. H<br />
+ATTON<br />
+, ﬁDoes OO Sync with How We Think?ﬂ   <br />
+IEEE Software<br />
+     <br />
+15<br />
+   (MayŒJune <br />
+1998), pp. 46Œ54. <br />
+ [Hoepman and Jacobs, 2007]  J.-H. H<br />
+OEPMAN<br />
+ <br />
+AND<br />
+ B. J<br />
+ACOBS<br />
+, ﬁIncreased Security through Open <br />
+Source,ﬂ   <br />
+Communications of the ACM<br />
+     <br />
+50<br />
+   (January 2007), pp. 79Œ83. <br />
+ [IEEE 610.12, 1990]  ﬁA Glossary of Software Engineering Terminology,ﬂ IEEE 610.12-1990, Insti-<br />
+tute of Electrical and Electronic Engineers, Inc., 1990. <br />
+ [IEEE Standards, 2003]  ﬁProducts and Projects Status Report,ﬂ <br />
+standards.ieee.org/db/status/<br />
+status.txt<br />
+,<br />
+ June 3, 2003. <br />
+ [IEEE/ACM, 1999]  ﬁSoftware Engineering Code of Ethics and Professional Practice, Version 5.2, <br />
+as Recommended by the IEEE-CS/ACM Joint Task Force on Software Engineering Ethics and <br />
+Professional Practice,ﬂ <br />
+www.computer.org/tab/seprof/code.htm<br />
+, 1999. <br />
+ [IEEE/EIA 12207.0-1996, 1998]  ﬁIEEE/EIA 12207.0-1996 Industry Implementation of Interna-<br />
+tional Standard ISO/IEC 12207:1995,ﬂ Institute of Electrical and Electronic Engineers, Electronic <br />
+<br />
+Industries Alliance, New York, 1998. <br />
+ [ISO/IEC 12207, 1995]  ﬁISO/IEC 12207:1995, Information TechnologyŠSoftware Life-Cycle Pro-<br />
+cesses,ﬂ International Organization for Standardization, International Electrotechnical Commis-<br />
+<br />
+sion, Geneva, 1995. <br />
+Chapter 1  <br />
+The Scope of Software Engineering<br />
+  <br />
+31<br />
+  3<br />
+ This and the other URLs cited in this book were correct at the time of going to press.  However, Web addresses <br />
+tend to change all too frequently and without prior or subsequent noti˚ cation.  If this happens, the reader should <br />
+use a search engine to locate the new URL. The date given in a reference to a URL is the publication date. <br />
+sch76183_ch01_001-034.indd   31<br />
+sch76183_ch01_001-034.indd   31<br />
+04/06/10   12:30 PM<br />
+<br />
+04/06/10   12:30 PM<br />
+ [Johnson, 2000]  R. A. J<br />
+OHNSON<br />
+, ﬁThe Ups and Downs of Object-Oriented System Development,ﬂ <br />
+  <br />
+Communications of the ACM<br />
+     <br />
+43<br />
+   (October 2000), pp. 69Œ73. <br />
+ [Josephson, 1992]  M. J<br />
+OSEPHSON<br />
+,   <br />
+Edison, A Biography<br />
+  , John Wiley and Sons, New York, 1992. <br />
+ [Kan et al., 1994]  S. H. K<br />
+AN<br />
+, S. D. D<br />
+ULL<br />
+, D. N. A<br />
+MUNDSON<br />
+, R. J. L<br />
+INDNER<br />
+, <br />
+AND<br />
+ R. J. H<br />
+EDGER<br />
+, ﬁAS/400 <br />
+Software Quality Management,ﬂ   <br />
+IBM Systems Journal<br />
+     <br />
+33<br />
+   (No. 1, 1994), pp. 62Œ88. <br />
+ [Keil and Tiwana, 2005]  M. K<br />
+EIL<br />
+ <br />
+AND<br />
+ A. T<br />
+IWANA<br />
+, ﬁBeyond Cost: The Drivers of COTS Application <br />
+Value,ﬂ   <br />
+IEEE Software<br />
+     <br />
+22<br />
+   (MayŒJune 2005), pp. 64Œ69. <br />
+ [Kelly, Sherif, and Hops, 1992]  J. C. K<br />
+ELLY<br />
+, J. S. S<br />
+HERIF<br />
+, <br />
+AND<br />
+ J. H<br />
+OPS<br />
+, ﬁAn Analysis of Defect Den-<br />
+sities Found during Software Inspections,ﬂ   <br />
+Journal of Systems and Software  <br />
+   <br />
+17<br />
+   (January 1992), <br />
+pp. 111Œ17. <br />
+ [La Libre Online, 2007a] ﬁLalibre.beŠUne erreur à 883 millions d™euros,ﬂ <br />
+www.lalibre.be/index.<br />
+php?view=article&art_id=305607<br />
+.<br />
+ <br />
+ [La Libre Online, 2007b]  ﬁLalibre.beŠC™est la faute à l™informatique,ﬂ <br />
+www.lalibre.be/index.<br />
+php?view=article&art_id=307021<br />
+.<br />
+ <br />
+ [Leveson and Turner, 1993]  N. G. L<br />
+EVESON<br />
+ <br />
+AND<br />
+ C. S. T<br />
+URNER<br />
+, ﬁAn Investigation of the Therac-25 <br />
+Accidents,ﬂ   <br />
+IEEE Computer<br />
+     <br />
+26<br />
+   (July 1993), pp. 18Œ41. <br />
+ [Li et al., 2008]  J. L<br />
+I<br />
+, O. P. N. S<br />
+LYNGSTAD<br />
+, M. T<br />
+ORCHIANO<br />
+, M. M<br />
+ORISIO<br />
+, <br />
+AND<br />
+ C. B<br />
+UNSE<br />
+, ﬁA State-of-<br />
+the-Practice Survey of Risk Management in Development with Off-the-Shelf Software Compo-<br />
+nents,ﬂ   <br />
+IEEE<br />
+     <br />
+Transactions on Software Engineering  <br />
+   <br />
+34<br />
+   (MarchŒApril 2008), pp. 271Œ86. <br />
+ [Lientz, Swanson, and Tompkins, 1978]  B. P. L<br />
+IENTZ<br />
+, E. B. S<br />
+WANSON<br />
+, <br />
+AND<br />
+ G. E. T<br />
+OMPKINS<br />
+, ﬁChar-<br />
+acteristics of Application Software Maintenance,ﬂ   <br />
+Communications of the ACM<br />
+     <br />
+21<br />
+   (June 1978), <br />
+pp. 466Œ71. <br />
+ [Longstaff, Chittister, Pethia, and Haimes, 2000]  T. A. L<br />
+ONGSTAFF<br />
+, C. C<br />
+HITTISTER<br />
+, R. P<br />
+ETHIA<br />
+, <br />
+AND<br />
+ <br />
+Y. Y. H<br />
+AIMES<br />
+, ﬁAre We Forgetting the Risks of Information Technology?ﬂ   <br />
+IEEE Computer   <br />
+  <br />
+33<br />
+   <br />
+(December 2000), pp. 43Œ51. <br />
+ [Madanmohan and De™, 2004]  T. R. M<br />
+ADANMOHAN<br />
+ <br />
+AND<br />
+ R. D<br />
+E<br />
+™, ﬁOpen Source Reuse in Commercial <br />
+Firms,ﬂ   <br />
+IEEE Software  <br />
+   <br />
+21<br />
+   (NovemberŒDecember 2004), pp. 62Œ69. <br />
+ [Mellor, 1994]  P. M<br />
+ELLOR<br />
+, ﬁCAD: Computer-Aided Disaster,ﬂ Technical Report, Centre for Software <br />
+Reliability, City University, London, July 1994. <br />
+ [Meyer, 1992]  B. M<br />
+EYER<br />
+, ﬁApplying ‚Design by Contract™,ﬂ   <br />
+IEEE Computer<br />
+     <br />
+25<br />
+   (October 1992), <br />
+pp. 40Œ51. <br />
+ [Naur, Randell, and Buxton, 1976]  P. N<br />
+AUR<br />
+, B. R<br />
+ANDELL<br />
+, <br />
+AND<br />
+ J. N. B<br />
+UXTON<br />
+ (Editors),   <br />
+Software <br />
+Engineering: Concepts and Techniques: Proceedings of the NATO Conferences<br />
+  , Petrocelli-<br />
+<br />
+Charter, New York, 1976. <br />
+ [Neumann, 1980]  P. G. N<br />
+EUMANN<br />
+, Letter from the Editor,   <br />
+ACM SIGSOFT Software Engineering <br />
+Notes<br />
+     <br />
+5<br />
+   (July 1980), p. 2. <br />
+ [Parnas, 1994]  D. L. P<br />
+ARNAS<br />
+, ﬁSoftware Aging,ﬂ   <br />
+Proceedings of the 16th International Conference <br />
+on Software Engineering<br />
+  , Sorrento, Italy, May 1994, IEEE, pp. 279Œ87. <br />
+ [Paulson, Succi, and Eberlein, 2004]  J. W. P<br />
+AULSON<br />
+, G. S<br />
+UCCI<br />
+, <br />
+AND<br />
+ A. E<br />
+BERLEIN<br />
+, ﬁAn Empirical <br />
+Study of Open-Source and Closed-Source Software Products,ﬂ   <br />
+IEEE Transactions on Software <br />
+Engineering  <br />
+   <br />
+30<br />
+   (April 2004), pp. 246Œ56. <br />
+ [Payne and Landry, 2006]  D. P<br />
+AYNE<br />
+ <br />
+AND<br />
+ B. J. L. L<br />
+ANDRY<br />
+, ﬁA Uniform Code of Ethics: Business and <br />
+IT Professional Ethics,ﬂ <br />
+Communications of the ACM<br />
+   <br />
+49<br />
+   (November 2006), pp. 81Œ84. <br />
+ [Procaccino, Verner, and Lorenzet, 2006]  J. D. P<br />
+ROCACCINO<br />
+, J. M. V<br />
+ERNER<br />
+, <br />
+AND<br />
+ S. J. L<br />
+ORENZET<br />
+, <br />
+ﬁDe˚<br />
+ ning and Contributing to Software Development Success,ﬂ   <br />
+Communications of the ACM<br />
+   <br />
+(August 2006), pp. 79Œ83. <br />
+32<br />
+  Chapter 1  <br />
+The Scope of Softw<br />
+are Engineering<br />
+sch76183_ch01_001-034.indd   32<br />
+sch76183_ch01_001-034.indd   32<br />
+04/06/10   12:30 PM<br />
+<br />
+04/06/10   12:30 PM<br />

@@ -9,7 +9,7 @@ from tika import parser
 
 #f_name='Test1.pdf'
 
-f_name='MidTermStudyGuide.pdf'
+f_name='Test1.pdf'
 
 # This function grabs the string from a pdf file
 def getTEXT(pdf_file):
