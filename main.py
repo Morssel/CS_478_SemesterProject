@@ -23,9 +23,6 @@ def randomString(stringLength=15):
     return ''.join(random.choice(letters) for i in range(stringLength))
 
 
-
-
-
 '''
 @app.route('/FLASK_BDDT/')
 def upload_form():
@@ -73,6 +70,21 @@ def upload_form():
             new_file_name = os.path.join(app.config['PARSED_FOLDER']) + '/' + web_link + '.html'
             with open(new_file_name, "w", encoding="utf-8") as f:
                 f.write(result)
+
+            # get author and title data and weblink and write to file & post to the solr server
+            author_text=''
+            title_text=''
+
+            if 'title_text' in request.form and request.form['title_text'] != 'Enter Title':
+                author_text = request.form['title_text']
+                print(author_text)
+            if 'author_text' in request.form and request.form['author_text'] != 'Enter Author':
+                text_search = request.form['author_text']
+                print(text_search)
+            http_link ="http://localhost:5000/FLASK_BDDT/PARSED/"+web_link + '.html'
+            make_solr_json(http_link, author_text, title_text, filename, result)
+            post_solr_update()
+
             return redirect('/FLASK_BDDT/PARSED/' + web_link + '.html')
         else:
             flash('Allowed file types are txt, pdf')
