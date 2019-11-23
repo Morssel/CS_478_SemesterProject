@@ -22,6 +22,10 @@ def randomString(stringLength=15):
     letters = string.ascii_lowercase
     return ''.join(random.choice(letters) for i in range(stringLength))
 
+
+
+
+
 '''
 @app.route('/FLASK_BDDT/')
 def upload_form():
