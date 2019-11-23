@@ -34,6 +34,19 @@ class Solr_query():
         items = r['response']['docs']
         return items
 
+    def title_lookup(self, id):
+        def make_BDDT_address():
+            address = self.server_address + self.core + "/select?indent=on&q=Title_BDDT:" + str(id) \
+                      + "&fl=Web_BDDT,Author_BDDT,Titile_BDDT,File_BDDT&wt=json"
+            return address
+
+        address = make_BDDT_address()
+        r = requests.get(address).json()
+        response=convert(r)
+        #return response
+        items = r['response']['docs']
+        return items
+
     # This function converts a dictionary or an iterable
     # of unicode strings and return them as python strings.
 def convert(data):

@@ -44,10 +44,15 @@ def searchpage():
         if 'a_submit' in request.form:
             author_title_text = request.form['author_title_search']
             print(author_title_text)
+            global sq
+            r = sq.title_lookup(author_title_text)
+            html_result = json2html.convert(r)
+            new_file_name = os.path.join(app.config['TEMPLATE_FOLDER'], "result.html")
+            with open(new_file_name, "w", encoding="utf-8") as f1:
+                f1.write(html_result)
         elif 't_submit' in request.form:
             text_search = request.form['text_search']
             print(text_search)
-            global sq
             r = sq.content_lookup(text_search)
 
             html_result = json2html.convert(r)
@@ -90,11 +95,11 @@ def upload_form():
             title_text=''
 
             if 'title_text' in request.form and request.form['title_text'] != 'Enter Title':
-                author_text = request.form['title_text']
-                print(author_text)
+                title_text = request.form['title_text']
+                print(title_text)
             if 'author_text' in request.form and request.form['author_text'] != 'Enter Author':
-                text_search = request.form['author_text']
-                print(text_search)
+                author_text = request.form['author_text']
+                print(author_text)
             http_link ="http://localhost:5000/FLASK_BDDT/PARSED/"+web_link + '.html'
             make_solr_json(http_link, author_text, title_text, filename, result)
             post_solr_update()
