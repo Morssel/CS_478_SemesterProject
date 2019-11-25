@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>BDDT</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+<main role="main">
+
+<div class="container-header">
+  <p>The URL for this document is {{txtURL}}</p>
+  <br /> 
+  <br /> 
+  <p id="textHolder"></p>
+</div>
+
+<script>
+        var txtFile = new XMLHttpRequest();
+        txtFile.open("GET", "{{txtURL}}", true);
+        txtFile.onreadystatechange = function() {
+          if (txtFile.readyState === 4) {  // Makes sure the document is ready to parse.
+            if (txtFile.status === 200) {  // Makes sure it's found the file.
+              allText = txtFile.responseText; 
+              //lines = txtFile.responseText.split("\n"); // Will separate each line into an array
+              var customTextElement = document.getElementById('textHolder');
+        customTextElement.innerHTML = txtFile.responseText;
+            }
+          }
+        }
+        txtFile.send(null);
+</script>
+</main>
+</body>
+</html>
+

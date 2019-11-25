@@ -2,12 +2,14 @@
 import random
 import string
 import os
+import boto3
 from app import app
 from flask import Flask, flash, request, redirect, render_template
 from werkzeug.utils import secure_filename
 from PDF_parser import *
 from Utilities import *
 from Solr_query import *
+
 
 ALLOWED_EXTENSIONS = set(['txt', 'pdf','doc','docx'])
 process_file = ''
@@ -90,6 +92,18 @@ def upload_form():
             with open(new_file_name, "w", encoding="utf-8") as f:
                 f.write(result)
 
+            # setup result string to be turned into a html file and stored on S3 bucket
+            result = "<html>\n" +result+ "\n</html>"
+            f = open("/tmp/"+web_link+".html","w+")
+            f.write(result)
+            f.close()
+
+            session = boto3.Session(profile_name='zappa-project')  # If you only have one AWS account in you .aws credentials then this can be default
+            # # Note that the profile "zappa-project" will only work on Joseph's machine as it is unique
+            s3 = session.resource('s3')  
+            s3.meta.client.upload_file('/tmp/'+web_link+'.html', 'zappabucketjktest', 'static/'+web_link+'.html', ExtraArgs={'ContentType': "text/html", 'ACL': "public-read"})
+            txtURL = 'https://zappabucketjktest.s3.us-east-2.amazonaws.com/static/'+web_link+'.html'
+
             # get author and title data and weblink and write to file & post to the solr server
             author_text=''
             title_text=''
@@ -104,7 +118,8 @@ def upload_form():
             make_solr_json(http_link, author_text, title_text, filename, result)
             post_solr_update()
 
-            return redirect('/FLASK_BDDT/PARSED/' + web_link + '.html')
+            return render_template('textfile.html', txtURL = txtURL )
+            #return redirect('/FLASK_BDDT/PARSED/' + web_link + '.html')
         else:
             flash('Allowed file types are txt, pdf')
             return redirect(request.url)
