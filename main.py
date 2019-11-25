@@ -89,19 +89,26 @@ def upload_form():
             result = tika_parse(process_file)
             web_link = randomString()
             new_file_name = os.path.join(app.config['PARSED_FOLDER']) + '/' + web_link + '.html'
+
             with open(new_file_name, "w", encoding="utf-8") as f:
                 f.write(result)
 
             # setup result string to be turned into a html file and stored on S3 bucket
             result = "<html>\n" +result+ "\n</html>"
-            f = open("/tmp/"+web_link+".html","w+")
-            f.write(result)
-            f.close()
 
-            session = boto3.Session(profile_name='zappa-project')  # If you only have one AWS account in you .aws credentials then this can be default
+            new_file_name2 = os.path.join(app.config['TEMP_FOLDER']) + '/' + web_link + '.html'
+
+            #f = open(new_file_name2,"w+")
+            #f.write(result)
+            #f.close()
+            with open(new_file_name2, "w", encoding="utf-8") as f2:
+                f2.write(result)
+
+
+            session = boto3.Session(profile_name='default')  # If you only have one AWS account in you .aws credentials then this can be default
             # # Note that the profile "zappa-project" will only work on Joseph's machine as it is unique
             s3 = session.resource('s3')  
-            s3.meta.client.upload_file('/tmp/'+web_link+'.html', 'zappabucketjktest', 'static/'+web_link+'.html', ExtraArgs={'ContentType': "text/html", 'ACL': "public-read"})
+            s3.meta.client.upload_file(new_file_name2, 'zappabucketjktest', 'static/'+web_link+'.html', ExtraArgs={'ContentType': "text/html", 'ACL': "public-read"})
             txtURL = 'https://zappabucketjktest.s3.us-east-2.amazonaws.com/static/'+web_link+'.html'
 
             # get author and title data and weblink and write to file & post to the solr server
@@ -114,7 +121,8 @@ def upload_form():
             if 'author_text' in request.form and request.form['author_text'] != 'Enter Author':
                 author_text = request.form['author_text']
                 print(author_text)
-            http_link ="http://localhost:5000/FLASK_BDDT/PARSED/"+web_link + '.html'
+            #http_link ="http://localhost:5000/FLASK_BDDT/PARSED/"+web_link + '.html'
+            http_link = txtURL
             make_solr_json(http_link, author_text, title_text, filename, result)
             post_solr_update()
 
