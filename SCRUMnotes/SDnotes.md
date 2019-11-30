@@ -235,4 +235,94 @@ Tasks
 - They keep track of the users, not us.
 
 
- 
+## 11/01/19
+
+- Roadblock concerning integrating the database
+- Concerns that if a user wants to browse the public directory while finding private documents
+- This would require building a database for the login, usernames, passwords, and more
+- Great concept, but not enough time
+- If a user wants a private document, we give them a url string
+- url hyperlink is unique and acts as a username/pw
+- link takes them to the webpage, moving away from the database.
+- Let the user choose, private by default
+- User fills categories for title, author, and genre minimum
+- SQL database question regarding AWS Lambda
+- Review AWS documentation (Hans) and Kaitlyn tests
+- Front end, may add hamburger menu for mobile users
+
+## 11/04/19
+
+- discovery of solution regarding SQL database
+- requires using AWS Relational Database Tables (RDS)
+- Can hold capabilities of asp.net
+- Hans researching some tutorials on how to integrate database
+
+## 11/06/19
+
+- Kaitlyn has cleaned up database of the private filters
+- Revamped part of the front end
+- Miscommunication on one end
+- Hans believed all the documents would display on directory page
+- Hans and Kaitlyn had to draw our diagram to see end result.
+- Hamburger format keeps going off page
+- Questions regarding directory wildcards from Al
+- can we catch the specifics of what we need or will the user have to type in the exact matches
+
+## 11/08/19
+
+- Two weeks before the demo
+- Hans will be trying to rebuild database for asp.net
+- Believes he can get a connection, but may rebuild it from his computer
+- Joseph running into problems with flask and the S3 bucket
+- Could be referenced to using permissions
+- Can get the parser working, but only on localhost
+- Have new milestones
+- 11/15 find someway to connect the database from S3
+- 11/18 Merge upload page and Al's code
+
+## 11/11/19
+
+- Hans rebuilt and added other features to the database
+- Could connect to the database on AWS RDS
+- could not get the database to appear after linking the combinations
+- May believe it has something to do with permission errors
+- Al beginning research on how to search within the document. 
+
+## 11/13/19
+
+- On frontend side, Jace will revamp the file upload and homepage
+- Adding new functionality
+- Kaitlyn's database originally couldn't link up
+- After Hans's testing and rebuild, still couldn't get it to hook up.
+- May end up just testing on local host.
+- Al's continuing his research on searching using Solr
+
+## 11/15/19
+
+- Jace has finished his changes on the upload page
+- Will begin merging his code with Al's backend
+- Joseph still running into problems uploading the document to S3
+- May be to the naming conventions with Flask
+- Been making progress, but a more problems kept creeping. 
+
+## 11/18/19 
+
+- Al has gotten the merge with Jace's upload page
+- May keep the display as is for the Choose File/ Upload File
+- Can only work right now but the template will hide it if the button goes to the bottom
+- Page gets parsed and is routed to a directory where the parsed document stays
+- Random string is generated for text document
+- Joseph can get the document to be put into an s3 bucket
+- May put the s3 bucket public
+- Anyone can then check it out
+- Will at that point just put a wrapper around it
+- Technically a site but wrapped. 
+
+
+## 11/20/19 
+- Al has integrated Solr searching
+- We can search both the document and keywords inside the document
+- Joseph can get the files to go into the S3 bucket
+- Can actually find the parsed document
+- Can display how much the files get condensed.
+
